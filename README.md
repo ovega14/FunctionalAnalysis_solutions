@@ -1,2 +1,1 @@
-# FunctionalAnalysis_solutions
-Solution Manual For Functional Analysis (MIT 18.102)
+# Solution Manual For Functional Analysis (MIT 18.102)
