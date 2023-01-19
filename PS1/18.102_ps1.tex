@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[]{amsthm} %lets us use \begin{proof}
+\usepackage[]{amssymb} %gives us the character \varnothing
+\usepackage[]{amsmath}
+\usepackage[parfill]{parskip} %avoid indent when skipping lines
+
+\title{18.102 Assignment 1}
+\author{Octavio Vega}
+\date\today
+%This information doesn't actually show up on your document unless you use the maketitle command below
+
+\begin{document}
+\maketitle %This command prints the title based on information entered above
+
+\section*{Problem 1}
+\subsection*{(a)}
+[Hölder's Inequality]
+\begin{proof}
+	Let $A,B>0$ and $t\in(0,1)$. We claim that 
+	\begin{equation}\label{hint}
+		A^tB^{1-t}\leq tA + (1-t)B.
+	\end{equation}
+	For $x>0$, define $$f(x):= tx + (1-t)B -x^tB^{1-t}.$$
+	Computing the first and second derivatives of $f$, we find $$f'(x)=t-tx^{t-1}B^{1-t},\quad \textrm{and}$$
+	$$f''(x)=-t(t-1)x^{t-2}B^{1-t}.$$
+	Then at $x=B$, we have $f'(B)=0$ and $f''(B)=-t(t-1)\frac{1}{B}>0$ for $0<t<1$. Hence, $f(x)$ has a minimum at $x=B$ by the second derivative test. Since $f(B)=0$, we conclude that $f$ attains a minimum value of 0 at $x=B$. If $A\neq B$, then it follows that
+	\begin{align}
+		f(A) &\geq f(B)=0\\
+		 \implies tA + (1-t)B - A^tB^{1-t}&\geq 0\\
+		 \implies A^tB^{1-t}&\leq tA + (1-t)B,
+	\end{align}
+	and the claim is proven. 
+	
+	Now let $A=\frac{|a_k|^p}{\sum_{k=1}^{n}|a_k|^p}$ and $B = \frac{|b_k|^p}{\sum_{k=1}^{n}|b_k|^p}$ for $n\in\mathbb{N}$. Note that these choices satisfy the positivity conditions required in the previous claim. Then by \eqref{hint}, letting $t=\frac{1}{p}$, we have
+	\begin{equation}
+		A^\frac{1}{p}B^\frac{1}{q}\leq \frac{A}{p} + \frac{B}{q}
+	\end{equation}
+	Substituting the expressions for $A$ and $B$ gives 
+	\begin{equation}
+		\frac{|a_k||b_k|}{(\sum_{k=1}^{n}|a_k|^p)^{\frac{1}{p}}(\sum_{k=1}^{n}|b_k|^q)^{\frac{1}{q}}}\leq \frac{|a_k|^p}{p\sum_{k=1}^{n}|a_k|^p} + \frac{|b_k|^q}{q\sum_{k=1}^{n}|b_k|^q}.
+	\end{equation}
+	Summing from $k=1$ to $n$ on both sides of the inequality, we find
+	\begin{align}
+		\sum_{k=1}^{n}\frac{|a_k||b_k|}{(\sum_{k=1}^{n}|a_k|^p)^{\frac{1}{p}}(\sum_{k=1}^{n}|b_k|^q)^{\frac{1}{q}}}&\leq \frac{1}{p}\sum_{k=1}^{n}\frac{|a_k|^p}{\sum_{k=1}^{n}|a_k|^p} + \frac{1}{q}\sum_{k=1}^{n}\frac{|b_k|^q}{\sum_{k=1}^{n}|b_k|^q}\\
+		&=\frac{1}{p} + \frac{1}{q}=1\\
+		\implies \sum_{k=1}^{n}\frac{|a_k||b_k|}{(\sum_{k=1}^{n}|a_k|^p)^{\frac{1}{p}}(\sum_{k=1}^{n}|b_k|^q)^{\frac{1}{q}}}&\leq 1.
+	\end{align}
+	Multiplying both sides by the product $(\sum_{k=1}^{n}|a_k|^p)^{\frac{1}{p}}(\sum_{k=1}^{n}|b_k|^q)^{\frac{1}{q}}$, we obtain the desired result,
+	\begin{equation}
+		\sum_{k=1}^{n}|a_k b_k| \leq \left[\sum_{k=1}^{n}|a_k|^p\right]^{\frac{1}{p}}\left[\sum_{k=1}^{n}|b_k|^q\right]^{\frac{1}{q}}.
+	\end{equation}
+\end{proof}
+\subsection*{(b)}
+[Minkowki's Inequality]
+\begin{proof}
+	By the triangle inequality, we have
+	\begin{align}
+		\sum_{k=1}^n|a_k + b_k|^p &= \sum_{k=1}^n |a_k + b_k||a_k + b_k|^{p-1}\\
+		&\leq \sum_{k=1}^n|a_k||a_k + b_k|^{p-1} + \sum_{k=1}^n|b_k||a_k + b_k|^{p-1}.
+	\end{align}
+	Then by Hölder's inequality [proved in \textbf{(a)}], 
+	\begin{equation}
+		\sum_{k=1}^n |a_k||a_k + b_k|^{p-1}\leq \left[\sum_{k=1}^n |a_k|^p\right]^\frac{1}{p} \left[\sum_{k=1}^n |a_k + b_k|^p\right]^\frac{p-1}{p}, \quad \textrm{and}
+	\end{equation}
+	\begin{equation}
+		\sum_{k=1}^n |b_k||a_k + b_k|^{p-1}\leq \left[\sum_{k=1}^n |b_k|^p\right]^\frac{1}{p} \left[\sum_{k=1}^n |a_k + b_k|^p\right]^\frac{p-1}{p},
+	\end{equation}
+	where we have identified $q=\frac{p}{p-1}$. Then
+	\begin{align}
+		&\sum_{k=1}^n|a_k + b_k|^p \leq \left(\left[\sum_{k=1}^n |a_k|^p\right]^\frac{1}{p} + \left[\sum_{k=1}^n |b_k|^p\right]^\frac{1}{p}\right)\left[\sum_{k=1}^n |a_k + b_k|^p\right]^\frac{p-1}{p} \\
+		&\implies \left[\sum_{k=1}^n|a_k + b_k|^p\right] \left[\sum_{k=1}^n |a_k + b_k|^p\right]^\frac{1-p}{p} \leq \left[\sum_{k=1}^n |a_k|^p\right]^\frac{1}{p} + \left[\sum_{k=1}^n |b_k|^p\right]^\frac{1}{p}. 
+	\end{align}
+	Combining exponents on the left side, we arrive at
+	\begin{equation}
+		\left[\sum_{k=1}^n |a_k + b_k|^p\right]^\frac{1}{p} \leq \left[\sum_{k=1}^n |a_k|^p\right]^\frac{1}{p} + \left[\sum_{k=1}^n |b_k|^p\right]^\frac{1}{p}.
+	\end{equation}
+\end{proof}
+
+\section*{Problem 2}
+\begin{proof}
+	We first show that $\ell^p$ is a normed space. 
+	
+	Let $a = \{a_j\}_{j=1}^{\infty}$ and $b = \{b_j\}_{j=1}^{\infty}$ be sequences in $\ell^p$. Suppose $||a||_p=0$. Then by Hölder's inequality, letting $b_j=n^{-\frac{1}{p}}$ for $n\in \mathbb{N}$, $\forall j\in\mathbb{N}$, we have
+	\begin{align}
+		0=\left[\sum_{j=1}^n|a_j|^p\right]^\frac{1}{p} &= \left[\sum_{j=1}^{n}|a_j|^p\right]^\frac{1}{p} \left[\sum_{j=1}^n \frac{1}{n}\right]^\frac{1}{p}\\
+		&\geq \sum_{j=1}^n |a_j n^{-\frac{1}{p}}| = n^{-\frac{1}{p}}\sum_{j=1}^n |a_j| \\
+		&\geq 0.
+	\end{align}
+	Thus, we have that
+	\begin{equation}
+		0\leq \sum_{j=1}^n |a_j| \leq 0,
+	\end{equation}
+	but since $|a_j|$ is always nonnegative, this must imply that $a_j=0$ $\forall j\in \mathbb{N}$. Going in the opposite direction, suppose $a=0$ [i.e. $a_j=0$ $\forall j\in \mathbb{N}$]. Then
+	\begin{equation}
+		||a||_p=\left[\sum_{j=1}^n |a_j|^p\right]^\frac{1}{p} = \left[\sum_{j=1}^n 0\right]^\frac{1}{p}=0^\frac{1}{p}=0. 
+	\end{equation}
+	Hence, we have shown $||a||_p = 0 \iff a = 0$ [definiteness]. Now let $\lambda\in\mathbb{K}$ [an element in a field of scalars, $\mathbb{R}$ or $\mathbb{C}$]. Then
+	\begin{equation}
+		||\lambda a||_p = \left[\sum_{j=1}^n |\lambda a_j|^p\right]^\frac{1}{p}=\left[|\lambda|^p \sum_{j=1}^n |a_j|^p\right]^\frac{1}{p} = |\lambda|\left[\sum_{j=1}^n |a_j|^p\right]^\frac{1}{p}.
+	\end{equation}
+	Hence, $||\lambda a||_p = |\lambda|\cdot||a||_p$ [homogeneity]. Now consider the norm of the sum, $||a+b||_p$. By Minkowski's inequality, we have
+	\begin{equation}
+		||a+b||_p = \left[\sum_{j=1}^n |a_j +b_j|^p\right]^\frac{1}{p}\leq \left[\sum_{j=1}^n |a_j|^p\right]^\frac{1}{p} + \left[\sum_{j=1}^n |b_j|^p\right]^\frac{1}{p}
+	\end{equation}
+	Hence, $||a+b||_p \leq ||a||_p + ||b||_p$ [triangle inequality]. Thus we have proven that $||\cdot||_p$ is a norm on $\ell^p$, so we conclude that $\ell^p$ is a normed space. 
+	
+	Next we show that $\ell^p$ is complete. 
+	
+	Let $\{a^{(n)}\}_n$ be a Cauchy sequence in $\ell^p$ [i.e. $\{a_j^{(n)}\}_{j=1}^{\infty}\in\ell^p$ and $\{a^{(n)}\}_n=\{\{a_j^{(n)}\}_{j}\}_{n}$]. Let $\epsilon>0$. Then $\exists N_0\in\mathbb{N}$ such that $\forall n,m\geq N_0$, 
+\end{proof}
+
+\end{document}
