@@ -150,4 +150,86 @@
 	We will show that $\ell^p \setminus c_0 := \{b\in\ell^p | \lim_{k \to\infty} b_k \neq 0\}$ is open. 
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 5}
+\subsection*{(a)}
+\begin{proof}
+	We consider two cases. 
+	
+	\underline{Case 1}: $p=1$ [i.e. $q=\infty$]. If $\{a_k\}_k\in\ell^1$, then $||a||_1 < \infty$, so $\sum_{k=1}^{\infty} |a_k|$ converges. Similarly, if $\{b_k\}_k\in\ell^{\infty}$, then $||b||_{\infty} = \sup_{1\leq k <  \infty}|b_k|<\infty$. Then
+	\begin{align}
+		\sum_{k=1}^{\infty}|a_k b_k| &\leq \sum_{k=1}^{\infty}|a_k|\sup_{k\in\mathbb{N}}|b_k| \\
+		&= ||b||_{\infty}\left[\sum_{k=1}^{\infty}|a_k|\right]^1 \\
+		&= ||a||_1||b||_{\infty},
+	\end{align}
+	as desired.
+	
+	\underline{Case 2}: $1<p<\infty$. Since $\frac{1}{p} + \frac{1}{q}=1$, then the result for this case follows immediately from Hölder's inequality. For all $n\in\mathbb{N}$, 
+	\begin{equation}
+		\sum_{k=1}^n |a_k b_k| \leq \left[\sum_{k=1}^n |a_k|^p\right]^\frac{1}{p} + \left[\sum_{k=1}^n |b_k|^q\right]^\frac{1}{q}.
+	\end{equation}
+	Taking $n\to\infty$ in the above inequality, we achieve the desired result:
+	\begin{equation}
+		\sum_{k=1}^{\infty} |a_k b_k| \leq ||a||_p||b||_q. 
+	\end{equation}
+\end{proof}
+\subsection*{(b)}
+\begin{proof}
+	By the result proven in part \textbf{(a)},
+	\begin{align}
+		\sum_{k=1}^{\infty} a_k b_k &\leq \sum_{k=1}^{\infty} |a_k b_k| \\
+		&\leq ||a||_p||b||_q \in \mathbb{C}.
+	\end{align}
+	Hence, $F_b$  maps $\ell^p$ into the scalar field $\mathbb{K} = \mathbb{C}$. So we conclude that $F_b\in \left(\ell^p\right)'$. 
+	
+	Next, we compute the operator norm of $F_b$. Let $a\in\ell^p$. Note that
+	\begin{align}
+		|F_b(a)|&=\left|\sum_{k=1}^{\infty} a_k b_k \right|\\
+		&\leq \sum_{k=1}^{\infty} |a_k b_k| \\
+		&\leq ||a||_p ||b||_q.
+	\end{align}
+	Then taking the supremum over the set of $||a||_p=1$,
+	\begin{align}
+		||F_b||&=\sup_{||a||_p=1} |F_b(a)| \\
+		&= \sup_{||a||_p=1} ||a||_p ||b||_q \\
+		&= ||b||_q. 
+	\end{align}
+	Thus we have shown that $F_b \in \left(\ell^p\right)'$ and $||F_b||=||b||_{\ell^q}$, as desired.
+\end{proof}
+\subsection*{(c)}
+\begin{proof}
+	We first show that $F$ is linear.
+	
+	[Note: $F(b) = F_b = \sum_{k=1}^{\infty}b_k \in \left(\ell^p\right)'$.]
+	
+	Let $b$ and $c$ be sequences in $\ell^q$, and let $\lambda \in \mathbb{K}$. Then by the linearity of sums,
+	\begin{equation}
+		F(b+c) = \sum_{k=1}^{\infty}(b_k + c_k) = \sum_{k=1}^{\infty}b_k + \sum_{k=1}^{\infty}c_k = F(b) + F(c), \quad \textrm{and}
+	\end{equation}
+	\begin{equation}
+		F(\lambda b) = \sum_{k=1}^{\infty} \lambda b_k = \lambda \sum_{k=1}^{\infty}b_k = \lambda F(b).
+	\end{equation}
+	Thus, $F$ is linear. 
+	
+	Next, we show that $F$ is bijective. Suppose $F(b)=F(c)$. Then by part \textbf{(b)},
+	\begin{equation}
+		0 = ||F_b - F_c|| = ||b-c||_{\ell^q}.
+	\end{equation}
+	But since $||\cdot||_{\ell^q}$ is a norm, this must imply that 
+	\begin{align}
+		b-c&=0 \\
+		\implies b&=c.
+	\end{align}
+	Hence, $F$ is injective. Now suppose we are given $F_b=\sum_{k=1}^{\infty}b_k\in \left(\ell^p\right)'$. Then by definition, we choose $b=\{b_k\}_k\in\ell^q$ so that $F(b) = F_b$. We can make this choice for any such series in $\left(\ell^p\right)'$, since by what we proved in \textbf{(b)}, it always holds that the sequence $b$ exists in $\ell^q$. Hence, $F$ is surjective, which means that $F$ is bijective. 
+	
+	We now show that $F$ is bounded. The proof of this claim follows immediately from the result in \textbf{(b)}. Let $b\in\ell^q$. Then
+	\begin{align}
+		||F(b)|| &= ||F_b|| \\
+		&=||b||_{\ell^q} \\
+		&\leq c||b||_{\ell^q}, \quad \textrm{for } c=1.
+	\end{align}
+	So, $F$ is continuous (bounded).
+	
+	Therefore, $F: \ell^q \rightarrow \left(\ell^p\right)'$ is a bijective, bounded, linear operator. 
+\end{proof}
 \end{document}
