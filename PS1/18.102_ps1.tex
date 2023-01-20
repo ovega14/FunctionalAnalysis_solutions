@@ -9,10 +9,9 @@
 \title{18.102 Assignment 1}
 \author{Octavio Vega}
 \date\today
-%This information doesn't actually show up on your document unless you use the maketitle command below
 
 \begin{document}
-\maketitle %This command prints the title based on information entered above
+\maketitle
 
 \section*{Problem 1}
 \subsection*{(a)}
@@ -78,6 +77,7 @@
 	\end{equation}
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 2}
 \begin{proof}
 	We first show that $\ell^p$ is a normed space. 
@@ -145,11 +145,14 @@
 	Since $\ell^p$ is a complete normed space, we conclude that $\ell^p$ is a Banach space. 
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 3}
 \begin{proof}
 	We will show that $\ell^p \setminus c_0 := \{b\in\ell^p | \lim_{k \to\infty} b_k \neq 0\}$ is open. 
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 5}
 \subsection*{(a)}
@@ -159,7 +162,7 @@
 	\underline{Case 1}: $p=1$ [i.e. $q=\infty$]. If $\{a_k\}_k\in\ell^1$, then $||a||_1 < \infty$, so $\sum_{k=1}^{\infty} |a_k|$ converges. Similarly, if $\{b_k\}_k\in\ell^{\infty}$, then $||b||_{\infty} = \sup_{1\leq k <  \infty}|b_k|<\infty$. Then
 	\begin{align}
 		\sum_{k=1}^{\infty}|a_k b_k| &\leq \sum_{k=1}^{\infty}|a_k|\sup_{k\in\mathbb{N}}|b_k| \\
-		&= ||b||_{\infty}\left[\sum_{k=1}^{\infty}|a_k|\right]^1 \\
+		&= \left[\sum_{k=1}^{\infty}|a_k|\right]^1 ||b||_{\infty} \\
 		&= ||a||_1||b||_{\infty},
 	\end{align}
 	as desired.
