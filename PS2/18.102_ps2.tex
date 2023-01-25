@@ -16,7 +16,27 @@
 \section*{Problem 1}
 \subsection*{(a)}
 \begin{proof}
-	Let $B$ be a Banach space. Suppose $T \in \mathcal{B}(B,B)$ and $||I-T||<1$.
+	Let $B$ be a Banach space. Suppose $T \in \mathcal{B}(B,B)$ and $||I-T||<1$. Then by Geometric series, 
+	\begin{equation}
+		\sum_{n=0}^{\infty} ||(I-T)^n|| \leq \sum_{n=0}^{\infty} ||I-T||^n = \frac{1}{1-||I-T||}<\infty.
+	\end{equation}
+	So the series $\sum_{n=0}^{\infty} (I-T)^n$ converges absolutely, which implies that it converges. Fix $m\in\mathbb{N}$. Then
+	\begin{align}
+		T\sum_{n=0}^m (I-T)^n &= [I-(I-T)]\sum_{n=0}^m (I-T)^n \\
+		&= \sum_{n=0}^m (I-T)^n - \sum_{n=0}^m (I-T)^{n+1} \\
+		&= I - (I-T)^{m+1}, \textrm{ by telescoping sum.}
+	\end{align}
+	By continuity of $T$, 
+	\begin{align}
+		T\sum_{n=0}^{\infty}(I-T)^n &= T\left(\lim_{m\to\infty}\sum_{n=0}^m (I-T)^n\right)\\
+		&= \lim_{m\to\infty} T \sum_{n=0}^m (I-T)^n \\
+		&= \lim_{m\to\infty}\left[I - (I-T)^{m+1}\right] \\
+		&= I,
+	\end{align}
+	since $||I-T||<1$.
+	We can similarly show that $\sum_{n=0}^{\infty}(I-T)^n = I$.
+	
+	Thus, $T$ is indeed invertible, and $\sum_{n=0}^{\infty} (I-T)^n \rightarrow T^{-1}$ in $\mathcal{B}(B,B)$.
 \end{proof}
 
 \end{document}
