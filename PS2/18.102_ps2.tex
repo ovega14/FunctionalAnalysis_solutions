@@ -39,4 +39,26 @@
 	Thus, $T$ is indeed invertible, and $\sum_{n=0}^{\infty} (I-T)^n \rightarrow T^{-1}$ in $\mathcal{B}(B,B)$.
 \end{proof}
 
+\subsection*{(b)}
+\begin{proof}
+	Let $\mathcal{I} := \{T\in\mathcal{B}(B,B) | T^{-1} \textrm{ exists}\}$. We want to show that $\forall T\in\mathcal{I}$, $\exists \delta>0$ such that if $||S-T||<\delta \implies S\in\mathcal{I}$.
+	
+	Choose $\delta = \frac{1}{||T^{-1}||}$, and write 
+	\begin{equation}
+		S = T - (T-S) = T\left[I-T^{-1}\left(T-S\right)\right].
+	\end{equation}
+	If $||S-T||<\delta = \frac{1}{||T^{-1}||}$, then
+	\begin{align}
+		\frac{1}{||T^{-1}||} &> ||S-T|| \\
+		&= ||T-T\left[I-T^{-1}(T-S)\right]|| \\
+		&= ||T||\cdot||I-\left[I-T^{-1}(T-S)\right]||
+	\end{align}
+	\begin{align}
+		&\implies ||I-\left[I-T^{-1}(T-S)\right]|| < \frac{1}{||T^{-1}||\cdot||T||} = 1 \\
+		&\implies ||T^{-1}(T-S)|| = ||I-T^{-1}S|| < 1.
+	\end{align}
+	So by (a), $T^{-1}S$ is invertible, which implies that $S$ is invertible. Thus, $\exists \delta>0$ such that if $S\in B_{\delta}(T)$, then $S\in\mathcal{I}$.
+	
+	Therefore, $\mathcal{I}$ is open.
+\end{proof}
 \end{document}
