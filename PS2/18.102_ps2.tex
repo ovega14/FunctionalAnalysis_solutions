@@ -138,4 +138,55 @@ TODO TODO TODO TODO
 	\end{equation}
 	so $v \in \ker{(T)}$. Hence $\ker{(T)}$ is closed.
 \end{proof}
+
+\subsection*{(b)}
+\begin{proof}
+	($\Rightarrow$) Suppose $V/\ker{(T)}$ is isomorphic to $\textrm{range}(T)$. Then $\exists$ isomorphism $S:V/\ker{(T)} \longrightarrow \textrm{range}(T)$. We claim that the operator defined via \\ $S(v + \ker{(T)}) = Tv$ satisfies this. 
+	
+	First, we show that $S$ is linear. Let $v_1, v_2 \in V/\ker{(T)}$. Then by linearity of $T$,
+	\begin{align}
+		S(v_1 + v_2 + \ker{(T)}) &= T(v_1 + v_2) \\
+		&= Tv_1 + Tv_2 \\
+		&= S(v_1 + \ker{(T)}) + S(v_2 + \ker{(T)}).
+	\end{align}
+	Let $\lambda \in \mathbb{K}$. Then by linearity of $T$ and since $\lambda \cdot \ker{(T)} = \ker{(T)}$,
+	\begin{align}
+		S(\lambda (v + \ker{(T)})) &= S(\lambda v + \ker{(T)}) \\
+		&= T(\lambda v) \\
+		&= \lambda Tv\\
+		&= \lambda S(v+ \ker{(T)}).
+	\end{align}
+	Thus, $S$ is linear.
+	
+	Next, we show that $S$ is bounded. We have
+	\begin{align}
+		||S|| &= \sup\limits_{||v|| = 1}||S(v + \ker{(T)})|| \\
+		&= \sup\limits_{||v|| = 1}||Tv|| \\
+		&= ||T||.
+	\end{align}
+	Thus $S$ is bounded, since $T\in\mathcal{B}(V,W)$. 
+	So, $S$ is indeed an isomorphism, which confirms that $V/\ker{(T)}$ is isomorphic to $\textrm{range}(T)$.
+	
+	Now we proceed to the main part of the proof, where we will show that the above implies that $\textrm{range}(T)$ is closed.
+	
+	Note that by problems 2 and 3, the space $V/\ker{(T)}$ is a Banach space because we showed in \textbf{(a)} that $\ker{(T)}$ is a proper closed supspace of $V$, and $V$ is a Banach space. 
+	
+	Let $\{w_j\}_j$ be a sequence in $\textrm{range}(T)$ such that $w_j \rightarrow w \in W$. Then $\{w_j\}_{j\in\mathbb{N}}$ is Cauchy. Since $S^{-1}$ is a continuous linear operator, then $\{S^{-1}(w_j)\}_j$ is also a Cauchy sequence in $V/\ker{(T)}$. 
+	
+	Since $V/\ker{(T)}$ is a Banach space, then it is complete. So $\exists v\in V/\ker{(T)}$ such that
+	\begin{equation}
+		S^{-1}(w_j) \rightarrow v.
+	\end{equation}
+	By continuity, $S\left(S^{-1}(w_j)\right)\rightarrow S(v)$, then
+	\begin{align}
+		&\implies \lim_{j\to\infty} w_j = w = S(v)\\
+		&\implies w \in \textrm{range(T)}.
+	\end{align}
+	Thus, $\textrm{range}(T)$ is closed in $W$.
+	
+	($\Leftarrow$) Suppose $\textrm{range}(T)$ is closed. Then $\textrm{range}(T)\subset W$ is a Banach space. The operator $S: V/\ker{(T)} \longrightarrow \textrm{range}(T)$ as defined before is a well-defined, bijective, bounded linear operator, i.e. $S\in\mathcal{B}(V/\ker{(T)}, \textrm{range}(T))$.
+	Then by the Open Mapping theorem, $S^{-1}\in \mathcal{B}(\textrm{range}(T), V/\ker{(T)})$.
+	
+	Thus $S$ is an isomorphism, and we are done.
+\end{proof}
 \end{document}
