@@ -189,4 +189,30 @@ TODO TODO TODO TODO
 	
 	Thus $S$ is an isomorphism, and we are done.
 \end{proof}
+
+\section*{Problem 5}
+\subsection*{(a)}
+\begin{proof}
+	Let $b \in \ell^1$, $\epsilon >0$, $N \in \mathbb{N}$. Define the truncated sequence
+	\begin{equation}
+		a := \{b_1, b_2, b_3, ..., b_N, 0, 0, ...\}.
+	\end{equation}
+	Then $\sum_{k=1}^{\infty}k |a_k| = \sum_{k=1}^N k |b_k| < \infty$, so $a\in W$. We choose $N$ such that $\sum_{k=1}^N |b_k| > \sum_{k=1}^{\infty}|b_k| - \epsilon$. [Note that this is always possible since the infinite series converges, so its sequence of partial sums also converges.] Then we have
+	\begin{align}
+		||a-b||_1 &= \sum_{k=1}^{\infty}|a_k - b_k| \\
+		&= \sum_{k=1}^N|b_k - b_k| + \sum_{k=N+1}^{\infty}|0-b_k| \\
+		&= \sum_{k=N+1}^{\infty}|b_k|\\
+		&= \sum_{k=1}^{\infty} |b_k| - \sum_{k=1}^N |b_k|\\
+		&< \epsilon.
+	\end{align}
+	So we have shown that for every $\epsilon > 0$ and $b \in \ell^1$, $\exists N \in \mathbb{N}$ such that $||a-b||_1 < \epsilon$, i.e. $B(b,\epsilon)\cap W \neq \emptyset$. Thus $W$ is dense in $\ell^1$.
+	
+	Now consider the sequence $\{b_k\}_k$ given by $b_k = \frac{1}{k^2}$. Then $\sum_k b_k$ converges absolutely ($p>1$), but 
+	\begin{equation}
+		\sum_{k=1}^{\infty}k |b_k| = \sum_{k=1}^{\infty}k\cdot \frac{1}{k^2} = \sum_{k=1}^{\infty}\frac{1}{k}
+	\end{equation}
+	diverges by Harmonic series. So $b\in \ell^1$ but $b\notin W$. Hence $\ell^1 \neq W$.
+	
+	Thus we conclude that $W$ is a proper, dense subset of $\ell^1$.
+\end{proof}
 \end{document}
