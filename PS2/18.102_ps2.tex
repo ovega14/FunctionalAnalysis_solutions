@@ -97,4 +97,30 @@
 	\end{align}
 	Thus, $||v+W||$ is a norm on $V/W$.
 \end{proof}
+
+\subsection*{(b)}
+TODO TODO TODO TODO
+
+\section*{Problem 3}
+\begin{proof}
+	Let $\{v_n\}_n$ be a sequence of elements in $V$. Suppose that the series $\sum_{n}(v_n+W)$ is absolutely summable, i.e. that $\sum_{n}||v_n + W||$ converges. Since $||v_n + W|| = \inf\limits_{w\in W}||v_n + w||$, then for each $n\in \mathbb{N}$, $\exists w_n \in W$ such that 
+	\begin{align}
+		||v_n + w_n|| &\leq ||v_n + W|| + 2^{-n} \\
+		\implies \sum_{n}||v_n + w_n|| &\leq \sum_{n}||v_n + W|| + \sum_{n}2^{-n} \\
+		&= \sum_n ||v_n + W|| + 1.
+	\end{align}
+	Then by comparison, $\sum_n ||v_n + w_n||$ converges, so $\sum_n (v_n + w_n)$ converges.
+	
+	Since $V$ is a Banach space, then, by closure, $\exists v \in V$ such that \\ $v = \sum_n (v_n + w_n)$. Then
+	\begin{align}
+		\lim_{N\to\infty} v+ W - \sum_{n=1}^N (v_n + W) &= \sum_{n=1}^{\infty} (v_n + w_n) + W - \lim_{N\to\infty}\sum_{n=1}^N(v_n + W) \\
+		&= \sum_{n=1}^{\infty}v_n + \sum_{n=1}^{\infty}w_n + W -\lim_{N\to\infty}\sum_{n=1}^N(v_n + W) \\
+		&= \sum_{n=1}^{\infty}v_n + W -\lim_{N\to\infty}\sum_{n=1}^{N}(v_n + W) \\
+		&= \sum_{n=1}^{\infty}v_n + W -\lim_{N\to\infty}\sum_{n=1}^{N} v_n - W \\
+		&= \sum_{n=1}^{\infty}v_n - \lim_{N\to\infty}\sum_{n=1}^{N} = 0.
+	\end{align}
+	So $\sum_n (v_n + W) = v+W$, thus $\sum_n (v_n + W)$ converges in $V/W$.
+	
+	Therefore $V/W$ is a Banach space.
+\end{proof}
 \end{document}
