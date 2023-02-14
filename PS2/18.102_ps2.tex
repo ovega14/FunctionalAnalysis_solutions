@@ -123,4 +123,19 @@ TODO TODO TODO TODO
 	
 	Therefore $V/W$ is a Banach space.
 \end{proof}
+
+\section*{Problem 4}
+\subsection*{(a)}
+\begin{proof}
+	Let $\{v_n\}_n$ be a sequence of elements in $\ker{(T)}$ such that $v_n \rightarrow v \in V$ and $Tv_n \rightarrow w \in W$. Then $\forall n \in \mathbb{N}$,
+	\begin{align}
+		&\implies Tv_n = 0 \\
+		&\implies \{Tv_n\}_n \rightarrow w = 0.
+	\end{align}
+	By continuity of $T$, 
+	\begin{equation}
+		0 = \lim_{n\to\infty} Tv_n = T\left(\lim_{n\to\infty}v_n\right) = Tv,
+	\end{equation}
+	so $v \in \ker{(T)}$. Hence $\ker{(T)}$ is closed.
+\end{proof}
 \end{document}
