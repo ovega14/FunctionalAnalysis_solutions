@@ -215,4 +215,49 @@ TODO TODO TODO TODO
 	
 	Thus we conclude that $W$ is a proper, dense subset of $\ell^1$.
 \end{proof}
+
+\subsection*{(b)}
+\begin{proof}
+	Define the graph of $T$ by 
+	\begin{equation}
+		\Gamma (T) := \{(a, Ta) \; | \; a\in W\} \subset W\times \ell^1.
+	\end{equation}
+	Let $\{x_n\}_n$ be a sequence in $W$. Then $Tx_n \in \ell^1$, i.e. $(x_n, Tx_n) \in \Gamma (T)$.
+	
+	Suppose $x_n \rightarrow x$ and $Tx_n \rightarrow y$. By definition of $T$, we have $(Tx_n)_k = k (x_n)_k$. Then
+	\begin{align}
+		\lim_{n\to\infty}(Tx_n)_k &= \lim_{n\to\infty} k(x_n)_k\\
+		&= k \lim_{n\to\infty}(x_n)_k \\
+		&= k x_k \\
+		&= (Tx)_k\\
+		&= y_k.
+	\end{align}
+	Thus $Tx=y\in \ell^1$. Also, $\lim_{n\to\infty} x_n = x = \{x_k\}_k$. Then
+	\begin{align}
+		&\implies \sum_k k |x_k| = \sum_k k |\lim_{n\to\infty}(x_n)_k| < \infty\\
+		&\implies x \in W.
+	\end{align}
+	Hence, we have shown that $\begin{pmatrix} x_n\\ Tx_n \end{pmatrix} \rightarrow \begin{pmatrix} x\\ y \end{pmatrix} \in \Gamma (T)$.
+	
+	Thus, $\Gamma(T)$ is closed.
+	
+	Now let $e_n = \{\delta_{kn}\}_k$ for $n\in\mathbb{N}$. Then 
+	\begin{equation}
+		||e_n|| = \sum_{k}|\delta_{kn}| = 1,
+	\end{equation}
+	so $e_n \in \ell^1$. Furthermore,
+	\begin{equation}
+		\sum_{k}k|\delta_{kn}| = n < \infty,
+	\end{equation}
+	so $e_n \in W$. However,
+	\begin{equation}\label{delta_norm}
+		||Te_n|| = ||\{k\delta_{kn}\}_k|| = \sum_{k}k|\delta_{kn}| = n.
+	\end{equation}
+	Since we can do this for any $n\in\mathbb{N}$, then $||T||\geq n \implies ||T||=\infty$.
+	
+	[\textit{Note:} It is somewhat tempting to take the result of equation \eqref{delta_norm} to suggest that since $n\in\mathbb{N}$ is finite, then $||T||<\infty$ so $T$ must be bounded. However, this is not necessarily true because even though each $\sum_k k |a_k|$ is finite, the supremum over all $||a||_1 = 1$ of the sum may not be. For instance, $\sup_{n\in \mathbb{N}} n = \infty$, even though each $n$ is finite.]
+	
+	Therefore we conclude that the graph of $T$ is closed, but $T$ is not bounded.
+	
+\end{proof}
 \end{document}
