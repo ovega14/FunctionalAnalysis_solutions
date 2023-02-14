@@ -61,4 +61,40 @@
 	
 	Therefore, $\mathcal{I}$ is open.
 \end{proof}
+
+\section*{Problem 2}
+\subsection*{(a)}
+\begin{proof}
+	To show that $||v + W||$ is a norm, we will show that it obeys positive definiteness, homogeneity, and the triangle inequality.
+	
+	First, suppose that $0 = ||v+W|| = \inf\limits_{w\in W}||v + w||$. Then since $||\cdot||_{V}$ is a norm on $V$, 
+	\begin{equation}
+		||w+w|| = 0 \iff v + w = 0 \implies v = -w.
+	\end{equation}
+	So $\exists$ a sequence $\{w_k\}_k \subset W$ such that $w_k \rightarrow -v$. Since $W$ is closed, $-v\in W \implies v\in V$. But then $v+W = 0 + W$ because $v \in W$. 
+	
+	Thus, $||v + W|| = 0 \iff v = 0$ (definiteness).
+	
+	Also, $||v+W|| = \inf\limits_{w\in W}||v+w|| \geq 0$ because $||\cdot||_V$ is a norm, and $||v+w|| \geq 0$ $\forall w\in W$.
+	
+	Let $\lambda \in \mathbb{K}$. Then since $\lambda W = W$, 
+	\begin{align}
+		||\lambda (v + W)|| &= ||\lambda v + W|| \\
+		&= \inf\limits_{w\in W} ||\lambda v + w|| \\
+		&= \inf\limits_{w\in W} |\lambda| \cdot ||v + \frac{w}{\lambda}|| \\
+		&= |\lambda|\inf\limits_{w\in W}||v+w|| \\
+		&= |\lambda|\cdot||v+W|| \quad \textrm{(homogeneity)}.
+	\end{align}
+	Now let $u+W$, $v+W \in V/W$. Then
+	\begin{align}
+		||(u+W) + (v+W)|| &= ||u+v+W|| \\
+		&= \inf\limits_{w\in W}||u+v+w|| \\
+		&= \inf\limits_{w\in W}||u+v+2w|| \\
+		&= \inf\limits_{w\in W}||u+w + v+w|| \\
+		&\leq \inf\limits_{w\in W}\left(||u+w|| + ||v+w||\right)\\
+		&\leq \inf\limits_{w\in W}||u+w|| + \inf\limits_{w\in W}||v+w||\\
+		&= ||u+W|| + ||v+W|| \quad \textrm{(triangle inequality)}.
+	\end{align}
+	Thus, $||v+W||$ is a norm on $V/W$.
+\end{proof}
 \end{document}
