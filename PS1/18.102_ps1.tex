@@ -114,33 +114,33 @@
 	\end{equation}
 	Then this implies
 	\begin{align}
-		\left[\sum_{j=1}^{\infty}|a_j ^{(n)} - a_j ^{(m)}|^p\right]^\frac{1}{p} = ||a^{(n)}-a^{(m)}||_p &< \epsilon \\
-		\implies \sum_{j=1}^{\infty} |a_j ^{(n)} - a_j ^{(m)}|^p = ||a^{(n)}-a^{(m)}||_p ^{p} &< \epsilon^p.
+		\left[\sum_{j=1}^{\infty}\left|a_j ^{(n)} - a_j ^{(m)}\right|^p\right]^\frac{1}{p} = \left|\left|a^{(n)}-a^{(m)}\right|\right|_p &< \epsilon \\
+		\implies \sum_{j=1}^{\infty} \left|a_j ^{(n)} - a_j ^{(m)}\right|^p = \left|\left|a^{(n)}-a^{(m)}\right|\right|_p ^{p} &< \epsilon^p.
 	\end{align}
 	Then for any $j\in\mathbb{N}$, 
 	\begin{equation}
-		|a_j ^{(n)} - a_j ^{(m)}|^p < \sum_{j=1}^{\infty} |a_j ^{(n)} - a_j ^{(m)}|^p < \epsilon^p.
+		\left|a_j ^{(n)} - a_j ^{(m)}\right|^p < \sum_{j=1}^{\infty} \left|a_j ^{(n)} - a_j ^{(m)}\right|^p < \epsilon^p.
 	\end{equation}
 	Hence, the sequence $\{a_j^{(n)}\}_n \subset \ell^p$ is Cauchy. By completeness of $\mathbb{R}$, $\forall j\in\mathbb{N}$ $\exists a_j$ such that $\lim_{n \to \infty} a_j ^{(n)} = a_j \in \mathbb{R}$. 
 	
 	Fix $k\in\mathbb{N}$. Then for $m,n > N_0$, 
 	\begin{align}
-		\sum_{j=1}^k |a_j ^{(n)}-a_j^{(m)}|^p &\leq \sum_{j=1}^{\infty} |a_j ^{(n)}-a_j^{(m)}|^p \\
-		&= ||a^{(n)}-a^{(m)}||_p < \epsilon^p\\
-		\overset{n \to \infty}\implies 	\sum_{j=1}^k |a_j ^{(m)}-a_j|^p &< \epsilon^p. \label{eq1} 
+		\sum_{j=1}^k \left|a_j ^{(n)}-a_j^{(m)}\right|^p &\leq \sum_{j=1}^{\infty} \left|a_j ^{(n)}-a_j^{(m)}\right|^p \\
+		&= \left|\left|a^{(n)}-a^{(m)}\right|\right|_p < \epsilon^p\\
+		\overset{n \to \infty}\implies 	\sum_{j=1}^k \left|a_j ^{(m)}-a_j\right|^p &< \epsilon^p. \label{eq1} 
 	\end{align}
 	By Minkowski's inequality for $||\cdot||_p$ in $\mathbb{R}^k$, for $m>N_0$, we have
 	\begin{align}
-		\left[\sum_{j=1}^k |a_j|^p\right]^\frac{1}{p} &\leq \left[\sum_{j=1}^k |a_j^{(m)}-a_j|^p\right]^\frac{1}{p} + \left[\sum_{j=1}^k |a_j^{(m)}|^p\right]^\frac{1}{p} \\
-		&< \epsilon + \left[\sum_{j=1}^k |a_j^{(m)}|^p\right]^\frac{1}{p} \\
+		\left[\sum_{j=1}^k |a_j|^p\right]^\frac{1}{p} &\leq \left[\sum_{j=1}^k \left|a_j^{(m)}-a_j\right|^p\right]^\frac{1}{p} + \left[\sum_{j=1}^k \left|a_j^{(m)}\right|^p\right]^\frac{1}{p} \\
+		&< \epsilon + \left[\sum_{j=1}^k \left|a_j^{(m)}\right|^p\right]^\frac{1}{p} \\
 		\overset{n \to \infty}\implies ||a||_p &\leq \epsilon + ||a^{(m)}||_p.
 	\end{align}
 	Hence, $a \in \ell^p$. Then by letting $k \to \infty$ in \eqref{eq1}, 
 	\begin{align}
-		\sum_{j=1}^{\infty} |a_j ^{(m)}-a_j|^p = ||a^{(m)}-a||_p ^{p} &< \epsilon ^p \\
-		\implies ||a^{(m)}-a||_p &< \epsilon.  
+		\sum_{j=1}^{\infty} \left|a_j ^{(m)}-a_j\right|^p = \left|\left|a^{(m)}-a\right|\right|_p ^{p} &< \epsilon ^p \\
+		\implies \left|\left|a^{(m)}-a\right|\right|_p &< \epsilon.  
 	\end{align}
-	Then $\lim_{m \to \infty} ||a^{(m)}-a||_p = 0$, which implies that the sequence $\{a^{(m)}\}_m \subset \ell^p$  converges to $a\in\ell^p$. Thus, $\ell^p$ is complete.
+	Then $\lim_{m \to \infty} \left|\left|a^{(m)}-a\right|\right|_p = 0$, which implies that the sequence $\{a^{(m)}\}_m \subset \ell^p$  converges to $a\in\ell^p$. Thus, $\ell^p$ is complete.
 	
 	Since $\ell^p$ is a complete normed space, we conclude that $\ell^p$ is a Banach space. 
 \end{proof}
@@ -148,11 +148,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 3}
 \begin{proof}
-	We will show that $\ell^p \setminus c_0 := \{b\in\ell^p | \lim_{k \to\infty} b_k \neq 0\}$ is open. 
+	Let $x^{(k)}\subset c_0$ be a sequence (of sequences) such that \\ $x^{(k)}\rightarrow y=\{y_n\}_n \in \ell^{\infty}$. 
+	
+	Let $\epsilon > 0$. Choose $N_0 \in \mathbb{N}$ such that $\forall k \geq N_0$, 
+	\begin{equation}
+		\left|\left|x^{(k)} - y\right|\right|_{\infty} = \sup\limits_{n\in\mathbb{N}} \left|x_n^{(k)}-y_n\right| < \frac{\epsilon}{2}.
+	\end{equation}
+	For each $k$, choose $N_1\in\mathbb{N}$ such that $\forall n \geq N_1$, 
+	\begin{equation}
+		\left|x_n^{(k)}\right| < \frac{\epsilon}{2}.
+	\end{equation}
+	Then by the triangle inequality, for $k\geq N_0$ and $n\geq N_1$, 
+	\begin{align}
+		|y_n| &= \left|y_n - x_n^{(k)} + x_n^{(k)}\right| \\
+		& \leq \left|y_n - x_n^{(k)}\right| + \left|x_n^{(k)}\right| \\
+		&< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+		&= \epsilon.
+	\end{align}
+	Thus, $y_n \rightarrow 0 \implies y \in c_0$, so $c_0 \subset \ell^{\infty}$ is closed.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 4}
+TODO TODO TODO 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 5}
 \subsection*{(a)}
