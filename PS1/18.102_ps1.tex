@@ -170,7 +170,42 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 4}
-TODO TODO TODO 
+\subsection*{(a)}
+\begin{proof}
+	Let $x^{(n)}$ be a sequence (of sequences) in $S$ such that \\$x^{(n)} \rightarrow y = \{y_k\}_k \in \ell^p$. 
+	
+	Then by continuity of the norm $||\cdot||_p$ and since $x^{(n)} \in S$ $\forall n\in\mathbb{N}$, 
+	\begin{align}
+		||y||_p &= \left|\left|\lim_{n \to \infty} x^{(n)}\right|\right| \\
+		&= \lim_{n \to \infty} \left|\left|x^{(n)}\right|\right| \\
+		&= \lim_{n \to \infty} 1 = 1. 
+	\end{align}
+	Hence $x^{(n)} \rightarrow y \in S$, so we conclude that $S\subset \ell^p$ is closed.
+\end{proof}
+
+\subsection*{(b)}
+\begin{proof}
+	Let $n\in\mathbb{N}$. Define $\delta_{kn}$ by 
+	\begin{equation}
+		\delta_{kn}:=
+		\begin{cases}
+			1 & \text{if } k=n\\
+			0 & \text{if } x\neq n.
+		\end{cases}
+	\end{equation}
+	Let $e_n = \{\delta_{kn}\}_{k}$. Then
+	\begin{equation}
+		||e_n||_p = \left(\sum_{k=1}^{\infty}|\delta_{kn}|^p\right)^\frac{1}{p} = 1,
+	\end{equation}
+	so $e_n \in S$. Now conside the subsequence $\{e_{n_k}\}_k = \{e_n\}_{n\in\mathbb{N}\backslash\{k\}}$, i.e. where we take $e_n$ and remove the element at which $k=n$ for each $n\in\mathbb{N}$. Then
+	\begin{align}
+		||e_{n_k}||_p &= \left(\sum_{k=1}^{\infty}|e_{n_k}|^p\right)^\frac{1}{p}\\
+		&= \left(\sum_{n\in\mathbb{N}\backslash\{0\}}|\delta_{kn}|^p\right)^\frac{1}{p}\\
+		&= (0)^\frac{1}{p}\\
+		&= 0 \neq 1.
+	\end{align}
+	Thus the subsequence $\{e_{n_k}\}_k$ does not converge in $S$, so we conclude that $S$ is not compact.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 5}
 \subsection*{(a)}
