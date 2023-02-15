@@ -57,7 +57,7 @@
 		&\implies ||I-\left[I-T^{-1}(T-S)\right]|| < \frac{1}{||T^{-1}||\cdot||T||} = 1 \\
 		&\implies ||T^{-1}(T-S)|| = ||I-T^{-1}S|| < 1.
 	\end{align}
-	So by (a), $T^{-1}S$ is invertible, which implies that $S$ is invertible. Thus, $\exists \delta>0$ such that if $S\in B_{\delta}(T)$, then $S\in\mathcal{I}$.
+	So by \textbf{(a)}, $T^{-1}S$ is invertible, which implies that $S$ is invertible. Thus, $\exists \delta>0$ such that if $S\in B_{\delta}(T)$, then $S\in\mathcal{I}$.
 	
 	Therefore, $\mathcal{I}$ is open.
 \end{proof}
@@ -99,7 +99,30 @@
 \end{proof}
 
 \subsection*{(b)}
-TODO TODO TODO TODO
+\begin{proof}
+	Let $u \in V \backslash W$. Then by \textbf{(a)}, $||u+W|| > 0$, since $u \neq 0$.
+	
+	Also, since $||u+W|| = \inf\limits_{w\in W}||u + w||$, $\exists w\in W$ such that for any $\epsilon >0$
+	\begin{equation}
+		||u+W|| \leq ||u+w|| \; \textrm{, and}
+	\end{equation}
+	\begin{equation}
+		||u+w|| \leq ||u+W|| + \epsilon||u+W||.
+	\end{equation}
+	Now let $v = \frac{u+w}{||u+w||}$. Then $v \in V$ and $||v||=1$. We have
+	\begin{align}
+		||v+W|| &= \inf\limits_{w\in W}||v+w|| \\
+		&= \inf\limits_{w\in W}\left|\left|\frac{u+w}{||u+w||} + w\right|\right| \\
+		&= \inf\limits_{w\in W}\left|\left|\frac{u+w + w||u+w||}{||u+w||}\right|\right| \\
+		&\geq \inf\limits_{w\in W}\left|\left|\frac{u+w+w||u+w||}{||u+W||(1+\epsilon)}\right|\right| \\
+		&= \frac{1}{||u+W||(1+\epsilon)}\inf\limits_{w\in W}\left|\left|u+w(1+||u+w||)\right|\right| \\
+		&= \frac{1}{||u+W||(1+\epsilon)}\inf\limits_{w\in W}||u+w|| \\
+		&= \frac{||u+W||}{||u+W||(1+\epsilon)} \\
+		&= \frac{1}{1+\epsilon} = \frac{1+\epsilon}{1+\epsilon} - \frac{\epsilon}{1+\epsilon} \\
+		&= 1-\frac{\epsilon}{1+\epsilon} \\
+		&\geq 1 - \epsilon.
+	\end{align}
+\end{proof}
 
 \section*{Problem 3}
 \begin{proof}
