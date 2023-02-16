@@ -17,6 +17,26 @@
 \subsection*{(a)}
 \begin{proof}
 	We want to show that $u \in M'$. First, we show that $u$ is linear.
+	
+	Let $a,b \in M$ and let $\lambda \in \mathbb{C}$. Then
+	\begin{equation}
+		u(\lambda a ) = \lim_{k\to\infty}(\lambda a_k) = \lambda \cdot \lim_{k \to \infty}a_k = \lambda u(a) \textrm{ , and}
+	\end{equation} 
+	\begin{equation}
+		u(a+b) = \lim_{k\to\infty}(a_k + b_k) = \lim_{k \to \infty} a_k + \lim_{k \to \infty}b_k = u(a) + u(b).
+	\end{equation}
+	So $u$ is linear on $M$. Next, we show that $u$ is bounded.
+	
+	Let $a\in M$, i.e. $\lim_{k \to \infty} a_k$ exists. Then $a$ is bounded, so $\exists B \geq 0$ such that $\forall k\in\mathbb{N}$, $|a_k| \leq B$. Then by continuity of the norm,
+	\begin{align}
+		||u|| &\leq |u(a)|  \\
+		&= \left|\lim_{k \to \infty}a_k\right| \\
+		&= \lim_{k \to \infty} |a_k| \\
+		&\leq B,
+	\end{align} 
+	so $u$ is bounded.
+	
+	Then we conclude that $u$ is a bounded linear functional on $M$. 
 \end{proof}
 
 \end{document}
