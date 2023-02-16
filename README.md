@@ -4,7 +4,7 @@
 
 ### Overview
 
-This repository will contain my solutions to the assignments from **18.102 Functional Analysis**, offered at the Massachusetts Institute of Technology (MIT) during the Spring 2021 semester and taught by Professor Casey Rodriguez. The materials are obtained from [MIT OpenCourseWare (OCW)](https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/pages/syllabus/). 
+This repository will contain my solutions to the assignments from **18.102 Introduction to Functional Analysis**, offered at the Massachusetts Institute of Technology (MIT) during the Spring 2021 semester and taught by Professor Casey Rodriguez. The materials are obtained from [MIT OpenCourseWare (OCW)](https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/). 
 
 This manual is written in $\LaTeX$, and note that I purposely do not omit any of the additional output files Tex generates when compiling the documents. So not only can you view the PDF files containing the written up solutions, but also the other files-- chiefly important among which is the typesetting code that you can examine and/or edit on your own. I will continue updating these files as I keep working through the course assignments. 
 
@@ -29,7 +29,7 @@ For questions or concerns, feel free to contact me at <vega00087@alum.mit.edu>.
 
 ### Acknowledgments
 
-1. Special thanks to [MIT OCW] (https://ocw.mit.edu) for making available the full lecture videos, lecture notes, and assignments for this course as well as for many others published online. I hope to see more advanced mathematics courses with full materials published on OCW in the future.
+1. Special thanks to [MIT OCW](https://ocw.mit.edu) for making available the full lecture videos, lecture notes, and assignments for this course as well as for many others published online. I hope to see more advanced mathematics courses with full materials published on OCW in the future.
 
 *Please **Star** if you find this resource helpful!*
 
