@@ -39,4 +39,26 @@
 	Then we conclude that $u$ is a bounded linear functional on $M$. 
 \end{proof}
 
+\subsection*{(b)}
+\begin{proof}
+	(By contradiction). Suppose instead that $\exists b \in \ell^1$ such that $\forall a \in \ell^{\infty}$,
+	\begin{equation}\label{sum-operator}
+		v(a) = \sum_{k=1}^{\infty}a_k b_k.
+	\end{equation}
+	Define $e_n := \{\delta_{kn}\}_k \in \ell^{\infty}$, for fixed $n\in\mathbb{N}$. Then $\lim_{k \to \infty}\delta_{nk} = 0$, so $e_n \in M$ as well. By equation \eqref{sum-operator}, we have
+	\begin{equation}
+		v(e_n) = \sum_{k=1}^{\infty}\delta_{kn}b_k = b_n.
+	\end{equation}
+	By the Hahn-Banach theorem, $v|_{M} = u$. But $u(e_n) = \lim_{k \to \infty}\delta_{kn}=0$, and since $e_n \in M$, we have
+	\begin{equation}
+		b_n = v(e_n)=u(e_n) = 0.
+	\end{equation}
+	This must hold for any $n\in\mathbb{N}$, so $b_n=0$ $\forall n\in\mathbb{N}$. Then $b=\{b_k\}_k = (0, 0, ...)$, so $v=0$ by definition. But
+	\begin{equation}
+		0 = v(1, 1, ...) = u(1, 1, ....) = 1, \quad (\Rightarrow \Leftarrow)
+	\end{equation}
+	so we arrive at a contradiction to the initial assumption. 
+	
+	Therefore $\nexists b \in \ell^1$ such that $\forall a \in \ell^{\infty}$, $v(a)=\sum_k a_k b_k$.
+\end{proof}
 \end{document}
