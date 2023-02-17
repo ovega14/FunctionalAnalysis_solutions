@@ -90,4 +90,25 @@
 	Thus $T^{\dagger}\in\mathcal{B}(W', V')$ and $\|T^{\dagger}\| = \|T\|$.
 \end{proof}
 
+\subsection*{(b)}
+\begin{proof}
+	Let $a \in \ell^p$, and $b_k=R a_k$. We want to show that $b = \{b_k\}_k \in \ell^p$. Since $a \in \ell^p$, then $a$ is bounded, which implies that $\exists B \geq 0$ such that $\forall k \in \mathbb{N}$, $|a_k| \leq B$. Then $b_k = Ra_k := a_{k-1}$, with $b_1 = a_0 := 0$.
+	
+	Thus $\forall k \in \mathbb{N}$, $|b_k| = |a_{k-1}|\leq B$, so $b$ is also bounded. We have
+	\begin{equation}
+		\|b\|_{\infty} = \sup_k |b_k| = \sup_k |a_{k-1}|.
+	\end{equation}
+	So, $R: \ell^p \rightarrow \ell^p$. Next we compute the operator norm of $R$:
+	\begin{align}
+		\|R\| &= \sup_{\|a\|=1}\|Ra\| \\
+		&= \sup_{\|a\|=1}\sup_k |Ra_k| \\
+		&= \sup_{\|a\|=1}\sup_k|a_{k-1}| \\
+		&= \sup_{\|a\|=1}\sup_k \{0, |a_1|, |a_2|, ...\} \\
+		&= \sup_{\|a\|=1}\sup_k |a_k| \\
+		&= \sup_{\|a\|=1}\|a\| \\
+		&= 1.
+	\end{align}
+	Therefore, $R\in\mathcal{B}(\ell^p, \ell^p)$ with $\|R\|=1$.
+\end{proof}
+
 \end{document}
