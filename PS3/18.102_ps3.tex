@@ -61,4 +61,33 @@
 	
 	Therefore $\nexists b \in \ell^1$ such that $\forall a \in \ell^{\infty}$, $v(a)=\sum_k a_k b_k$.
 \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2}
+\subsection*{(a)}
+\begin{proof}
+	First we show that $\|T^{\dagger}\| \leq \|T\|$. We have\begin{align}
+		\|T^{\dagger}\| &= \sup_{||f||=1}\|T^{\dagger} f\| \\
+		&= \sup_{\|f\|=1}\|f\circ T\| \\
+		&\leq \sup_{\|f\|=1}\|f\|\|T\| \\
+		&\leq \|T\|.
+	\end{align}
+	So, $T^{\dagger}: W' \rightarrow V'$ is bounded, i.e. $T^{\dagger}\in \mathcal{B}(W', V')$. 
+	
+	Next we show that $\|T^{\dagger}\| \geq \|T\|$. 
+	
+	Let $x\in V$ with $\|x\|=1$. Since $W$ is a normed space, then by the theorem from lecture 6 (corollary to Hahn-Banach Thm.), $\exists f \in W'$ such that $\|f\|=1$ and $f(w)=\|w\|$ $\forall w \in W\backslash\{0\}$. 
+	
+	Since $T: V \rightarrow W$, then $w = Tx$ for $x \in V$, so $f(Tx) = \|Tx\|$. Then we have
+	\begin{align}
+		\|T^{\dagger}\| &= \sup_{\|f\|=1}\|T^{\dagger}f\| \\
+		&= \sup_{\|f\|=1}\sup_{\|x\|=1}|(f\circ T)(x)| \\
+		&=\sup_{\|f\|=1}\sup_{\|x\|=1}|f(Tx)| \\
+		&\geq \sup_{\|x\|=1}\|Tx\| \\
+		&= \|T\|,
+	\end{align}
+	as desired.
+	
+	Thus $T^{\dagger}\in\mathcal{B}(W', V')$ and $\|T^{\dagger}\| = \|T\|$.
+\end{proof}
+
 \end{document}
