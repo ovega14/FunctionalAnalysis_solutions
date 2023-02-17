@@ -111,4 +111,30 @@
 	Therefore, $R\in\mathcal{B}(\ell^p, \ell^p)$ with $\|R\|=1$.
 \end{proof}
 
+\subsection*{(c)}
+Suppose $1\leq p < \infty$, and $\frac{1}{p} + \frac{1}{q} = 1$. From assignment 1, we identify $\left(\ell^p\right)'$ with $\ell^q$ via the pairing: $f\in \left(\ell^p\right)' \iff \exists b\in \ell^q$ such that $\forall a \in \ell^p$, 
+\begin{equation}
+	f(a) = \sum_{k=1}^{\infty} a_k b_k,
+\end{equation}
+and $\|f\| = \|b\|_q$. 
+
+For example, let $b=\{b_k\}_k=e_1$ defined by $e_1 := \{\delta_{1k}\}_k=\{1, 0, 0, ...\} \in \ell^q$. Then $\forall a \in ell^p$,
+\begin{align}
+	\left(R^{\dagger}e_1\right)(a) &:= \sum_{k=1}^{\infty}Ra_k \delta_{1k} \\
+	&= Ra_1\\
+	&= a_0  \\
+	&= 0 \\
+	&= \sum_{k=1}^{\infty}a_k \cdot 0.
+\end{align}
+Thus $R^{\dagger}e_1 = 0 \in \ell^q$. 
+
+Now let $a\in\ell^p$. Then 
+\begin{align}
+	\left(R^{\dagger}b\right)(a) &= \sum_{k=1}^{\infty}\left(Ra\right)_k b_k \\
+	&= \sum_{k=1}^{\infty} a_{k-1}b_k \\
+	&= 0\cdot b_k + \sum_{k=2}^{\infty}a_{k-1}b_k \\
+	&= \sum_{k=1}^{\infty}a_k b_{k+1}. 
+\end{align}
+Hence, $\{\left(R^{\dagger}b\right)_k\}_k = \{b_{k+1}\}_k$. Therefore, where $R$ was the right-shift operator, we can identify $R^{\dagger}$ as a left-shift operator.
+
 \end{document}
