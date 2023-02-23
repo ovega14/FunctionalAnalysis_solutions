@@ -206,4 +206,31 @@ Hence, $\{\left(R^{\dagger}b\right)_k\}_k = \{b_{k+1}\}_k$. Therefore, where $R$
 	\end{align}
 	So we conclude that $(a_x, b_x) = (a_y,b_y)$
 \end{proof}
+
+\subsection*{(c)}
+\begin{proof}
+	Let $x \in \bigcup_{q \in U\cap\mathbb{Q}}(a_q, b_q)$. 
+	
+	Then for at least one $q\in U\cap \mathbb{Q}$, $x\in(a_q, b_q)$. By part \textbf{(a)}, since $q\in U$, then $(a_q, b_q) \subset U \implies x \in U$. Thus,
+	\begin{equation}\label{union_sub_u}
+		\bigcup\limits_{q \in U\cap\mathbb{Q}} (a_q, b_q) \subseteq U.
+	\end{equation}
+	Now let $x \in U$. 
+	
+	Since $U$ is open, then $\exists \epsilon >0$ such that $(x-\epsilon, x+\epsilon) \subset U$. Since $\mathbb{Q}$ is dense in $\mathbb{R}$, then $\exists q,r \in U\cap\mathbb{Q}$ such that $x-\epsilon<q<x$ and $x<r<x+\epsilon$, i.e. 
+	\begin{equation}
+		q<x<r.
+	\end{equation}
+	By \textbf{(a)}, $(a_q, b_q)\subset U$. Then since $x>q$, we have $x\in(a_q, b_q)$ \\$\implies x \in \bigcup_{q \in U\cap\mathbb{Q}}(a_q, b_q)$. Thus,
+	\begin{equation}\label{u_sub_union}
+		U \subseteq \bigcup\limits_{q \in U\cap\mathbb{Q}} (a_q, b_q). 
+	\end{equation}
+	Then equations \eqref{union_sub_u} and \eqref{u_sub_union} imply the final result,
+	\begin{equation}
+		U = \bigcup\limits_{q \in U\cap\mathbb{Q}} (a_q, b_q), 
+	\end{equation}
+	as desired.
+\end{proof}
+In other words, having completed these proofs, we've shown that every open set $U\subset \mathbb{R}$ can be written as a countable union of open intervals. 
+
 \end{document}
