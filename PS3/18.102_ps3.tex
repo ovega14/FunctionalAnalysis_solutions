@@ -136,7 +136,7 @@ Now let $a\in\ell^p$. Then
 	&= \sum_{k=1}^{\infty}a_k b_{k+1}. 
 \end{align}
 Hence, $\{\left(R^{\dagger}b\right)_k\}_k = \{b_{k+1}\}_k$. Therefore, where $R$ was the right-shift operator, we can identify $R^{\dagger}$ as a left-shift operator.
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 3}
 \begin{proof}
 	To show that $m^*(E+x)=m^*(E)$, we will show both that \\$m^*(E+x)\geq m^*(E)$ and $m^*(E+x)\leq m^*(E)$.
@@ -160,6 +160,16 @@ Hence, $\{\left(R^{\dagger}b\right)_k\}_k = \{b_{k+1}\}_k$. Therefore, where $R$
 	From equations \eqref{measure_leq} and \eqref{measure_geq}, we conclude that $m^*(E+x)=m^*(E)$.
 	
 	Therefore, the outer measure $m^*$ is translation-invariant.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 4}
+\subsection*{(a)}
+\begin{proof}
+	Let $x \in U$. Then $a_x \leq b_x$, and both $(a_x, x]\subset U$ and $[x, b_x) \subset U$. Thus, 
+	\begin{equation}
+		(a_x, b_x) = (a_x, x] \cup [x, b_x) \subset U,
+	\end{equation} 
+	as desired.
 \end{proof}
 
 \end{document}
