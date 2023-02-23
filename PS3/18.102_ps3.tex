@@ -172,4 +172,38 @@ Hence, $\{\left(R^{\dagger}b\right)_k\}_k = \{b_{k+1}\}_k$. Therefore, where $R$
 	as desired.
 \end{proof}
 
+\subsection*{(b)}
+\begin{proof}
+	Let $x,y \in U$ and suppose $y\in(a_x,b_x)$. 
+	
+	\underline{Case 1}: $y\in (a_x,x]$. Then since $y<x$,
+	\begin{align}
+		a_y &= \inf\{a\in\mathbb{R} \;|\; (a, y] \subset U\} \\
+		&= \inf\{a\in\mathbb{R} \;|\; (a, y]\cup[y,x] \subset U\} \\
+		&= \inf\{a\in\mathbb{R} \;|\; (a, x] \subset U\}\\
+		&= a_x.
+	\end{align}
+	Similarly,
+	\begin{align}
+		b_y &= \sup \{b\in\mathbb{R} \;|\; [y,b)\subset U\} \\
+		&= \sup\{b\in\mathbb{R} \;|\; [x,y]\cup[y,b) \subset U\} \\
+		&= \sup \{b\in\mathbb{R} \;|\; [x,b) \subset U\}\\
+		&= b_x.
+	\end{align}
+	\underline{Case 2}: $y \in [x, b_x)$. Then since $y>x$,
+	\begin{align}
+		a_y &= \inf\{a\in\mathbb{R} \;|\; (a, y] \subset U\} \\
+		&= \inf \{a\in\mathbb{R} \;|\; (a,x]\cup[x,y] \subset U\} \\
+		&= \inf \{a\in\mathbb{R} \;|\; (a,x] \subset U\} \\
+		&= a_x.
+	\end{align}
+	Similarly,
+	\begin{align}
+		b_y &= \sup\{b\in\mathbb{R} \;|\; [y, b) \subset U\} \\
+		&= \sup\{b\in\mathbb{R} \;|\; [x,y]\cup[y,b) \subset U\} \\
+		&= \sup\{b\in\mathbb{R} \;|\; [x,b) \subset U\} \\
+		&= b_x.
+	\end{align}
+	So we conclude that $(a_x, b_x) = (a_y,b_y)$
+\end{proof}
 \end{document}
