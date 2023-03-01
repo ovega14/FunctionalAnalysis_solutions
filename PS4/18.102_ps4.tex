@@ -5,6 +5,7 @@
 \usepackage[]{amssymb} %gives us the character \varnothing
 \usepackage[]{amsmath}
 \usepackage[parfill]{parskip} %avoid indent when skipping lines
+\usepackage[toc,page]{appendix}
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
@@ -24,6 +25,81 @@
 \maketitle
 	
 \section*{Problem 1}
-TODO TODO TODO
+\begin{proof}
+	Let $A \subset \mathbb{R}$ and let $E \in \mathcal{A}$. Then $f^{-1}(E)$ is measurable, so
+	\begin{equation}
+		m^*\left(A\cap f^{-1}(E)\right) + m^*\left(A\cap f^{-1}(E)^c\right) \leq m^*(A).
+	\end{equation}
+	We will first show that $\mathcal{A}$ is closed under taking complements so we must show that $E^c \in \mathcal{A}$ for every $E \in \mathcal{A}$; i.e. $f^{-1}(E^c)$ is measurable. 
+	
+	We will use the fact that $f^{-1}(E^c) = f^{-1}(E)^c$, which is proven in appendix \ref{appendix:A}.
+	
+	Since $f^{-1}(E)$ is measurable, we have
+	\begin{align}
+		m^*(A) &\geq m^*\left(A\cap f^{-1}(E)\right) + m^*\left(A\cap f^{-1}(E)^c\right) \\
+		&= m^*\left[A\cap\left(f^{-1}(E)^c\right)^c\right] + m^*\left(A\cap f^{-1}(E^c)\right) \\
+		&= m^*\left(A\cap f^{-1}(E^c)^c\right) = m^*\left(A\cap f^{-1}(E^c)\right).
+	\end{align}
+	Hence, $f^{-1}(E^c)$ is measurable, so $E^c \in \mathcal{A}$. Thus, $\mathcal{A}$ is closed under taking complements.
+	
+	Now we show that $\mathcal{A}$ is closed under taking countable unions. 
+	
+	Let $\{E_n\}_n \subset \mathcal{A}$ be a sequence of sets in $\mathcal{A}$, and let $A\subset \mathbb{R}$. Then 
+	\begin{align}
+		m^*\left[A\cap f^{-1}\left(\bigcup_n E_n\right)\right] &= m^*\left[A\cap\left(\bigcup_n f^{-1}(E_n)\right)\right] \\
+		&= m^*\left[\bigcup_n\left(A\cap f^{-1}(E_n)\right)\right] \\
+		& \leq \sum_n m^*\left(A\cap f^{-1}(E_n)\right) \\
+		& \leq m^*\left(A\cap f^{-1}(E_n)\right),
+	\end{align}
+	by countable subadditivity and positive-definiteness of the outer measure $m^*$. Similarly, we also have
+	\begin{align}
+		m^*\left[A\cap f^{-1}\left(\bigcup_n E_n\right)^c\right] &= m^*\left[A\cap \left(\bigcup_n f^{-1}(E_n)\right)^c\right] \\
+		&= m^*\left[A\cap\left(\bigcap_n f^{-1}(E_n)^c\right)\right] \\
+		&\leq m^*\left(A\cap f^{-1}(E_n)^c\right),
+	\end{align}
+	by monotonicity of $m^*$, because $\bigcap_n f^{-1}(E_n)^c \subseteq f^{-1}(E_n)^c$.
+	
+	Finally, since $E_n \in \mathcal{A}$, then $f^{-1}(E_n)$ is Lebesgue measurable, so we have 
+	\begin{align}
+		m^*\left[A\cap f^{-1}\left(\bigcup_n E_n\right)\right] + \\ m^*\left[A\cap f^{-1}\left(\bigcup_n E_n\right)^c\right]
+		&\leq m^*\left(A\cap f^{-1}(E_n)\right) + m^*(A\cap f^{-1}(E_n)^c) \\
+		&\leq m^*(A).
+	\end{align}
+	So, $f^{-1}\left(\bigcup_n E_n\right)$ is measurable, hence $\bigcup_n E_n \in \mathcal{A}$. Thus, $\mathcal{A}$ is closed under taking countable unions.
+	
+	Therefore, $\mathcal{A}$ is a $\sigma$-algebra.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2}
+TODO TODO TODO 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+	
+\section{Appendix A}
+\label{appendix:A}
+\textbf{Theorem:} Let $f:\mathbb{R}\rightarrow\mathbb{R}$. If $E \subset \mathbb{R}$, then $f^{-1}(E^c) = f^{-1}(E)^c$.
+\begin{proof}
+	Let $x \in f^{-1}(E^c)$. Then
+	\begin{align}
+		&\implies f(x) \notin E^c \iff f(x) \notin E \\
+		&\implies x \notin f^{-1}(E) \iff x \in f^{-1}(E)^c.
+	\end{align}
+	Thus, we have
+	\begin{equation}\label{subset1}
+		f^{-1}(E^c) \subseteq f^{-1}(E)^c.
+	\end{equation}
+	Now let $x\in f^{-1}(E)^c$. Then
+	\begin{align}
+		&\implies x \notin f^{-1}(E) \iff f(x) \notin E \\
+		&\implies f(x) \in E^c \iff x \in f^{-1}(E^c).
+	\end{align}
+	So, we also have
+	\begin{equation}\label{subset2}
+		f^{-1}(E)^c \subseteq f^{-1}(E^c).
+	\end{equation}
+	Taking equations \eqref{subset1} and \eqref{subset2} together allows us to conclude that \\$f^{-1}(E^c) = f^{-1}(E)^c$, as desired.
+\end{proof}
+\end{appendices}
 	
 \end{document}
