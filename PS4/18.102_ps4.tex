@@ -175,13 +175,13 @@
 	\begin{equation}\label{shift-comp-int}
 		(A+x) \cap (E+x)^c = (A\cap E^c) + x.
 	\end{equation}
-	In \href{https://github.com/ovega14/FunctionalAnalysis_solutions/blob/main/PS3/18.102_ps3.pdf}{PS3.3}, we showed that the outer measure $m^*$ is translation invariant. Thus, computing the outer measures of the sets in \eqref{shift-int} and \eqref{shift-comp-int} gives
+	In \href{https://github.com/ovega14/FunctionalAnalysis_solutions/blob/main/PS3/18.102_ps3.pdf}{PS3.3}, we showed that the outer measure $m^*$ is translation invariant. Thus, computing the outer measures of sets \eqref{shift-int} and \eqref{shift-comp-int} gives
 	\begin{equation}\label{measure-shift-int}
-		m^*\left[(A+\cap E) + x\right] = m^*(A\cap E),
+		m^*\left[(A\cap E) + x\right] = m^*(A\cap E),
 	\end{equation}
 	and by the same token
 	\begin{equation}\label{measure-shift-comp-int}
-		m^*\left[(A+\cap E^c) + x\right] = m^*(A\cap E^c).
+		m^*\left[(A\cap E^c) + x\right] = m^*(A\cap E^c).
 	\end{equation}
 	Adding equations \eqref{measure-shift-int} and \eqref{measure-shift-comp-int} results in 
 	\begin{equation}
@@ -199,12 +199,36 @@
 \subsection*{(b)}
 \begin{proof}
 	We proceed using the fact that for any $U \subset \mathbb{R}$ and $r > 0$, the outer measure respects scalar multiplication; i.e. that 
-	\begin{equation}
+	\begin{equation}\label{resp-scale}
 		m^*(rU) = r \cdot m^*(U).
 	\end{equation}
 	We prove this statement in appendix \ref{appendix:B.1}. 
 	
-	Let $r > 0$. 
+	Let $r > 0$, and let $A \subset \mathbb{R}$. We may express the intersection of the scaled sets
+	\begin{equation}\label{int-scale}
+		(rA) \cap (rE) = r(A\cap E),
+	\end{equation}
+	and similarly for the complement $E^c$,
+	\begin{equation}\label{int-comp-scale}
+		(rA) \cap (rE^c) = r(A\cap E^c).
+	\end{equation}
+	By equation \eqref{resp-scale}, computing the measures of sets \eqref{int-scale} and \eqref{int-comp-scale} gives
+	\begin{equation}\label{measure-scale-int}
+		m^*\left[r(A\cap E)\right] = r \cdot m^*(A \cap E),
+	\end{equation}
+	and similarly
+	\begin{equation}\label{measure-scale-comp-int}
+		m^*\left[r(A\cap E^c)\right] = r \cdot m^*(A \cap E^c).
+	\end{equation}
+	Since $E$ is assumed to be measurable, then adding equations \eqref{measure-scale-int} and \eqref{measure-scale-comp-int} yields
+	\begin{equation}
+		r \cdot m^*(A\cap E) + r \cdot m^*(A \cap E^c) \leq r\cdot m^*(A).
+	\end{equation}
+	Since $A \subset \mathbb{R}$, then $rA \subset \mathbb{R}$ also. The equations above imply that
+	\begin{equation}
+		m^*\left[(rA)\cap(rE)\right] + m^*\left[(rA)\cap(rE^c)\right] \leq r\cdot m^*(A) = m^*(rA).
+	\end{equation}
+	Therefore, we conclude that $rE$ is measurable. 
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
