@@ -6,6 +6,7 @@
 \usepackage[]{amsmath}
 \usepackage[parfill]{parskip} %avoid indent when skipping lines
 \usepackage[toc,page]{appendix}
+\usepackage{mathtools}
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
@@ -71,8 +72,99 @@
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 2}
-TODO TODO TODO 
-
+\begin{proof}
+	($\Rightarrow$) Suppose $E$ is measurable. 
+	
+	Let $\epsilon > 0$. Then by definition of the outer measure $m^*$, $\exists \{I_n\}_n$ a collection of open intercals with $E\subset \cup_n I_n$ such that
+	\begin{equation}
+		\sum_n \ell(I_n) < m^*(E) + \frac{\epsilon}{2}
+	\end{equation}
+	\begin{equation}
+		\implies \sum_n \ell (I_n) - m^*(E) < \frac{\epsilon}{2},
+	\end{equation}
+	where $\ell (I_n)$ denotes the length of the interval $I_n$. Also, since $m^*(E) < \infty$, then
+	\begin{equation}
+		\sum_n m^*(I_n) = \sum_n \ell (I_n) < \infty.
+	\end{equation}
+	By the countable subbaditivity of $m^*$, we have
+	\begin{equation}
+		m^*\left(\bigcup_n I_n\right) \leq \sum_n m^*(I_n) = \sum_n \ell (I_n) < \infty.
+	\end{equation}
+	Then by removing $E$ from the union $\cup_n I_n$, we get
+	\begin{align}
+		m^*\left[\left(\bigcup_n I_n\right) \backslash E\right] &= m^*\left(\bigcup_n I_n \right) - m^*(E) \\
+		&\leq \sum_n \ell (I_n) - m^*(E) \\
+		&< \frac{\epsilon}{2}.
+	\end{align}
+	For any $N \in \mathbb{N}$, $\bigcup_{n=1}^N I_n \subseteq \bigcup_{n=1}^{\infty}I_n$. Thus, $\left(\bigcup_{n=1}^N I_n\right) \backslash E \subseteq \left(\bigcup_{n=1}^{\infty}I_n\right) \backslash E$. Then by the monotonicity of $m^*$,
+	\begin{align}\label{star}
+		m^*\left[\left(\bigcup_{n=1}^N I_n\right) \backslash E\right] &\leq m^*\left[\left(\bigcup_n I_n\right) \backslash E\right] \\
+		& < \frac{\epsilon}{2}.
+	\end{align}
+	Since $\sum_n m^*(I_n) < \infty$, then the series converges, so $\exists N \in \mathbb{N}$ such that \\$\sum_{n=N+1}^{\infty}m^*(I_n) < \frac{\epsilon}{2}$. Because $E \subseteq \cup_n I_n$, we have
+	\begin{align}
+		E \backslash \left(\bigcup_{n=1}^N I_n\right) &\subset \left(\bigcup_{n=1}^{\infty}I_n\right) \backslash \left(\bigcup_{n=1}^N I_n\right) \\
+		& \subseteq \bigcup_{n=N+1}^{\infty}I_n.
+	\end{align}
+	Then by monotonicity of $m^*$,
+	\begin{align}\label{doublestar}
+		m^*\left[E\backslash \left(\bigcup_{n=1}^{\infty}I_n\right)\right] &\leq m^*\left(\bigcup_{n=N+1}^{\infty}I_n\right) \\
+		&\leq \sum_{n=N+1}^{\infty}m^*(I_n) \\
+		&< \frac{\epsilon}{2}.
+	\end{align}
+	Combining equations \eqref{star} and \eqref{doublestar}, we have
+	\begin{align}
+		m^*\left(E \Delta \bigcup_{n=1}^N I_n\right)&= m^*\left[E \backslash \left(\bigcup_{n=1}^N I_n\right)\right] + m^*\left[\left(\bigcup_{n=1}^N I_n\right) \backslash E\right] \\
+		&< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+		&= \epsilon.
+	\end{align}
+	Letting $U = \bigcup_{n=1}^N I_n$, we see that
+	\begin{equation}
+		m^*(U \Delta E) < \epsilon,
+	\end{equation}
+	as desired.
+	
+	$(\Leftarrow)$ Suppose that for every $\epsilon > 0$, $\exists$ a finite union of open intervals $U$ such that $m^*(U \Delta E) < \epsilon$.
+	
+	Let $A \subset \mathbb{R}$. Since $U$ is a finite union of open intervals, then $U$ is measurable. Thus,
+	\begin{equation}\label{U-measurable}
+		m^*(A \cap U) + m^*(A \cap U^c) \leq m^*(A).
+	\end{equation}
+	We can express the set $A \cap E$ as follows:
+	\begin{align}
+		A \cap E &= A \cap \left[\left(E\cap U\right)\cup\left(E\cap U^c\right)\right] \\
+		&= (A\cap E \cap U) \cup (A \cap E \cap U^c).
+	\end{align}
+	Then by exclusivity,
+	\begin{equation}\label{partition}
+		m^*(A \cap E) = m^*(A\cap E\cap U) + m^*(A\cap E\cap U^c)
+	\end{equation}
+	Similarly, we can write
+	\begin{align}
+		A\cap E^c &= A\cap \left[(E^c \cap U)\cup(E^c \cap U^c)\right] \\
+		&= (A\cap E^c\cap U) \cup (A\cap E^c \cap U^c).
+	\end{align}
+	This gives
+	\begin{equation}\label{partition-comp}
+		m^*(A \cap E^c) = m^*(A\cap E^c\cap U) + m^*(A\cap E^c\cap U^c).
+	\end{equation}
+	Adding equations \eqref{partition} and \eqref{partition-comp} yields
+	\begin{align}
+		m^*(A\cap E) + m^*(A\cap E^c) = m^*(A\cap E \cap U) + m^*(A\cap E\cap U^c) \\+ m^*(A\cap E^c\cap U) + m^*(A\cap E^c\cap U^c) \\
+		= m^*(A \cap E \cap U) + m^*\left[A\cap \left(E \backslash U\right)\right] \\+ m^*\left[A\cap \left(U\backslash E\right)\right] + m^*(A\cap E^c \cap U^c).
+	\end{align}
+	Since $A\cap E \cap U \subseteq A\cap U$ and $A\cap E^c \cap U^c \subseteq A\cap U^c$, and since $(U \backslash E)$ and $(E \backslash U)$ are disjoint, we have 
+	\begin{align}
+		m^*(A\cap E) = m^*(a \cap E^c) \leq m^*(A\cap U) + m^*(A \cap U^c) \\+ m^*\left(A \cap \left[(E\backslash U)\cup (U\cap E)\right]\right)\\
+		= m^*(A\cap U) + m^*(A \cap U^c) + m^*(U \Delta E) \\
+		\leq m^*(A) + \epsilon.
+	\end{align}
+	Since this holds for every $\epsilon > 0$, we can take $\epsilon$ to be arbitrarily small:
+	\begin{equation}
+		\xRightarrow{\epsilon \to 0} m^*(A\cap E) + m^*(A\cap E^c) \leq m^*(A).
+	\end{equation}
+	Therefore, $E$ is measurable.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{appendices}
 	
