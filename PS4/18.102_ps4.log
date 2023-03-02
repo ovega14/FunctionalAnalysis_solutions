@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  1 MAR 2023 19:59
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  1 MAR 2023 22:50
  restricted system commands enabled.
 **18.102_ps4.tex
 (./18.102_ps4.tex
@@ -527,7 +527,7 @@ Here is how much of LuaTeX's memory you used:
  635 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 dir, 2 glue, 4 kern, 1 glyph, 41 attribute, 55 gl
 ue_spec, 22 attribute_list, 1 write nodes
-   avail lists: 2:873,3:168,4:22,5:467,6:26,7:2520,8:42,9:793,10:4,11:61
+   avail lists: 2:873,3:168,4:26,5:467,6:26,7:2680,8:42,9:793,10:4,11:63
  30207 multiletter control sequences out of 65536+200000
  67 fonts using 5934535 bytes
  71i,14n,71p,533b,469s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -545,9 +545,9 @@ ic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on 18.102_ps4.pdf (3 pages, 107192 bytes).
+Output written on 18.102_ps4.pdf (3 pages, 107684 bytes).
 
-PDF statistics: 136 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 137 PDF objects out of 1000 (max. 8388607)
  32 named destinations out of 1000 (max. 131072)
  25 words of extra memory for PDF output out of 10000 (max. 100000000)
 
