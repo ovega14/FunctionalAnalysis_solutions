@@ -43,7 +43,7 @@
 	\end{align}
 	Hence, $f^{-1}(E^c)$ is measurable, so $E^c \in \mathcal{A}$. Thus, $\mathcal{A}$ is closed under taking complements.
 	
-	Now we show that $\mathcal{A}$ is closed under taking countable unions. We use the fact that $f^{-1}\left(\cup_n E_n\right) = \cup_n f^{-1}(E_n)$, which is proven in appendix \ref{appendix:B}.
+	Now we show that $\mathcal{A}$ is closed under taking countable unions. We use the fact that $f^{-1}\left( \; \bigcup_n E_n\right) = \bigcup_n f^{-1}(E_n)$, which is proven in appendix \ref{appendix:B}.
 	
 	Let $\{E_n\}_n \subset \mathcal{A}$ be a sequence of sets in $\mathcal{A}$, and let $A\subset \mathbb{R}$. Then 
 	\begin{align}
@@ -54,7 +54,7 @@
 	\end{align}
 	by countable subadditivity and positive-definiteness of the outer measure $m^*$. Similarly, we have
 	\begin{align}
-		m^*\left[A\cap f^{-1}\left(\bigcup_n E_n\right)^c\right] &= m^*\left[A\cap \left(\bigcup_n f^{-1}(E_n)\right)^c\right] \\
+		m^*\left[A\cap f^{-1}\left(\bigcup_n E_n\right)^c \; \right] &= m^*\left[A\cap \left(\bigcup_n f^{-1}(E_n)\right)^c \; \right] \\
 		&= m^*\left[A\cap\left(\bigcap_n f^{-1}(E_n)^c\right)\right] \\
 		&\leq m^*\left(A\cap f^{-1}(E_n)^c\right),
 	\end{align}
@@ -62,11 +62,11 @@
 	
 	Finally, since $E_n \in \mathcal{A}$, then $f^{-1}(E_n)$ is Lebesgue measurable, so we have 
 	\begin{align}
-		m^*\left[A\cap f^{-1}\left(\bigcup_n E_n\right)\right] + \\ m^*\left[A\cap f^{-1}\left(\bigcup_n E_n\right)^c\right]
+		m^*\left[A\cap f^{-1}\left(\bigcup_n E_n\right)\right] + \nonumber \\ m^*\left[A\cap f^{-1}\left(\bigcup_n E_n\right)^c \; \right]
 		&\leq m^*\left(A\cap f^{-1}(E_n)\right) + m^*(A\cap f^{-1}(E_n)^c) \\
 		&\leq m^*(A).
 	\end{align}
-	So, $f^{-1}\left(\bigcup_n E_n\right)$ is measurable, hence $\bigcup_n E_n \in \mathcal{A}$. Thus, $\mathcal{A}$ is closed under taking countable unions.
+	So, $f^{-1}\left(\; \bigcup_n E_n\right)$ is measurable, hence $\bigcup_n E_n \in \mathcal{A}$. Thus, $\mathcal{A}$ is closed under taking countable unions.
 	
 	Therefore, $\mathcal{A}$ is a $\sigma$-algebra.
 \end{proof}
@@ -75,7 +75,7 @@
 \begin{proof}
 	($\Rightarrow$) Suppose $E$ is measurable. 
 	
-	Let $\epsilon > 0$. Then by definition of the outer measure $m^*$, $\exists \{I_n\}_n$ a collection of open intercals with $E\subset \cup_n I_n$ such that
+	Let $\epsilon > 0$. Then by definition of the outer measure $m^*$, $\exists$ a collection of open intervals $\{I_n\}_n$ with $E\subset \bigcup_n I_n$ such that
 	\begin{equation}
 		\sum_n \ell(I_n) < m^*(E) + \frac{\epsilon}{2}
 	\end{equation}
@@ -97,19 +97,17 @@
 		&< \frac{\epsilon}{2}.
 	\end{align}
 	For any $N \in \mathbb{N}$, $\bigcup_{n=1}^N I_n \subseteq \bigcup_{n=1}^{\infty}I_n$. Thus, $\left(\bigcup_{n=1}^N I_n\right) \backslash E \subseteq \left(\bigcup_{n=1}^{\infty}I_n\right) \backslash E$. Then by the monotonicity of $m^*$,
-	\begin{align}\label{star}
-		m^*\left[\left(\bigcup_{n=1}^N I_n\right) \backslash E\right] &\leq m^*\left[\left(\bigcup_n I_n\right) \backslash E\right] \\
-		& < \frac{\epsilon}{2}.
-	\end{align}
-	Since $\sum_n m^*(I_n) < \infty$, then the series converges, so $\exists N \in \mathbb{N}$ such that \\$\sum_{n=N+1}^{\infty}m^*(I_n) < \frac{\epsilon}{2}$. Because $E \subseteq \cup_n I_n$, we have
-	\begin{align}
-		E \backslash \left(\bigcup_{n=1}^N I_n\right) &\subset \left(\bigcup_{n=1}^{\infty}I_n\right) \backslash \left(\bigcup_{n=1}^N I_n\right) \\
-		& \subseteq \bigcup_{n=N+1}^{\infty}I_n.
-	\end{align}
+	\begin{equation}\label{star}
+		m^*\left[\left(\bigcup_{n=1}^N I_n\right) \backslash E\right] \leq m^*\left[\left(\bigcup_n I_n\right) \backslash E\right] < \frac{\epsilon}{2}.
+	\end{equation}
+	Since $\sum_n m^*(I_n) < \infty$, then the series converges, so $\exists N \in \mathbb{N}$ such that \\$\sum_{n=N+1}^{\infty}m^*(I_n) < \frac{\epsilon}{2}$. Because $E \subset \bigcup_n I_n$, we have
+	\begin{equation}
+		E \backslash \left(\bigcup_{n=1}^N I_n\right) \subset \left(\bigcup_{n=1}^{\infty}I_n\right) \backslash \left(\bigcup_{n=1}^N I_n\right) \subseteq \bigcup_{n=N+1}^{\infty}I_n.
+	\end{equation}
 	Then by monotonicity of $m^*$,
 	\begin{align}\label{doublestar}
-		m^*\left[E\backslash \left(\bigcup_{n=1}^{\infty}I_n\right)\right] &\leq m^*\left(\bigcup_{n=N+1}^{\infty}I_n\right) \\
-		&\leq \sum_{n=N+1}^{\infty}m^*(I_n) \\
+		m^*\left[E\backslash \left(\bigcup_{n=1}^{\infty}I_n\right)\right] &\leq m^*\left(\bigcup_{n=N+1}^{\infty}I_n\right) \nonumber \\
+		&\leq \sum_{n=N+1}^{\infty}m^*(I_n) \nonumber \\
 		&< \frac{\epsilon}{2}.
 	\end{align}
 	Combining equations \eqref{star} and \eqref{doublestar}, we have
@@ -150,12 +148,12 @@
 	\end{equation}
 	Adding equations \eqref{partition} and \eqref{partition-comp} yields
 	\begin{align}
-		m^*(A\cap E) + m^*(A\cap E^c) = m^*(A\cap E \cap U) + m^*(A\cap E\cap U^c) \\+ m^*(A\cap E^c\cap U) + m^*(A\cap E^c\cap U^c) \\
-		= m^*(A \cap E \cap U) + m^*\left[A\cap \left(E \backslash U\right)\right] \\+ m^*\left[A\cap \left(U\backslash E\right)\right] + m^*(A\cap E^c \cap U^c).
+		m^*(A\cap E) + m^*(A\cap E^c) = m^*(A\cap E \cap U) + m^*(A\cap E\cap U^c) \nonumber \\+ m^*(A\cap E^c\cap U) + m^*(A\cap E^c\cap U^c) \\
+		= m^*(A \cap E \cap U) + m^*\left[A\cap \left(E \backslash U\right)\right] \nonumber \\+ m^*\left[A\cap \left(U\backslash E\right)\right] + m^*(A\cap E^c \cap U^c).
 	\end{align}
 	Since $A\cap E \cap U \subseteq A\cap U$ and $A\cap E^c \cap U^c \subseteq A\cap U^c$, and since $(U \backslash E)$ and $(E \backslash U)$ are disjoint, we have 
 	\begin{align}
-		m^*(A\cap E) = m^*(a \cap E^c) \leq m^*(A\cap U) + m^*(A \cap U^c) \\+ m^*\left(A \cap \left[(E\backslash U)\cup (U\cap E)\right]\right)\\
+		m^*(A\cap E) + m^*(A \cap E^c) \leq m^*(A\cap U) + m^*(A \cap U^c) \nonumber \\+ m^*\left(A \cap \left[(E\backslash U)\cup (U\cap E)\right]\right)\\
 		= m^*(A\cap U) + m^*(A \cap U^c) + m^*(U \Delta E) \\
 		\leq m^*(A) + \epsilon.
 	\end{align}
@@ -165,6 +163,10 @@
 	\end{equation}
 	Therefore, $E$ is measurable.
 \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 3}
+TODO TODO TODO
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{appendices}
 	

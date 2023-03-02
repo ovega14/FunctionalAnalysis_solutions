@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  2 MAR 2023 00:19
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  2 MAR 2023 15:33
  restricted system commands enabled.
 **18.102_ps4.tex
 (./18.102_ps4.tex
@@ -573,22 +573,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/vega0/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
- [5]
+ [5] [6]
 (./18.102_ps4.aux)
 Package rerunfilecheck Info: File `18.102_ps4.out' has not changed.
-(rerunfilecheck)             Checksum: 85F2800CFB7B2965789394453CF9A4F5;295.
+(rerunfilecheck)             Checksum: ABD2D25AB579E00B1788AE236EBA999A;295.
 )
 
 Here is how much of LuaTeX's memory you used:
- 11640 strings out of 478540
+ 11634 strings out of 478540
  125056,552014 words of node,token memory allocated
- 758 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 5 dir, 2 glue, 4 kern, 1 glyph, 77 attribute, 58 gl
-ue_spec, 40 attribute_list, 1 write nodes
-   avail lists: 1:1,2:894,3:231,4:26,5:661,6:28,7:3021,8:54,9:1127,10:4,11:86
+ 782 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 dir, 2 glue, 4 kern, 1 glyph, 85 attribute, 58 gl
+ue_spec, 44 attribute_list, 1 write nodes
+   avail lists: 1:1,2:864,3:218,4:26,5:606,6:30,7:3000,8:54,9:960,10:4,11:86
  31037 multiletter control sequences out of 65536+200000
  67 fonts using 5934535 bytes
- 71i,14n,74p,533b,465s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,14n,74p,533b,483s stack positions out of 5000i,500n,10000p,200000b,50000s
 <//?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-bold.otf><//
 ?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-regular.otf><//
 ?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-italic.otf><//?
@@ -603,9 +603,9 @@ ic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on 18.102_ps4.pdf (5 pages, 128171 bytes).
+Output written on 18.102_ps4.pdf (6 pages, 128252 bytes).
 
-PDF statistics: 188 PDF objects out of 1000 (max. 8388607)
- 68 named destinations out of 1000 (max. 131072)
+PDF statistics: 184 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 131072)
  25 words of extra memory for PDF output out of 10000 (max. 100000000)
 
