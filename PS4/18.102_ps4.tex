@@ -165,7 +165,36 @@
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 3}
-TODO TODO TODO
+\subsection*{(a)}
+\begin{proof}
+	Let $A \subset \mathbb{R}$. We can express the intersection
+	\begin{equation}\label{shift-int}
+		(A+x) \cap (E+x) = (A\cap E) + x.
+	\end{equation}
+	Similarly,
+	\begin{equation}\label{shift-comp-int}
+		(A+x) \cap (E+x)^c = (A\cap E^c) + x.
+	\end{equation}
+	In \href{https://github.com/ovega14/FunctionalAnalysis_solutions/blob/main/PS3/18.102_ps3.pdf}{PS3.3}, we showed that the outer measure $m^*$ is translation invariant. Thus, computing the outer measures of the sets in \eqref{shift-int} and \eqref{shift-comp-int} gives
+	\begin{equation}\label{measure-shift-int}
+		m^*\left[(A+\cap E) + x\right] = m^*(A\cap E),
+	\end{equation}
+	and by the same token
+	\begin{equation}\label{measure-shift-comp-int}
+		m^*\left[(A+\cap E^c) + x\right] = m^*(A\cap E^c).
+	\end{equation}
+	Adding equations \eqref{measure-shift-int} and \eqref{measure-shift-comp-int} results in 
+	\begin{equation}
+		m^*(A\cap E) + m^*(A\cap E^c) \leq m^*(A),
+	\end{equation}
+	which holds since $E$ is assumed to be measurable.
+	
+	Since $A \subset \mathbb{R}$, then $A + x \subset \mathbb{R}$ also. Then from the equations above, it follows that
+	\begin{equation}
+		m^*\left[(A+x) \cap (E+x)\right] + m^*\left[(A+x) \cap (E+x)^c\right] \leq m^*(A) = m^*(A+x).
+	\end{equation}
+	Therefore, we conclude that $E+x$ is measurable. 
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{appendices}
