@@ -100,6 +100,26 @@ TODO TODO TODO
 	\end{equation}
 	Taking equations \eqref{subset1} and \eqref{subset2} together allows us to conclude that \\$f^{-1}(E^c) = f^{-1}(E)^c$, as desired.
 \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Appendix B}
+\label{appendix:B}
+
+\textbf{Theorem:} Let $f:\mathbb{R} \rightarrow \mathbb{R}$ and let $\{E_n\}_n$ be a collection of subsets $E_n \subset \mathbb{R}$. Then
+\begin{equation}
+	f^{-1}\left(\bigcup_n E_n\right) = \bigcup_n f^{-1}(E_n).
+\end{equation}
+\begin{proof}
+	Let $x \in f^{-1}\left(\cup_n E_n\right)$. Then $f(x) \in \cup_n E_n$, so $f(x)$ is in any of $E_n$ for $n\in\mathbb{N}$. This is equivalent to saying that $x \in f^{-1}(E_n)$ for some $n \in \mathbb{N}$, which implies that $x \in \cup_n f^{-1}(E_n)$. Hence,
+	\begin{equation}
+		f^{-1}\left(\bigcup_n E_n\right) \subseteq \bigcup_n f^{-1}(E_n).
+	\end{equation}
+	Now let $x \in \cup_n f^{-1}(E_n)$. Then $x \in f^{-1}(E_n)$ for some $n \in \mathbb{N}$, which is equivalent to saying that $f(x) \in E_n$ for some $n$. Then $f(x) \in \cup_n E_n$, so $x \in f^{-1}\left(\cup_n E_n\right)$. Thus, 
+	\begin{equation}
+		\bigcup_n f^{-1}(E_n) \subseteq f^{-1}\left(\bigcup_n E_n\right).
+	\end{equation}
+	Therefore, both sets are subsets of one another, so they are equal.
+\end{proof}
+
 \end{appendices}
 	
 \end{document}
