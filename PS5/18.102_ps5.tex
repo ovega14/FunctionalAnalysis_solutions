@@ -69,5 +69,54 @@ TODO TODO TODO
 	
 	Therefore, as desired, $f$ must be measurable.
 \end{proof}
+
+\subsection*{(b)}
+\begin{proof}
+	($\Rightarrow$) Suppose $f$ is measurable.
+	
+	We define the indicator function $\chi_E$ on $E$ via
+	\begin{equation}
+		\chi_E(x) := 
+		\begin{cases}
+			1, \; x \in E \\
+			0, \; x \in E^c.
+		\end{cases}
+	\end{equation}
+	Then we can express $g$ as the product
+	\begin{equation}
+		g(x) = f(x) \cdot \chi_E(x).
+	\end{equation}
+	In problem \textbf{2a}, we showed that the product of measurable functions is measurable. By assumption, $f$ is measurable. so we need only check that $\chi_E$ is measurable.
+	
+	Let $\alpha \in \R$. 
+	
+	\underline{Case 1}: $1 \leq \alpha \leq \infty$. Then,
+	\begin{equation}
+		\chi_E ^{-1}\left((\alpha, \infty]\right) = \emptyset \in \M.
+	\end{equation}
+	\underline{Case 2}: $0 \leq \alpha < 1$. Then,
+	\begin{equation}
+		\chi_E^{-1}\left((\alpha,\infty]\right) = E \in \M.
+	\end{equation}
+	\underline{Case 3}: $-\infty \leq \alpha < 0$. Then,
+	\begin{equation}
+		\chi_E^{-1}\left((\alpha, \infty]\right) = \R \in \M.
+	\end{equation}
+	 Hence, $\chi_E$ is measurable, so $f\cdot \chi_E$ is also measurable.
+	 
+	 Therefore, $g$ is measurable.
+	 
+	 ($\Leftarrow$) Suppose $g$ is measurable. Since $g: E\cup E^c = \R \rightarrow [-\infty, \infty]$ is defined by
+	 \begin{align}
+	 	g(x) := 
+	 	\begin{cases}
+	 		f(x), \; &x \in E \\
+	 		0, \; &x \in E^c,
+	 	\end{cases}
+	 \end{align}
+	 then by restricting $g$ to $E$ we get $g\big|_E(x) = f(x)$. By part \textbf{(a)}, $g\big|_E$ must be measurable.
+	 
+	 Therefore, $f$ is measurable.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}

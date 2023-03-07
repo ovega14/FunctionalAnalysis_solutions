@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  7 MAR 2023 14:22
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  7 MAR 2023 14:41
  restricted system commands enabled.
 **18.102_ps5.tex
 (./18.102_ps5.tex
@@ -573,31 +573,32 @@ Package rerunfilecheck Info: File `18.102_ps5.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 11471 strings out of 478540
+ 11479 strings out of 478540
  125056,552014 words of node,token memory allocated
- 682 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 4 dir, 2 glue, 4 kern, 1 glyph, 55 attribute, 57 gl
-ue_spec, 29 attribute_list, 1 write nodes
-   avail lists: 1:1,2:781,3:144,4:26,5:288,6:38,7:2481,8:52,9:530,10:4,11:86
- 30932 multiletter control sequences out of 65536+200000
- 65 fonts using 5671159 bytes
- 71i,12n,74p,524b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
-<//?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-italic.otf><
-//?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman12-bold.otf><//?
-/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-regular.otf><//?
-/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman12-regular.otf><//?
-/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman17-regular.otf><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-sy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb>
-Output written on 18.102_ps5.pdf (2 pages, 87201 bytes).
+ 771 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 4 dir, 2 glue, 4 kern, 1 glyph, 83 attribute, 58 gl
+ue_spec, 43 attribute_list, 1 write nodes
+   avail lists: 1:1,2:788,3:179,4:26,5:414,6:38,7:2910,8:52,9:634,10:4,11:90
+ 30933 multiletter control sequences out of 65536+200000
+ 66 fonts using 5802847 bytes
+ 71i,14n,74p,524b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
+<//?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-bold.otf><//
+?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-italic.otf><//?
+/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman12-bold.otf><//?/c:
+/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-regular.otf><//?/c:
+/program files/miktex 2.9/fonts/opentype/public/lm/lmroman12-regular.otf><//?/c:
+/program files/miktex 2.9/fonts/opentype/public/lm/lmroman17-regular.otf><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+>
+Output written on 18.102_ps5.pdf (2 pages, 97876 bytes).
 
-PDF statistics: 97 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 131072)
+PDF statistics: 111 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
