@@ -5,6 +5,7 @@
 \usepackage[]{amssymb} %gives us the character \varnothing
 \usepackage[]{amsmath}
 \usepackage[parfill]{parskip} %avoid indent when skipping lines
+\usepackage[toc,page]{appendix}
 \usepackage{mathtools}
 \usepackage{hyperref}
 \hypersetup{
@@ -118,5 +119,46 @@ TODO TODO TODO
 	 
 	 Therefore, $f$ is measurable.
 \end{proof}
+
+\subsection*{(c)}
+\begin{proof}
+	We have already shown in class that sums and products of measurable functions are measurable. So if $u$ and $v$ are measurable, then both $u^2$ and $v^2$ are measurable, which implies that $u^2 + v^2$ is measurable.
+	
+	Define
+	\begin{equation}
+		f(x) := u^2(x) + v^2(x).
+	\end{equation}
+	Then we need only check that $f^{\frac{1}{2}}$ is measurable.
+	
+	Let $g(x) = x^{\frac{1}{2}}$. Then $f^{\frac{1}{2}}(x) = (g \circ f)(x)$, and $f: E \rightarrow [0,\infty] \\ \implies g: [0, \infty] \rightarrow [0, \infty]$. We use the fact that the composition of measurable functions is measurable, proven in appendix \ref{appendix:A.1}, to show that $f^{\frac{1}{2}}$ is measurable. 
+	
+	Let $\alpha \in \R$.
+	
+	\underline{Case 1}: $0 \leq \alpha \leq \infty$. Then,
+	\begin{equation}
+		g^{-1}\left((\alpha, \infty]\right) = (\alpha^2, \infty) \in \M.
+	\end{equation}
+	\underline{Case 2}: $-\infty \leq \alpha < 0$. Then,
+	\begin{equation}
+		g^{-1}\left((\alpha, \infty]\right) = \emptyset \in \M.
+	\end{equation}
+	Hence, $g$ is measurable, so by \ref{appendix:A.1}, $f^{\frac{1}{2}}$ is measurable.
+	
+	Therefore, $(u^2 + v^2)^{\frac{1}{2}}$ is measurable.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 4}
+TODO TODO TODO
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+	
+\section{Appendix A}
+\subsection{}
+\label{appendix:A.1}
+TODO TODO TODO
+
+\end{appendices}
+
 \end{document}
