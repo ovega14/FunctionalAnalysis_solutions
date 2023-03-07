@@ -16,6 +16,9 @@
 	pdfpagemode=FullScreen,
 }
 %\urlstyle{same}
+\newcommand{\R}{\mathbb{R}} %the real numbers
+\newcommand{\N}{\mathbb{N}} %the natural numbers
+\newcommand{\M}{\mathcal{M}} %set of all Lebesgue-measurable sets
 
 \title{18.102 Assignment 5}
 \author{Octavio Vega}
@@ -23,8 +26,48 @@
 
 \begin{document}
 \maketitle
-	
+
+%%% Notation %%%
+We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
+
 \section*{Problem 1}
+TODO TODO TODO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2}
 TODO TODO TODO 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 3}
+\subsection*{(a)}
+\begin{proof}
+	($\Rightarrow$) Suppose $f$ is measurable. 
 	
+	Let $\alpha \in \R$. We may express the preimage of the set $(\alpha, \infty]$ under the inverse of the restriction of $f$ to $E$ as follows:
+	\begin{equation}\label{f-inv-E}
+		f^{-1}\big|_E \left((\alpha, \infty])\right) = f^{-1}\left((\alpha, \infty])\right) \cap E,
+	\end{equation}
+	and similarly for $F$:
+	\begin{equation}\label{f-inv-F}
+		f^{-1}\big|_F \left((\alpha, \infty])\right) = f^{-1}\left((\alpha, \infty])\right) \cap F.
+	\end{equation}
+	Since $f$ is measurable, then $f^{-1}\left((\alpha, \infty])\right) \in \M$. By assumption, $E$ and $F$ are also measurable. Hence, the intersections in \eqref{f-inv-E} and \eqref{f-inv-F} are also measurable. 
+	
+	Therefore, $f\big|_E$ and $f\big|_F$ are measurable.
+	
+	($\Leftarrow$) Suppose $f\big|_E$ and $f\big|_F$ are measurable.
+	
+	Then for ever $\alpha \in \R$, $f^{-1}\big|_E \left((\alpha, \infty])\right) \in \M$ and $f^{-1}\big|_F \left((\alpha, \infty])\right) \in \M$. Since $\M$ is closed under taking finite unions, then the union of each of these sets is also measurable, i.e.
+	\begin{equation}
+		f^{-1}\big|_E \left((\alpha, \infty])\right) \cup f^{-1}\big|_F \left((\alpha, \infty])\right) \in \M.
+	\end{equation}
+	We also have that $E, F \in \M$, so $E \cup F \in \M$. Then we have
+	\begin{align}
+		f^{-1}\big|_E \left((\alpha, \infty])\right) \cup f^{-1}\big|_F \left((\alpha, \infty])\right) \\= \left(f^{-1}\left((\alpha, \infty])\right) \cap E\right) \cup \left(f^{-1}\left((\alpha, \infty])\right) \cap F\right) \nonumber \\
+		= f^{-1}\left((\alpha,\infty]\right) \cap (E \cup F) \\ 
+		= f^{-1}\left((\alpha,\infty]\right) \in \M, \label{inv-subset-union}
+	\end{align}
+	where in line \eqref{inv-subset-union} we used the fact that $f^{-1}\left((\alpha,\infty]\right) \subset (E \cup F)$. 
+	
+	Therefore, as desired, $f$ must be measurable.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
