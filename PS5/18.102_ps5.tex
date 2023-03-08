@@ -30,7 +30,7 @@
 \maketitle
 
 %%% Notation %%%
-We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
+In the problems to follow, we denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
 
 \section*{Problem 1}
 \subsection*{(a)}
@@ -70,11 +70,11 @@ We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
 	Define $U_k = E_1 \backslash E_k$ for each $k \in \N$. Then $\forall k \in \N$, $U_k \subset U_{k+1}$ since $E_{k+1} \subset E_k$. By \eqref{1b-star-star}, we have
 	\begin{align}
 		m\left(E_1 \backslash \bigcap_{k=1}^{\infty}E_k\right) &= m\left[\bigcup_{k=1}^{\infty}(E_1 \backslash E_k)\right] \\
-		&= \lim_{k \to \infty} m(E_1 \backslash E_k) \\
+		&= \lim_{k \to \infty} m(E_1 \backslash E_k) \label{1b-appendix}\\
 		&= \lim_{k \to \infty} \left[m(E_1) - m(E_k)\right] \\
-		&= m(E_1) - \lim_{k \to \infty}m(E_k).
+		&= m(E_1) - \lim_{k \to \infty}m(E_k),
 	\end{align}
-	Then using equation \eqref{1b-star}, this gives
+	where we get to line \eqref{1b-appendix} using the theorem proven in appendix \ref{appendix:A}. Then using equation \eqref{1b-star}, this gives
 	\begin{align}
 		m(E_1) - \lim_{k \to \infty} m(E_k) = m(E_1) - m\left(\bigcap_{k=1}^{\infty} E_k \right).
 	\end{align}
@@ -218,7 +218,7 @@ We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
 	\end{equation}
 	Then we need only check that $f^{\frac{1}{2}}$ is measurable.
 	
-	Let $g(x) = x^{\frac{1}{2}}$. Then $f^{\frac{1}{2}}(x) = (g \circ f)(x)$, and $f: E \rightarrow [0,\infty] \\ \implies g: [0, \infty] \rightarrow [0, \infty]$. We use the fact that the composition of measurable functions is measurable, proven in appendix \ref{appendix:A.1}, to show that $f^{\frac{1}{2}}$ is measurable. 
+	Let $g(x) = x^{\frac{1}{2}}$. Then $f^{\frac{1}{2}}(x) = (g \circ f)(x)$, and $f: E \rightarrow [0,\infty] \\ \implies g: [0, \infty] \rightarrow [0, \infty]$. We use the fact that the composition of a continuous function ($g$) with a measurable function ($f$) is measurable to show that $f^{\frac{1}{2}}$ is measurable. 
 	
 	Let $\alpha \in \R$.
 	
@@ -230,7 +230,7 @@ We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
 	\begin{equation}
 		g^{-1}\left((\alpha, \infty]\right) = \emptyset \in \M.
 	\end{equation}
-	Hence, $g$ is measurable, so by \ref{appendix:A.1}, $f^{\frac{1}{2}}$ is measurable.
+	Hence, $g$ is measurable, so $f^{\frac{1}{2}}$ is measurable.
 	
 	Therefore, $(u^2 + v^2)^{\frac{1}{2}}$ is measurable.
 \end{proof}
@@ -310,9 +310,25 @@ We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
 \begin{appendices}
 	
 \section{Appendix A}
-\subsection{}
-\label{appendix:A.1}
-TODO TODO TODO
+\label{appendix:A}
+\textbf{Theorem} (\textit{Continuity from Below}): If $\{E_n\}_{n=1}^{\infty}$ is a countable collection of measurable sets such that $\forall n \in \N$, $E_n \subset E_{n+1}$ and $m(E_n) < \infty$, then \\$m\left(\bigcup_{n=1}^{\infty}E_n\right) = \lim_{n \to \infty} m(E_n)$.
+\begin{proof}
+	We can write the countable union of all the sets as
+	\begin{align}
+		\bigcup_{n=1}^{\infty}E_n &= E_1 \cup (E_2 \backslash E_1) \cup (E_3 \backslash E_2) \cup \cdots \\
+		&= E_1 \cup \left(\bigcup_{n=2}^{\infty} (E_n\backslash E_{n-1})\right). \label{app-A-1}
+	\end{align}
+	Since $E_n \subset E_{n+1}$ $\forall n \in \N$, then $E_1$ and $\{E_n \backslash E_{n-1}\}_{n \geq 2}$ are all disjoint. Then taking the Lebesgue measure on both sides of \eqref{app-A-1} yields
+	\begin{align}
+		m\left(\bigcup_{n=1}^{\infty} E_n \right) &= m\left(E_1 \cup \left(\bigcup_{n=2}^{\infty}(E_n \backslash E_{n-1})\right)\right) \\
+		&= m(E_1) + \sum_{n=2}^{\infty}m(E_n \backslash E_{n-1}) \\
+		&= m(E_1) + \sum_{n=2}^{\infty}\left[m(E_n) - m(E_{n-1})\right] \\
+		&= m(E_1) + \lim_{n \to \infty}\sum_{k=2}^{n}\left[m(E_k) - m(E_{k-1})\right] \\
+		&= m(E_1) + \lim_{n \to \infty}\left(m(E_n) - m(E_1)\right) \\
+		&= \lim_{n \to \infty} m(E_n),
+	\end{align}
+	as desired.
+\end{proof}
 
 \end{appendices}
 
