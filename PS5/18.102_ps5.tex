@@ -78,7 +78,7 @@ We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
 	\begin{align}
 		m(E_1) - \lim_{k \to \infty} m(E_k) = m(E_1) - m\left(\bigcap_{k=1}^{\infty} E_k \right).
 	\end{align}
-	Therefore, we conclude that $m\left(\bigcap_{k=1}^{\infty}E_k\right) = \lim_{k \to \infty} m(E_k)$.
+	Therefore, we conclude that $m\left(\bigcap_{k=1}^{\infty}E_k\right) = \lim_{k \to \infty} m(E_k)$.\footnote{The assignment states this result as \textit{continuity from below} for the Lebesgue measure, but I believe this is actually \textit{continuity from above}.}
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 2}
@@ -275,7 +275,36 @@ We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
 	Therefore, $\lim_{n \to \infty} m(F_n(k)) = 0$.
 \end{proof}
 
-
+\subsection*{(b)}
+\begin{proof}
+	(i) Since $F$ is a countable union, then
+	\begin{align}
+		m(F) &= m\left(\bigcup_{k=1}^{\infty} F_{n_k}(k)\right) \\
+		& \leq \sum_{k=1}^{\infty} m\left(F_{n_k}(k)\right) \\
+		&< \sum_{k=1}^{\infty}2^{-k}\epsilon \\
+		&= \epsilon\left(\frac{1}{1-\frac{1}{2}} - 1\right) \\
+		&= \epsilon.
+	\end{align}
+	Thus, $m(F) < \epsilon$.
+	
+	(ii) The complement $F^c$ is given by
+	\begin{equation}
+		F^c = \left(\bigcup_{k=1}^{\infty} F_{n_k}(k)\right)^c = \bigcap_{k=1}^{\infty} F_{n_k}(k)^c,
+	\end{equation}
+	where
+	\begin{equation}
+		F_{n_k}(k) := \bigcup_{m=n_k}^{\infty} \{x \in E \;|\; |f_m(x) - f(x)|\geq k^{-1}\}.
+	\end{equation}
+	Then,
+	\begin{align}
+		F_{n_k}(k)^c = \bigcap_{m=n_k}^{\infty}\{x \in E \;|\; |f_n(x) - f(x)| < k^{-1}\} \\
+		\implies F^c = \bigcap_{k=1}^{\infty}\bigcap_{m=n_k}^{\infty}\{x \in E \;|\; |f_n(x) - f(x)| < k^{-1}\}.
+	\end{align}
+	Let $x \in F^c$. Then by the above equation, $\forall k \in \N$, $\exists n_k \in \N$ such that $\forall m \geq n_k$, $|f_m(x) - f(x)| < k^{-1}$. This implies that $f_n(x) \rightarrow f(x)$, and this is true for every $x \in F^c$.
+	
+	Therefore, we conclude that $f_n \rightarrow f$ uniformly on $F^c$.
+\end{proof}
+\underline{Remark}: In this problem, we have effectively proven \textit{Littlewood's second principle}, which is that every convergent sequence of measurable functions is uniformly convergent.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{appendices}
