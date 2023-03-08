@@ -47,6 +47,39 @@ We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
 	\end{align}
 	as desired.	
 \end{proof}
+
+\subsection*{(b)}
+\begin{proof}
+	Since $m(E_1) < \infty$ and $E_{k+1} \subset E_k$ $\forall k \in \N$, then $m(E_k) < m(E_1) < \infty$. Then
+	\begin{equation}
+		m\left(\bigcap_{k=1}^{\infty} E_k \right) < \infty,
+	\end{equation}
+	since $\bigcap_{k=1}^{\infty} E_k \subset E_k$.
+	
+	Additionally, we have
+	\begin{equation}\label{1b-star}
+		m\left[E_1 \backslash \left(\bigcap_{k=1}^{\infty}E_k\right)\right] = m(E_1) - m\left(\cap_{k=1}^{\infty}E_k\right).
+	\end{equation}
+	Also, we note that
+	\begin{align}
+		E_1 \backslash \left(\bigcap_{k=1}^{\infty} E_k \right) &= E_1 \cap \left(\bigcap_{k=1}^{\infty}E_k\right)^c \\
+		&= E_1 \cap \left(\bigcup_{k=1}^{\infty} E_k^c\right) \\
+		&= \bigcup_{k=1}^{\infty} \left(E_1 \cap E_k^c\right) \\
+		&= \bigcup_{k=1}^{\infty}\left(E_1 \backslash E_k \right). \label{1b-star-star}
+	\end{align}
+	Define $U_k = E_1 \backslash E_k$ for each $k \in \N$. Then $\forall k \in \N$, $U_k \subset U_{k+1}$ since $E_{k+1} \subset E_k$. By \eqref{1b-star-star}, we have
+	\begin{align}
+		m\left(E_1 \backslash \bigcap_{k=1}^{\infty}E_k\right) &= m\left[\bigcup_{k=1}^{\infty}(E_1 \backslash E_k)\right] \\
+		&= \lim_{k \to \infty} m(E_1 \backslash E_k) \\
+		&= \lim_{k \to \infty} \left[m(E_1) - m(E_k)\right] \\
+		&= m(E_1) - \lim_{k \to \infty}m(E_k).
+	\end{align}
+	Then using equation \eqref{1b-star}, this gives
+	\begin{align}
+		m(E_1) - \lim_{k \to \infty} m(E_k) = m(E_1) - m\left(\bigcap_{k=1}^{\infty} E_k \right).
+	\end{align}
+	Therefore, we conclude that $m\left(\bigcap_{k=1}^{\infty}E_k\right) = \lim_{k \to \infty} m(E_k)$.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 2}
 \subsection*{(a)}
@@ -203,7 +236,45 @@ We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 4}
-TODO TODO TODO
+\subsection*{(a)}
+\begin{proof}
+	We define $S$ as the set of elements in $E$ for which $f_n$ does not converge to $f$, via 
+	\begin{equation}
+		S := \{x\in E \;|\; \lim_{n \to \infty}f_n(x) \neq f(x) \}.
+	\end{equation}
+	If $\lim_{n \to \infty} f_n(x) \neq f(x)$, then for every $n \in \N$, $\exists \epsilon_0$ such that $\forall m > n$, \\$|f_m(x) - f(x)| \geq \epsilon_0$. Since this statement holds for every $n$, then letting $\epsilon_0 = \frac{1}{k}$ allows us to express $S$ as a countable union:
+	\begin{equation}
+		S = \bigcup_{m=1}^{\infty} \{x \in E \;|\; |f_m(x) - f(x)| \geq k^{-1} \} = F_1(k).
+	\end{equation}
+	But since $f_n \rightarrow f$ almost everywhere (a.e.) on $E$, then $S$ must have measure $0$, i.e.
+	\begin{equation}\label{4a-star}
+		m(F_1(k)) = 0 < \infty.
+	\end{equation}
+	We can also check that
+	\begin{align}
+		F_{n+1}(k) &= \bigcup_{m=n+1}^{\infty}\{x \in E \;|\; |f_m(x) - f(x)| \geq k^{-1} \} \\
+		&\subset \bigcup_{m=n}^{\infty}\{x \in E \;|\; |f_m(x) - f(x)| \geq k^{-1}\} \\
+		&= F_n(k).
+	\end{align}
+	So $\forall n \in \N$,
+	\begin{equation}\label{4a-star-star}
+		F_{n+1}(k) \subset F_n(k).
+	\end{equation}
+	By equations \eqref{4a-star} and \eqref{4a-star-star}, we appeal to problem \textbf{1b} to deduce that
+	\begin{equation}
+		\lim_{n \to \infty} m(F_n(k)) = m\left(\bigcap_{n=1}^{\infty} F_n(k) \right).
+	\end{equation}
+	We also have that
+	\begin{equation}
+		\bigcap_{n=1}^{\infty} F_n(k) \subset F_n(k) \subset F_1(k),
+	\end{equation}
+	so by the monotonicity of the Lebesgue measure, 
+	\begin{equation}
+		m\left(\bigcap_{n=1}^{\infty}F_n(k)\right) \leq m(F_1(k)) = 0.
+	\end{equation}
+	Therefore, $\lim_{n \to \infty} m(F_n(k)) = 0$.
+\end{proof}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
