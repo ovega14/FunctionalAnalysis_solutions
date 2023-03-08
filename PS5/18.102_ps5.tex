@@ -20,7 +20,7 @@
 \newcommand{\R}{\mathbb{R}} %the real numbers
 \newcommand{\N}{\mathbb{N}} %the natural numbers
 \newcommand{\M}{\mathcal{M}} %set of all Lebesgue-measurable sets
-\newcommand{\Q}{\mathcal{Q}} % the rational numbers
+\newcommand{\Q}{\mathbb{Q}} % the rational numbers
 
 \title{18.102 Assignment 5}
 \author{Octavio Vega}
@@ -33,7 +33,20 @@
 We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
 
 \section*{Problem 1}
-TODO TODO TODO
+\subsection*{(a)}
+\begin{proof}
+	Since $E, M \in \M$, then $E \cup M \in \M$ and $E \cap M \in \M$. We can express the union as 
+	\begin{equation}
+		E \cup F = (E \cap F) \cup (E \backslash F) \cup (F \backslash E).
+	\end{equation}
+	Then since $E$ and $F \backslash E$ are disjoint, we have
+	\begin{align}
+		m(E \cup F) + m(E \cap F) &= m\left[(E \cap F) \cup (E \backslash F)\right] + m(F \backslash E) + m(E \cap F) \\
+		&= m\left[(E \cap F) \cup (E \backslash F)\right] + m\left[(F \backslash E) \cup (E \cap F)\right] \\
+		&= m(E) + m(F),
+	\end{align}
+	as desired.	
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 2}
 \subsection*{(a)}
@@ -76,7 +89,7 @@ TODO TODO TODO
 	\begin{equation}
 		(f+g)^{-1}\left((\alpha, \infty]\right) = \bigcup_{r \in \Q} \left[f^{-1}\left((r,\infty]\right) \cap g^{-1}\left((\alpha - r,\infty]\right)\right] \in \M.
 	\end{equation}
-	Therefore $h$ is measurable.
+	Therefore, $h$ is measurable.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 3}
