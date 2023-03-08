@@ -20,6 +20,7 @@
 \newcommand{\R}{\mathbb{R}} %the real numbers
 \newcommand{\N}{\mathbb{N}} %the natural numbers
 \newcommand{\M}{\mathcal{M}} %set of all Lebesgue-measurable sets
+\newcommand{\Q}{\mathcal{Q}} % the rational numbers
 
 \title{18.102 Assignment 5}
 \author{Octavio Vega}
@@ -59,6 +60,24 @@ TODO TODO TODO
 	Therefore, $fg$ is measurable.
 \end{proof}
 
+\subsection*{(b)}
+\begin{proof}
+	Let $\alpha \in \R$.
+	
+	\underline{Case 1}: $\alpha = +\infty$. Then,
+	\begin{equation}
+		h^{-1}(\{\infty\}) = \{a\} = \bigcap_{n=1}^{\infty}\left[a, a + \frac{1}{n}\right] \in \M.
+	\end{equation}
+	\underline{Case 2}: $\alpha \neq \infty$. We have
+	\begin{equation}
+		h^{-1}\left((\alpha, \infty]\right) = (f+g)^{-1}\left((\alpha, \infty]\right).
+	\end{equation}
+	Then $x \in (f+g)^{-1}\left((\alpha, \infty]\right) \iff f(x) + g(x) > \alpha$. By the density of $\Q$ in $\R$, $\exists r \in \Q$ such that $f(x) > r > \alpha - g(x)$. Then since $f$ and $g$ are measurable, we have
+	\begin{equation}
+		(f+g)^{-1}\left((\alpha, \infty]\right) = \bigcup_{r \in \Q} \left[f^{-1}\left((r,\infty]\right) \cap g^{-1}\left((\alpha - r,\infty]\right)\right] \in \M.
+	\end{equation}
+	Therefore $h$ is measurable.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 3}
 \subsection*{(a)}
