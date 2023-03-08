@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  7 MAR 2023 15:17
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  7 MAR 2023 23:44
  restricted system commands enabled.
 **18.102_ps5.tex
 (./18.102_ps5.tex
@@ -572,22 +572,22 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/vega0/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] (./
-18.102_ps5.aux)
+{C:/Users/vega0/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
+ (./18.102_ps5.aux)
 Package rerunfilecheck Info: File `18.102_ps5.out' has not changed.
-(rerunfilecheck)             Checksum: 0159F97850EC3807FE421A895ECE61CA;250.
+(rerunfilecheck)             Checksum: 23CC921ED5E57682B2D9D4D3DAE314ED;250.
 )
 
 Here is how much of LuaTeX's memory you used:
- 11600 strings out of 478540
+ 11611 strings out of 478540
  125056,552014 words of node,token memory allocated
- 807 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 4 dir, 2 glue, 4 kern, 1 glyph, 95 attribute, 58 gl
-ue_spec, 49 attribute_list, 1 write nodes
-   avail lists: 1:1,2:828,3:188,4:26,5:438,6:38,7:3164,8:52,9:648,10:4,11:104
- 31036 multiletter control sequences out of 65536+200000
- 68 fonts using 6066223 bytes
- 71i,14n,74p,533b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 831 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 4 dir, 2 glue, 4 kern, 1 glyph, 103 attribute, 58 g
+lue_spec, 53 attribute_list, 1 write nodes
+   avail lists: 1:1,2:840,3:201,4:26,5:443,6:43,7:3388,8:50,9:727,10:4,11:116
+ 31041 multiletter control sequences out of 65536+200000
+ 70 fonts using 6329599 bytes
+ 71i,14n,74p,533b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
 <//?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-bold.otf><//
 ?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-italic.otf><//?
 /c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman12-bold.otf><//?/c:
@@ -602,9 +602,9 @@ ic/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on 18.102_ps5.pdf (3 pages, 112507 bytes).
+Output written on 18.102_ps5.pdf (4 pages, 116480 bytes).
 
-PDF statistics: 140 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 131072)
+PDF statistics: 150 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 131072)
  25 words of extra memory for PDF output out of 10000 (max. 100000000)
 

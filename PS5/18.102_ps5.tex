@@ -35,7 +35,30 @@ We denote by $\M$ the set of all Lebesgue-measurable subsets of $\R$.
 TODO TODO TODO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 2}
-TODO TODO TODO 
+\subsection*{(a)}
+\begin{proof}
+	Let $a \in \R$.
+	
+	We can write
+	\begin{equation}
+		fg = \frac{1}{4}\left[(f+g)^2 - (f-g)^2\right].
+	\end{equation}
+	We showed in lecture 9 that linear combinations of measurable functions are measurable, so we need only show that $f^2$ and $g^2$ are measurable.
+	
+	\underline{Case 1}: $\alpha < 0$. Then,
+	\begin{equation}
+		(f^2)^{-1}\left((\alpha, \infty]\right) = (f^2)^{-1}\left([0,\infty]\right) = E \in \M.
+	\end{equation}
+	\underline{Case 2}: $\alpha \geq 0$. Then $\forall x \in E$,
+	\begin{align}
+		f^2(x) > \alpha \iff f(x) > \sqrt{\alpha} \textrm{ or } f(x) < -\sqrt{a} \\
+		\implies (f^2)^{-1}\left((\alpha, \infty]\right) = [-\infty, -\sqrt{\alpha}) \cup (\sqrt{\alpha}, \infty] \in \M.
+	\end{align}
+	So $f^2$ is measurable, and by the same reasoning $g^2$ is measurable.
+	
+	Therefore, $fg$ is measurable.
+\end{proof}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Problem 3}
 \subsection*{(a)}
