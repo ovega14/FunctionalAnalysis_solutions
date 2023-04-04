@@ -30,6 +30,76 @@
 \maketitle
 	
 \section*{Problem 1}
-TODO TODO TODO
+\subsection*{(a)}
+\begin{proof}
+	Let $\epsilon > 0$, and define $c_1 := a$ and $c_{n+1} := b$. 
+	
+	Since $\psi$ is a step function on $[a, b]$, $\exists c_1 \leq c_2 \leq \cdots \leq c_n \leq c_{n+1} \in [a, b]$ such that $\forall i = 1, \cdots, n$,
+	\begin{equation}\label{psi_inverse}
+		\psi^{-1}(\{a_i\}) = (c_i, c_{i+1}],
+	\end{equation}
+	where each $a_i$ is one of the finitely many values that $\psi$ takes on. 
+	
+	Choose $\delta > 0$ such that $\delta < \frac{\epsilon}{2n}$. Define $g: [a, b] \rightarrow \R$ via
+	\begin{align}
+		g(x) := \begin{cases}
+			\frac{a_i + a_{i-1}}{2} + \left(\frac{a_i - a_{i-1}}{2\delta}\right)(x-c_i), \; &x \in (c_i - \delta, c_i + \delta) \\
+			a_i, \; &x \in [c_i + \delta, c_{i+1}-\delta] \\
+			-\frac{a_n}{2\delta}(x-b), \; &x \in (c_{n-1}-\delta, b],
+		\end{cases}
+	\end{align}
+	where $a_0 := -a_1$. Then
+	\begin{equation}
+		g(a) = \frac{a_1 + a_0}{2} + \left(\frac{a_1 - a_0}{2\delta}\right)(c_1 - c_1) = \frac{a_1 - a_1}{2} = 0,
+	\end{equation}
+	and
+	\begin{equation}
+		g(b) = -\frac{a_n}{2\delta}(b-b) = 0,
+	\end{equation}
+	as desired. We also see that since $g$ is piecewise linear, it is continuous. 
+	
+	Now consider the difference $|\psi(x) - g(x)|$.
+	
+	\underline{Case 1}: $x \in [c_i + \delta, c_{i+1} - \delta]$. Then by \eqref{psi_inverse}, we have
+	\begin{equation}
+		|\psi(x) - g(x)| = |\psi\left((c_i, c_{i+1}-\delta)\right) - a_i| = |a_i - a_i| = 0.
+	\end{equation}
+	\underline{Case 2}: $x \in (c_i - \delta, c_i + \delta)$. Then
+	\begin{align}
+		|\psi(x) - g(x)| &= \left|\frac{a_i + a_{i-1}}{2} + \left(\frac{a_i - a_{i-1}}{2\delta}\right)(x-c_i) - \psi(x)\right| \\
+		&< \left|\frac{a_i + a_{i-1}}{2} + \left(\frac{a_i - a_{i-1}}{2\delta}\right)\delta - \psi(x)\right| \\
+		&= \left|\frac{a_i + a_{i-1}}{2} + \frac{a_i + a_{i-1}}{2} - \psi(x)\right| \\
+		&= |a_i - \psi(x)| \\
+		&= 0 \textrm{ or } |a_{i+1} - a_i|.
+	\end{align}
+	\underline{Case 3}: $x \in (c_n - \delta, b)$. Then
+	\begin{align}
+		|\psi(x) - g(x)| &= \left|-\frac{a_n}{2\delta}(x-b) - \psi(x)\right| \\
+		&< \left|-\frac{a_n}{2\delta}\delta - \psi(x)\right| \\
+		&= \left|-\frac{a_n}{2} - \psi(x)\right| \\
+		&= \frac{3a_n}{2}.
+	\end{align}
+	So in all three cases, we have that either $|g(x) - \psi(x)| = 0$, or $|g(x) - \psi(x)| < \frac{3a}{2}$, or $|g(x) - \psi(x)|< |a_{i+1} - a_i|$.
+	
+	Define the set $E$ to be the collection of points in $[a, b]$ for which $|\psi(x) - g(x)| \neq 0$. Then
+	\begin{equation}
+		E := \bigcup_{k=1}^{n} (c_k - \delta, c_k + \delta).
+	\end{equation}
+	By definition, $\forall x \in E^c$, 
+	\begin{equation}
+		|\psi(x) - g(x)| = 0 < \epsilon.
+	\end{equation}
+	Since $E$ is a countable union of intervals, we have
+	\begin{align}
+		m(E) &= m\left[\bigcup_{k=1}^n (c_k - \delta, c_k + \delta)\right] \\
+		&\leq \sum_{k=1}^n m\left[(c_k - \delta, c_k + \delta)\right] \\
+		&= \sum_{k=1}^n \ell (c_k - \delta, c_k + \delta) \\
+		&= \sum_{k=1}^n 2\delta\\
+		&= 2n\delta \\
+		& < 2n \frac{\epsilon}{2n} \\
+		&= \epsilon,
+	\end{align}
+	as desired.
+\end{proof}
 	
 \end{document}
