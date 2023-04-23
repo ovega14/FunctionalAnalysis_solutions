@@ -30,6 +30,25 @@
 \maketitle
 	
 \section*{Problem 1}
-TODO TODO TODO
+\begin{proof}
+	We will show that $\Lambda([a, b])$ is a proper closed subspace of $C([a, b])$, which we know is a Banach space.
+	Let $\{f_n\}_n$ be a cauchy sequence in $\Lambda([a, b])$ such that $f_n \to f$ pointwise. Then for every $\epsilon > 0$, $\exists N \in \N$ such that $\forall n \geq N$, $||f - f_n|| < \epsilon$. This is equivalent to
+	\begin{equation}
+		\sup_{x \in [a, b]} |f(x) - f_n(x)| + \sup_{x \neq y \in [a, b]}\frac{|f(x) - f_n(x) - f(y) + f_n(y)|}{|x-y|} < \epsilon.
+	\end{equation}
+	Since both terms on the left hand side are non-negative, this implies
+	\begin{equation}
+		\sup_{x \neq y \in [a, b]}\frac{|f(x) - f_n(x) - f(y) + f_n(y)|}{|x-y|} < \epsilon.
+	\end{equation}
+	Then for any $x \neq y \in [a, b]$, we have
+	\begin{equation}
+		|f(x) - f_n(x) - f(y) + f_n(y)| < \epsilon|x-y|,
+	\end{equation}
+	which confirms that for each $n \geq N$, the function $f - f_n$ is Lipschitz continuous. By assumtion, $f_n$ is Lipschitz continuous $\forall n \in \N$, and the sum of Lipschitz continuous functions is also Lipschitz, thus $f = f_n + (f - f_n)$ is Lipschitz continuous.
+	
+	So, $\lim_{n \to \infty}f_n = f \in \Lambda([a, b])$, which proves that $\Lambda([a, b])$ is a proper closed subspace of $C([a, b])$.
+	
+	Therefore, $\Lambda([a, b])$ is a Banach space.  
+\end{proof}
 
 \end{document}
