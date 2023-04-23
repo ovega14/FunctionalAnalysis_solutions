@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  23 APR 2023 18:24
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  23 APR 2023 18:36
  restricted system commands enabled.
 **18.102_midterm.tex
 (./18.102_midterm.tex
@@ -571,22 +571,22 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/vega0/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (./18.102_m
-idterm.aux)
+{C:/Users/vega0/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] (./18.1
+02_midterm.aux)
 Package rerunfilecheck Info: File `18.102_midterm.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 )
 
 Here is how much of LuaTeX's memory you used:
- 11565 strings out of 478540
+ 11574 strings out of 478540
  125056,552014 words of node,token memory allocated
- 561 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 1 glyph, 21 attribute, 58 gl
-ue_spec, 12 attribute_list, 1 write nodes
-   avail lists: 1:1,2:354,3:114,4:16,5:252,6:20,7:2392,8:83,9:236,10:4,11:82
+ 626 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 dir, 2 glue, 4 kern, 1 glyph, 33 attribute, 58 gl
+ue_spec, 18 attribute_list, 1 write nodes
+   avail lists: 1:1,2:634,3:151,4:20,5:358,6:26,7:2847,8:83,9:476,10:4,11:84
  31024 multiletter control sequences out of 65536+200000
  64 fonts using 5539471 bytes
- 71i,6n,74p,537b,346s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,9n,74p,537b,421s stack positions out of 5000i,500n,10000p,200000b,50000s
 <//?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-regular.otf>
 <//?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-italic.otf><
 //?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman12-bold.otf><//?
@@ -595,13 +595,15 @@ ue_spec, 12 attribute_list, 1 write nodes
 Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
-s/msbm10.pfb>
-Output written on 18.102_midterm.pdf (1 page, 82811 bytes).
+s/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on 18.102_midterm.pdf (2 pages, 109209 bytes).
 
-PDF statistics: 78 PDF objects out of 1000 (max. 8388607)
- 6 named destinations out of 1000 (max. 131072)
+PDF statistics: 102 PDF objects out of 1000 (max. 8388607)
+ 15 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

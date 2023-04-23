@@ -50,5 +50,30 @@
 	
 	Therefore, $\Lambda([a, b])$ is a Banach space.  
 \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2}
+\begin{proof}
+	First we show that $||a + c_0||_{\ell^{\infty} / c_0} \leq \limsup_{n \to \infty} |a_n|$.
+	
+	Let $a = \{a_n\}_n \in \ell^{\infty}$. For each $n \in \N$, let $b_n = (a_1, a_2, ..., a_n, 0, 0, ...) \in c_0$. Then 
+	\begin{align}
+		\inf_{b \in c_0} ||a + b||_{\infty} & \leq \inf_n ||a - b_n||_{\infty} \\
+		&= \inf_n \sup_{m \in \N} |a_m - b_m| \\
+		&= \inf_n \sup_{m \geq n} |a_m| \\
+		&= \limsup_{n \to \infty} |a_n|.
+	\end{align}
+	Thus, 
+	\begin{equation}
+		||a + c_0||_{\ell^{\infty} / c_0} \leq \limsup_{n \to \infty} |a_n|.
+	\end{equation}
+	Let $b = (b_1, b_2, b_3, ...) \in c_0$. Then for every $\epsilon > 0$, $\exists n \in N$ such that $\forall m \geq n$, $|b_m| < \epsilon$, so 
+	\begin{align}
+		||a + b||_{\infty} & \geq \sup_{m \geq n}|a_m| - \epsilon \\
+		&\geq \limsup_{n \to \infty} |a_n| - \epsilon,
+	\end{align}
+	hence $\limsup_{n \to \infty}|a_n| < ||a + c_0||_{\ell^{\infty}/c_0} + \epsilon$.
+	
+	Therefore, $||a + c_0||_{\ell^{\infty} / c_0} = \limsup_{n \to \infty} |a_n|$.
+\end{proof}
 
 \end{document}
