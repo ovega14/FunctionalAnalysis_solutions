@@ -75,5 +75,25 @@
 	
 	Therefore, $||a + c_0||_{\ell^{\infty} / c_0} = \limsup_{n \to \infty} |a_n|$.
 \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 3}
+\subsection*{(a)}
+\begin{proof}
+	Since $\lim_{n \to \infty}T_n x = Tx$, then for every $\epsilon > 0$ $\exists N \in N$ such that $\forall n \geq N$,
+	\begin{equation}
+		||T_nx - Tx|| < \epsilon.
+	\end{equation}
+	By linearity of $T$, this is equivalent to 
+	\begin{equation}
+		||(T_n - T)x|| < \epsilon.
+	\end{equation}
+	Choose $\epsilon = ||x||$. With a sufficiently large choice of $N$, we have $\forall n \geq N$ and $\forall x \in V$,
+	\begin{equation}
+		||(T_n - T)x|| < ||x||.
+	\end{equation}
+	The above equation implies that the operator $T_n - T$ is continuous. Since $\{T_n\}_n$ is assumed to be a sequence in $\mathcal{B}(V, W)$, then $T_n - (T_n - T) = T$ is continuous.
+	
+	Therefore, $T$ is a bounded linear operator.
+\end{proof}
 
 \end{document}
