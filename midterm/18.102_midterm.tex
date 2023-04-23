@@ -107,5 +107,33 @@
 	\end{equation}
 	and we are done.
 \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 4}
+\subsection*{(a)}
+\begin{proof}
+	For each $n \in \N$, define the set $F_n \subset E$ via 
+	\begin{equation}
+		F_n := \left\{x \in E \;|\; |f(x)| > ||f||_{\infty} + \frac{1}{n}\right\}.
+	\end{equation}
+	Then by definition of the essential supremum of $f$, $\forall n \in \N$, $m(F_n) = 0$. So for almost every $x \in E$ (i.e. $\forall x \in E \backslash F_n$), we have
+	\begin{equation}
+		|f(x)| \leq ||f||_{\infty} + \frac{1}{n}.
+	\end{equation}
+	Now consider $\bigcup_{n \in \N}F_n$. Since $\forall n \in \N$ we have $F_{n+1} \subset F_n$, then $(E \backslash F_n) \subset (E \backslash F_{n+1})$.
+	
+	By continuity from below (proved in \href{https://github.com/ovega14/FunctionalAnalysis_solutions/blob/main/PS5/18.102_ps5.pdf}{PS5.1b}), we have that
+	\begin{align}
+		m\left(E \backslash \bigcup_n F_n\right) &= m\left(\bigcap_n F_n^c\right) \\
+		&= \lim_{n \to \infty} m(F_n^c) \\
+		&= \lim_{n \to \infty} m(E \backslash F_n) \\
+		&= m(E) - \lim_{n \to \infty}m(F_n) \\
+		&= m(E).
+	\end{align}
+	This is equivalent to the statement
+	\begin{equation}
+		m\left(\bigcup_n F_n\right) = 0.
+	\end{equation}
+	Therefore, $|f(x)| \leq ||f||_{\infty}$ almost everywhere on $E$.
+\end{proof}
 
 \end{document}
