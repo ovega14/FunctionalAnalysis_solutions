@@ -119,7 +119,7 @@
 	\begin{equation}
 		|f(x)| \leq ||f||_{\infty} + \frac{1}{n}.
 	\end{equation}
-	Now consider $\bigcup_{n \in \N}F_n$. Since $\forall n \in \N$ we have $F_{n+1} \subset F_n$, then $(E \backslash F_n) \subset (E \backslash F_{n+1})$.
+	Now consider $\bigcup_{n \in \N}F_n$. Since $\forall n \in \N$ we have $F_{n+1} \subset F_n$, then \\$(E \backslash F_n) \subset (E \backslash F_{n+1})$.
 	
 	By continuity from below (proved in \href{https://github.com/ovega14/FunctionalAnalysis_solutions/blob/main/PS5/18.102_ps5.pdf}{PS5.1b}), we have that
 	\begin{align}
@@ -136,4 +136,16 @@
 	Therefore, $|f(x)| \leq ||f||_{\infty}$ almost everywhere on $E$.
 \end{proof}
 
+\subsection*{(b)}
+\begin{proof}
+	(i) Let $c \in \R$. Then the function $cf$ is measurable, and by definition,
+	\begin{align}
+		||cf||_{\infty} &= \inf \left\{B \geq 0 \;|\; m\left(\left\{x \in E \;|\; |cf(x)| > B\right\}\right) = 0\right\} \\
+		&= \inf\left\{|c|\frac{B}{|c|} \;|\; m\left(\left\{x \in E \;|\; |f(x)| \geq \frac{B}{|c|}\right\}\right) = 0\right\} \\
+		&= |c| \inf\left\{\frac{B}{|c|} \;|\; m\left(\left\{x \in E \;|\; |f(x)| > \frac{B}{|c|}\right\}\right) = 0\right\} \\
+		&= |c| \cdot ||f||_{\infty}, 
+	\end{align}
+	as desired.
+\end{proof}
+ 
 \end{document}
