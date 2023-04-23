@@ -7,6 +7,7 @@
 \usepackage[parfill]{parskip} %avoid indent when skipping lines
 \usepackage[toc,page]{appendix}
 \usepackage{mathtools}
+\usepackage{dsfont}
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
@@ -94,6 +95,17 @@
 	The above equation implies that the operator $T_n - T$ is continuous. Since $\{T_n\}_n$ is assumed to be a sequence in $\mathcal{B}(V, W)$, then $T_n - (T_n - T) = T$ is continuous.
 	
 	Therefore, $T$ is a bounded linear operator.
+\end{proof}
+
+\subsection*{(b)}
+\begin{proof}
+	Since $V$ is a Banach space with respect to both norms $||\cdot||_1$ and $||\cdot||_2$, we may regard the spaces $V_1 := (V, ||\cdot||_1)$ and $V_2 := (V, ||\cdot||_2)$ as separate Banach spaces.
+	
+	Consider the identity mapping $\mathds{1} \in \mathcal{B}(V_1, V_2)$. Since $\mathds{1}$ is a bounded linear operator, then $\exists C > 0$ such that $\forall v \in V_1$,
+	\begin{equation}
+		||v||_2 = ||\mathds{1} v||_2 \leq C ||v||_1,
+	\end{equation}
+	and we are done.
 \end{proof}
 
 \end{document}
