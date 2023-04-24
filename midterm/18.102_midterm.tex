@@ -140,12 +140,39 @@
 \begin{proof}
 	(i) Let $c \in \R$. Then the function $cf$ is measurable, and by definition,
 	\begin{align}
-		||cf||_{\infty} &= \inf \left\{B \geq 0 \;|\; m\left(\left\{x \in E \;|\; |cf(x)| > B\right\}\right) = 0\right\} \\
-		&= \inf\left\{|c|\frac{B}{|c|} \;|\; m\left(\left\{x \in E \;|\; |f(x)| \geq \frac{B}{|c|}\right\}\right) = 0\right\} \\
-		&= |c| \inf\left\{\frac{B}{|c|} \;|\; m\left(\left\{x \in E \;|\; |f(x)| > \frac{B}{|c|}\right\}\right) = 0\right\} \\
+		||cf||_{\infty} &= \inf \left\{B \geq 0 \;\big|\; m\left(\left\{x \in E \;|\; |cf(x)| > B\right\}\right) = 0\right\} \\
+		&= \inf\left\{|c|\frac{B}{|c|} \;\Big|\; m\left(\left\{x \in E \;|\; |f(x)| \geq \frac{B}{|c|}\right\}\right) = 0\right\} \\
+		&= |c| \inf\left\{\frac{B}{|c|} \;\Big|\; m\left(\left\{x \in E \;|\; |f(x)| > \frac{B}{|c|}\right\}\right) = 0\right\} \\
 		&= |c| \cdot ||f||_{\infty}, 
 	\end{align}
 	as desired.
+	
+	(ii) By definition, we have
+	\begin{equation}
+		||f + g||_{\infty} = \inf\{C > 0 \;|\; m(\{x \in E \;|\; |f(x) + g(x)| > C\} = 0)\}.
+	\end{equation}
+	Note that by the triangle inequality, $|f(x) + g(x)| \leq |f(x)| + |g(x)|$, so if \\$|f(x) + g(x)| > C \Rightarrow |f(x)| + |g(x)| > C$. This means
+	\begin{equation}\label{4b.ii-1}
+		\{x \in E \;|\; |f(x) + g(x)| > C \} \subseteq \{x \in E \;|\; |f(x)| + |g(x)| > C\}.
+	\end{equation}
+	By monotonicity of the Lebesgue measure, this gives
+	\begin{equation}
+		m(\{x \in E \;|\; |f(x) + g(x)| > C \}) \leq m(\{x \in E \;|\; |f(x)| + |g(x)| > C\}),
+	\end{equation}
+	which implies that
+	\begin{equation}
+		||f + g||_{\infty} \leq \inf\{C > 0 \;|\; m(\{x \in E \;|\; |f(x)| + |g(x)| > C\}) = 0\}.
+	\end{equation}
+	Note that for $C > 0$, if for some $x \in E$ $|f(x)| + |g(x)| > C$, then it follows that either $|f(x)| > C$ or $|g(x)| > C$. Thus we can express the set on the right side of \eqref{4b.ii-1} as follows:
+	\begin{equation}
+		\{x \in E \;|\; |f(x)| + |g(x)| > C\} \subseteq \{x \in E \;|\; |f(x)| > C\} \cup \{x \in E \;|\; |g(x)| > C\}.
+	\end{equation}
+	Once again using monotonicity of $m(\cdot)$, we can conclude that
+	\begin{align}
+		||f + g||_{\infty} \leq \inf\{C > 0 \;|\; m(\{x \in E \;|\; |f(x)| > C\})=0\} + \nonumber \\ \inf\{C > 0 \;|\; m(\{x \in E \;|\; |g(x)| > C\})=0\} \\
+		= ||f||_{\infty} + ||g||_{\infty}.
+	\end{align}
+	Therefore the essential supremum satisfies both homogeneity and the triangle inequality.
 \end{proof}
  
 \end{document}
