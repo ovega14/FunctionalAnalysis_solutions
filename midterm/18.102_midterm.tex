@@ -197,4 +197,23 @@
 	as desired.
 \end{proof}
 
+\subsection*{(b)}
+\begin{proof}
+	By the theorem proven in \textbf{(a)}, since the set $F\cup G \subset E$ is measurable, then
+	\begin{equation}\label{5b.i}
+		\int_{F \cup G} \varphi = \int_E \varphi \chi_{F \cup G}.
+	\end{equation}
+	Since $F \cap G = \varnothing$, the characteristic function $\chi_{F \cup G}$ can only be 1 when its argument is in either of the sets $F$ or $G$, where it cannot be in both simultaneously. By this logic, the characteristic function can be expressed as a sum:
+	\begin{equation}
+		\chi_{F \cup G} = \chi_F + \chi_G.
+	\end{equation}
+	Inserting this into \eqref{5b.i} and invoking the theorem in $\textbf{(a)}$ once again, we find
+	\begin{align}
+		\int_{F \cup G} \varphi &= \int_E \varphi \left( \chi_F + \chi_G \right) \\
+		&= \int_E \varphi \chi_E + \int_E \varphi \chi_G \\
+		&= \int_F \varphi + \int_G \varphi,
+	\end{align}
+	which is the desired result.
+\end{proof}
+
 \end{document}
