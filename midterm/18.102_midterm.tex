@@ -174,5 +174,27 @@
 	\end{align}
 	Therefore the essential supremum satisfies both homogeneity and the triangle inequality.
 \end{proof}
- 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 5}
+\subsection*{(a)}
+\begin{proof}
+	Using the standard representation of the simple function $\varphi \in L^+(E)$, we have
+	\begin{align}
+		\int_F \varphi &= \int_F \sum_{i=1}^{n} a_i \chi_{A_i} \\
+		&= \sum_{i=1}^{n} a_i \int_F\chi_{A_i} \\
+		&= \sum_{i=1}^n a_i \int_E \chi_{A_i \cup F}. \label{5a.i}
+	\end{align}
+	Note that the characteristic function $\chi_{A_i \cap F}$ takes value 1 when its argument is in both $A_i$ and $F$. Equivalently, $\chi_{A_i \cap F}$ is zero when its argument is in either of the complements $A_i^c$ or $F^c$, or in both. Following this logic, we may express $\chi_{A_i \cap F}$ as a product of two other characteristic functions:
+	\begin{equation}
+		\chi_{A_i \cap F} = \chi_{A_i} \chi_F.
+	\end{equation}
+	Inserting this into \eqref{5a.i} and using linearity of the Lebesgue integral, we have
+	\begin{align}
+		\int_F \varphi &= \sum_{i=1}^n a_i \int_E \chi_{A_i} \chi_F \\
+		&= \int_E \left(\sum_{i=1}^n a_i \chi_{A_i}\right) \chi_F \\
+		&= \int_E \varphi \chi_F,
+	\end{align}
+	as desired.
+\end{proof}
+
 \end{document}
