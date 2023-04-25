@@ -101,5 +101,32 @@
 	\end{align}
 	as desired.
 \end{proof}
+
+\subsection*{(b)}
+\begin{proof}
+	Suppose $E$ is Lebesgue measurable and $m(E) < \infty$. Then by Littlewood's first principle, $\forall \delta > 0$ $\exists$ a finite collection of open intervals $\{U_i\}_{i=1}^n$ such that
+	\begin{equation}
+		m\left(E \Delta \bigcup_{i=1}^n U_i\right) < \delta.
+	\end{equation}
+	Let $\epsilon > 0$. Since $\varphi$ is a simple function, then we can express it as
+	\begin{equation}
+		\varphi = \sum_{i=1}^n a_i \chi_{E_i},
+	\end{equation}
+	where we take $U_i$ such that the symmetric difference
+	\begin{equation}
+		m(U_i \backslash E_i) + m(E_i \backslash U_i) < \frac{\epsilon}{n}
+	\end{equation}
+	for each $i \in \{1, ..., n\}$. 
 	
+	Let $\psi = \sum_{i=1}^n a_i \chi_{U_i}$. Then $\forall x \in U \cap E = (U \Delta E)^c$,
+	\begin{equation}
+		|\varphi(x) - \psi(x)| = 0 < \epsilon.
+	\end{equation}
+	We have
+	\begin{align}
+		m(U \Delta E) &= \sum_{i=1}^n m(U_i \backslash E_i) + \sum_{i=1}^n m(E_i \backslash U_i) \\
+		&< n \frac{\epsilon}{n} = \epsilon,
+	\end{align}
+	as desired.
+\end{proof}
 \end{document}
