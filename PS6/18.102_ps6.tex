@@ -129,4 +129,49 @@
 	\end{align}
 	as desired.
 \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2}
+\begin{proof}
+	Let $c_0=a$, $c_n=b$, and partition $[a, b]$ into disjoint intervals as follows:
+	\begin{equation}
+		[a, b] = [c_0, c_1) \cup [c_1, c_2) \cup ... \cup [c_{n-1}, c_n) \cup \{b\}.
+	\end{equation}
+	Letting $U_k = [c_{k-1}, c_k)$ for each $k \in \{1, ... n\}$, we have
+	\begin{equation}
+		\bigcup_{k=1}^n U_k = [a, b).
+	\end{equation}
+	On each interval $U_k$, extract a closed set $F_k$ such that $f$ is continuous on $F_k$ and such that
+	\begin{equation}
+		m\left(\bigcup_{k=1}^n F_k^c\right) < \epsilon.
+	\end{equation}
+	Then for each $k \in \{1, ..., n\}$, $\exists F_k \subseteq U_k$ closed such that $m(E \backslash F_k) < \frac{\epsilon}{2^n}$ and such that $f\big|_{F_k}$ is continuous.
+	
+	Since $F_k$ is closed, then $F_k^c$ is open, so the union $\bigcup_{k=1}^n F_k^c$ is open as well. Then $E = \bigcup_{k=1}^n F_k^c$ can be expressed as a union of disjoint intervals:
+	\begin{equation}
+		E = \bigcup_{k=1}^n (a_k, b_k).
+	\end{equation}
+	Define $g: [a, b] \to \R$ via
+	\begin{align}
+		g(x) := \begin{cases}
+			\frac{x - a_k}{b_k - a_k}f(b_k) + f(a_k), \quad &x \in E \\
+			f(x), \quad &x \in E^c.
+		\end{cases}
+	\end{align}
+	Then
+	\begin{equation}
+		\sup_{x \in [a, b]}|g(x)| \leq \sup_{x \in E}|g(x)| \leq |f(a_k)| + |f(b_k)|,
+	\end{equation}
+	and
+	\begin{equation}
+		\sup_{x \in [a, b]}|g(x)| \leq \sup_{x \in E^c}|g(x)| \leq \sup_{x \in E^c}|f(x)| \leq B.
+	\end{equation}
+	Also, 
+	\begin{equation}
+		m(E) = \sum_{k=1}^n m(F_k^c) < \sum_{k=1}^n \frac{\epsilon}{2^n} = \epsilon.
+	\end{equation}
+	Finally, $\forall x \in E^c$, $g(x) = f(x)$, so $|f(x) - g(x)| = 0 < \epsilon$.
+	
+	Therefore, the function $g$ meets the desired requirements.
+\end{proof}
+
 \end{document}
