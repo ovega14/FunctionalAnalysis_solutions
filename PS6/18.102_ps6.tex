@@ -173,5 +173,38 @@
 	
 	Therefore, the function $g$ meets the desired requirements.
 \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 3}
+\subsection*{(a)}
+\begin{proof}
+	Since $f$ is Lebesgue integrable, then $f$ is measurable. For each $n \in \N$, let $E_n = f^{-1}([-n, n])$. Then $[-n, n] = [-\infty, n] \cap [-n, \infty]$ and since $f$ is measurable, then $f^{-1}([-\infty, n])$ and $f^{-1}([-n, \infty])$ are measurable. Thus $f^{-1}([-\infty, n] \cap [-n, \infty])$ is measurable. Hence $f^{-1}([-n, n])$ is measurable $\iff E_n$ is measurable.
+	
+	Define $h_n = f\chi_{E_n}$. Then
+	\begin{align}
+		0 &\leq \int_a^b |f(x) - h_n(x)| \mathrm{d}x\\
+		&= \int_a^b |f(x) - f(x)\chi_{E_n}(x)| \mathrm{d}x \\
+		&= \int_a^b |f(x)||1 - \chi_{E_n}(x)| \mathrm{d}x \\
+		&= \int_a^b |f(x)|\chi_{E_n^c}(x) \mathrm{d}x \\
+		&= \int_{[a, b]\cap E_n^c}|f(x)| \mathrm{d}x,
+	\end{align}
+	where we have used the simple fact that for a measurable set $E$, the characteristic function over the set's complement takes the form $\chi_{E^c} = 1 - \chi_{E}$.
+	
+	We have $[a, b] cap E_n^c = [a, b] \cap f^{-1}([-n, n])^c$. But as $n \to \infty$, $f^{-1}([-n, n]) \to [a, b]$, so $f^{-1}([-n, n])^c \to [a, b]^c$. Hence, $[a, b] \cap E_n^c \to \varnothing$.
+	
+	Sending $n \to \infty$, we get
+	\begin{align}
+		0 &\leq \lim_{n \to \infty}\int_a^b |f(x) - h_n(x)| \mathrm{d}x \\
+		&= \lim_{n \to \infty} \int_{[a, b]\cap E_n^c} |f(x)| \mathrm{d}x \\
+		&= \int_{\varnothing}|f(x)| \mathrm{d}x \\
+		&= 0.
+	\end{align}
+	Thus, $\lim_{n \to \infty}\int_a^b |f(x) - h_n(x)| \mathrm{d}x = 0$.
+	
+	Let $h = \lim_{n \to \infty}h_n = f \chi_{[a, b]}$. Then $h$ is a product of two measurable functions, so $h$ is measurable. Also, $h$ is the limit of a sequence of simple functions $\{h_n\}_n$ with $|h| \leq |h_n|$ $\forall n \in \N$. So $h$ is bounded.
+	
+	Therefore $\int_{a}^b |f(x) - h(x)|\mathrm{d}x < \epsilon$, as desired.
+	
+
+\end{proof}
 
 \end{document}
