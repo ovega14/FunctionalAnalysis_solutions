@@ -21,6 +21,7 @@
 \newcommand{\N}{\mathbb{N}} %the natural numbers
 \newcommand{\M}{\mathcal{M}} %set of all Lebesgue-measurable sets
 \newcommand{\Q}{\mathbb{Q}} % the rational numbers
+\newcommand{\C}{\mathbb{C}} %the complex numbers
 
 \title{18.102 Assignment 6}
 \author{Octavio Vega}
@@ -254,6 +255,57 @@
 		&= \epsilon.
 	\end{align}
 	Hence, $g$ satisfies the desired constraints.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 4}
+\begin{proof}
+	First, we prove the Riemann-Lebesgue Lemma for step functions.
+	
+	Let $\psi: [-\pi, \pi] \to \C$ be a step function. Then given a partition \\$-\pi = x_0 < x_1 < ... < x_m = \pi$, we may write
+	\begin{equation}
+		\psi = \sum_{k=1}^m c_k \chi_{[x_{k-1}, x_k)}.
+	\end{equation}
+	Consider each of the integrals
+	\begin{equation}
+		I_1 = \int_{-\pi}^{\pi} \psi \cos{(nx)}\mathrm{d}x
+	\end{equation}
+	and
+	\begin{equation}
+		I_2 = \int_{-\pi}^{\pi}\psi \sin{(nx)} \mathrm{d}x.
+	\end{equation}
+	Computing, we get
+	\begin{align}
+		I_1 &= \sum_{k=1}^m c_k \int_{-\pi}^{\pi}\chi_{[x_{k-1}, x_k)}\cos{(nx)}\mathrm{d}x \\
+		&= \sum_{k=1}^m c_k \int_{x_{k-1}}^{x_k}\cos{(nx)} \mathrm{d}x \\
+		&= \sum_{k=1}^m c_k \frac{1}{n} \left[\sin{(x_k)} - \sin{(x_{k-1})}\right].
+	\end{align}
+	Similarly, we find
+	\begin{equation}
+		I_2 = -\sum_{k=1}^m c_k \frac{1}{n}\left[\cos{(x_k)} - \cos{(x_{k-1})}\right].
+	\end{equation}
+	Combining these results, we have
+	\begin{align}
+		\hat{\psi}(n) &= \frac{1}{2\pi}(I_1 - iI_2) \\
+		&= \frac{1}{2\pi n}\sum_{k=1}^m c_k \left[\sin{(x_k)} - \sin{(x_{k-1})} + i \left(\cos{(x_k)} - \cos{(x_{k-1})}\right)\right].
+	\end{align}
+	Taking the magnitude, we are left with
+	\begin{align}
+		|\hat{\psi}(n)| &\leq \sum_{k=1}^m \frac{|c_k|}{n}\left|\sin{(x_k)} - \sin{(x_{k-1})} + i \left(\cos{(x_k)} - \cos{(x_{k-1})}\right)\right| \\
+		&\leq 4 \sum_{k=1}^m \frac{|c_k|}{n} \xrightarrow{n \to \infty} 0.
+	\end{align}
+	Thus, $\lim_{|n| \to \infty}|\hat{\psi}(n)| = 0$.
+	
+	By problem \textbf{3a}, this step function $\psi$ exists for a Lebesgue integrable function $f: [-\pi, \pi] \to \C$, i.e. for $\epsilon > 0$, $\exists \psi$ such that
+	\begin{equation}
+		\int_{-\pi}^{\pi} \left(f(x) - \psi(x)\right) e^{-inx} \mathrm{d}x < \epsilon.
+	\end{equation}
+	So we have
+	\begin{align}
+		0 &\leq \left|\int_{-\pi}^{\pi} f(x)e^{-inx}\mathrm{d}x - \int_{-\pi}^{\pi}\psi(x)e^{-inx}\mathrm{d}x\right| \\
+		&\leq \int_{-\pi}^{\pi} \left|(f(x) - \psi(x))e^{-inx}\right| \mathrm{d}x \\
+		&< \epsilon.
+	\end{align}
+	Therefore, $\lim_{|n| \to \infty} |\hat{f}(n)|$ = 0.
 \end{proof}
 
 \end{document}
