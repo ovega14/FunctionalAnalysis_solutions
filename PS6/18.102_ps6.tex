@@ -233,4 +233,27 @@
 	Thus, $\psi$ suffices.
 \end{proof}
 
+\subsection*{(c)}
+\begin{proof}
+	Let $E = \{x\in [a, b] \;|\; |f(x) - g(x)| \geq \frac{\epsilon}{b-a}\}$. 
+	
+	By what we showed in problem \textbf{2}, we know $\exists$ such a continuous function $g: [a, b] \to \R$ such that  $g(a) = g(b) = 0$ and 
+	\begin{equation}
+		m\left(E\right) = 0.
+	\end{equation}
+	Then we have
+	\begin{align}
+		\int_a^b |f(x) - g(x)| \mathrm{d}x &= \int_{E\cup E^c} |f(x) - g(x)| \mathrm{d}x \\
+		&= \int_E |f(x) - g(x)| \mathrm{d}x + \int_{E^c} |f(x) - g(x)| \mathrm{d}x.
+	\end{align}
+	But $m(E) = 0$, so $m(E^c) = b-a$. Then
+	\begin{align}
+		\int_a^b |f(x) - g(x)| \mathrm{d}x &= \int_{E^c} |f(x) - g(x)| \mathrm{d}x \\
+		&< \int_{E^c} \frac{\epsilon}{b-a} \mathrm{d}x \\
+		&= (b-a) \frac{\epsilon}{b-a} \\
+		&= \epsilon.
+	\end{align}
+	Hence, $g$ satisfies the desired constraints.
+\end{proof}
+
 \end{document}

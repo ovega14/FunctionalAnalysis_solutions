@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  26 APR 2023 22:03
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.2) (format=lualatex 2021.9.11)  26 APR 2023 22:35
  restricted system commands enabled.
 **18.102_ps6.tex
 (./18.102_ps6.tex
@@ -573,22 +573,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/vega0/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
- [5] [6]
+ [5] [6] [7]
 (./18.102_ps6.aux)
 Package rerunfilecheck Info: File `18.102_ps6.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 )
 
 Here is how much of LuaTeX's memory you used:
- 11636 strings out of 478540
+ 11645 strings out of 478540
  125056,552014 words of node,token memory allocated
- 849 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 4 dir, 2 glue, 4 kern, 1 glyph, 109 attribute, 58 g
-lue_spec, 56 attribute_list, 1 write nodes
-   avail lists: 1:1,2:879,3:189,4:22,5:601,6:31,7:3087,8:68,9:1045,10:4,11:79
+ 872 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 dir, 2 glue, 4 kern, 1 glyph, 115 attribute, 58 g
+lue_spec, 59 attribute_list, 1 write nodes
+   avail lists: 1:1,2:912,3:189,4:22,5:600,6:31,7:3087,8:68,9:1045,10:4,11:79
  31033 multiletter control sequences out of 65536+200000
  68 fonts using 6066223 bytes
- 71i,17n,74p,533b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 71i,17n,74p,533b,427s stack positions out of 5000i,500n,10000p,200000b,50000s
 <//?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-bold.otf><//
 ?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-regular.otf><//
 ?/c:/program files/miktex 2.9/fonts/opentype/public/lm/lmroman10-italic.otf><//?
@@ -606,9 +606,9 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on 18.102_ps6.pdf (6 pages, 162032 bytes).
+Output written on 18.102_ps6.pdf (7 pages, 166358 bytes).
 
-PDF statistics: 189 PDF objects out of 1000 (max. 8388607)
- 68 named destinations out of 1000 (max. 131072)
+PDF statistics: 201 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
