@@ -177,7 +177,7 @@
 \section*{Problem 3}
 \subsection*{(a)}
 \begin{proof}
-	Since $f$ is Lebesgue integrable, then $f$ is measurable. For each $n \in \N$, let $E_n = f^{-1}([-n, n])$. Then $[-n, n] = [-\infty, n] \cap [-n, \infty]$ and since $f$ is measurable, then $f^{-1}([-\infty, n])$ and $f^{-1}([-n, \infty])$ are measurable. Thus $f^{-1}([-\infty, n] \cap [-n, \infty])$ is measurable. Hence $f^{-1}([-n, n])$ is measurable $\iff E_n$ is measurable.
+	Since $f$ is Lebesgue integrable, then $f$ is measurable. For each $n \in \N$, let $E_n = f^{-1}([-n, n])$. Then $[-n, n] = [-\infty, n] \cap [-n, \infty]$ and since $f$ is measurable, then $f^{-1}([-\infty, n])$ and $f^{-1}([-n, \infty])$ are measurable. Thus \\$f^{-1}([-\infty, n] \cap [-n, \infty])$ is measurable. Hence $f^{-1}([-n, n])$ is measurable $\iff E_n$ is measurable.
 	
 	Define $h_n = f\chi_{E_n}$. Then
 	\begin{align}
@@ -189,7 +189,7 @@
 	\end{align}
 	where we have used the simple fact that for a measurable set $E$, the characteristic function over the set's complement takes the form $\chi_{E^c} = 1 - \chi_{E}$.
 	
-	We have $[a, b] cap E_n^c = [a, b] \cap f^{-1}([-n, n])^c$. But as $n \to \infty$, $f^{-1}([-n, n]) \to [a, b]$, so $f^{-1}([-n, n])^c \to [a, b]^c$. Hence, $[a, b] \cap E_n^c \to \varnothing$.
+	We have $[a, b] \cap E_n^c = [a, b] \cap f^{-1}([-n, n])^c$. But as $n \to \infty$, \\$f^{-1}([-n, n]) \to [a, b]$, so $f^{-1}([-n, n])^c \to [a, b]^c$. Hence, $[a, b] \cap E_n^c \to \varnothing$.
 	
 	Sending $n \to \infty$, we get
 	\begin{align}
@@ -203,8 +203,34 @@
 	Let $h = \lim_{n \to \infty}h_n = f \chi_{[a, b]}$. Then $h$ is a product of two measurable functions, so $h$ is measurable. Also, $h$ is the limit of a sequence of simple functions $\{h_n\}_n$ with $|h| \leq |h_n|$ $\forall n \in \N$. So $h$ is bounded.
 	
 	Therefore $\int_{a}^b |f(x) - h(x)|\mathrm{d}x < \epsilon$, as desired.
+\end{proof}
 	
-
+\subsection*{(b)}
+\begin{proof}
+	By \textbf{(a)}, we know that $\exists$ a bounded measurable function $h: [a, b] \to \R$ such that
+	\begin{equation}
+		\int_a^b |f(x) - h(x)| \mathrm{d}x < \frac{\epsilon}{3}.
+	\end{equation}
+	Next, we approximate $h$ by a simple function $\varphi: [a, b] \to \R$ such that
+	\begin{equation}
+		\int_a^b |h(x) - \phi(x)| \mathrm{d}x < \frac{\epsilon}{3}.
+	\end{equation}
+	Finally, by problem \textbf{(1b)}, we can approximate $\varphi$ by a step function $\psi$ such that
+	\begin{equation}\label{3b.i}
+		|\varphi(x) - \psi(x)| < \frac{\epsilon}{3(b-a)}.
+	\end{equation}
+	Integrating \eqref{3b.i} over $[a, b]$, this is equivalent to
+	\begin{equation}
+		\int_a^b |\varphi(x) - \psi(x)| \mathrm{d}x < \frac{\epsilon}{3(b-a)}m([a, b]) = \frac{\epsilon}{3}.
+	\end{equation}
+	So, by the triangle inequality we have
+	\begin{align}
+		\int_a^b |f(x) - \psi(x)| \mathrm{d}x = \int_a^b |f(x) - h(x) + h(x) - \varphi(x) + \varphi(x) - \psi(x)| \mathrm{d}x \\
+		\leq \int_a^b |f(x) - h(x)| \mathrm{d}x + \int_a^b |h(x) - \varphi(x)| \mathrm{d}x + \int_a^b |\varphi(x) - \psi(x)|\mathrm{d}x \\
+		< \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} \\
+		= \epsilon.
+	\end{align}
+	Thus, $\psi$ suffices.
 \end{proof}
 
 \end{document}
