@@ -66,7 +66,49 @@
 	\begin{equation}
 		m([a, b] \backslash F) < \left(\frac{\epsilon}{4N}\right)^p,
 	\end{equation}
-	and the restriction $f_n \big|_F$ is continuous with $f_N(a) = f_N(b) = 0$.
+	and the restriction $f_n \big|_F$ is continuous with $f_N(a) = f_N(b) = 0$. So, we have
+	\begin{align}
+		||f_n - f||^p &= \int_{[a, b] \backslash F} |f_n - f|_p ^p \\
+		& \leq (2N)^p m([a, b]\backslash F) \\
+		&< (2N)^p \frac{\epsilon^p}{(4N)^p} \\
+		&= \left(\frac{\epsilon}{2} \right)^p,
+	\end{align}
+	i.e. $||f_n - f||_p < \epsilon$.
+	
+	Since $\chi$ is a step function, the theorem given in the assignment tells us that we can find a $g \in C([a, b])$ with $g(a) = g(b) = 0$. Let $g = \lim_{n \to \infty} f_n$. Then $|f - g| < \epsilon$. Thus, $C([a, b])$ is dense in $L^p([a, b])$.
+	
+	Therefore $L^p([a, b])$ is separable.
 \end{proof}
 	
+\subsection*{(c)}
+\begin{proof}
+	For each $n \in \N$, define $f_n := f \chi_{[-n, n]}$. Since $f \in L^p(\R)$, then $f\in L^p([-n, n])$, so by the given theorem, $f_n$ is a step function and $\exists g_n \in C([-n, n])$ with $g(-n) = g(n) = 0$ such that
+	\begin{equation}
+		||f - f_n||_p + ||f - g_n||_p < \epsilon.
+	\end{equation}
+	We compute
+	\begin{align}
+		||f - f_n||_p ^p &= \int_{\R} |f - f_n|^p \\
+		&= \int_{\R} |f|^p |1 - \chi_{[-n, n]}|^p \\
+		&= \int_{\R \backslash [-n, n]} |f|^p |1 - \chi_{[-n, n]}|^p + \int_{[-n, n]} |f|^p |\chi_{[-n, n]}|^p \\
+		&= \int_{\R \backslash [-n, n]} |f|^p.
+	\end{align}
+	Sending $n \to \infty$, we get
+	\begin{equation}
+		||f - f_n||_p ^p = \int_{\varnothing}|f|^p = 0.
+	\end{equation}
+	Thus, $||f_n - f||_p \to 0$ as $n \to \infty$. Choosing $R$ sufficiently large, we are left with $||f - g_n||_p < \epsilon$ as $n \to \infty$. Take $g = \lim_{n \to \infty} g_n$, and we are done.
+	
+	Therefore $||f - g||_p < \epsilon$.
+\end{proof}
+
+\subsection*{(d)}
+\begin{proof}
+	From part \textbf{(c)}, we know that for every $f \in L^p(\R)$ and $\epsilon > 0$, we can find a $g \in C(\R)$ such that $\forall |x| > R$, $g(x)=0$ and $||f - g||_p < \epsilon$. So, $C(\R)$ is dense in $L^p(\R)$.
+	
+	Let $\{g_n\}_n \subset C(\R)$. Then we are done, since this sequence is countable.
+	
+	Therefore $L^p(\R)$ is separable.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
