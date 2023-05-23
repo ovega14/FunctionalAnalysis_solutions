@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[]{amsthm} %lets us use \begin{proof}
+\usepackage[]{amssymb} %gives us the character \varnothing
+\usepackage[]{amsmath}
+\usepackage[parfill]{parskip} %avoid indent when skipping lines
+\usepackage[toc,page]{appendix}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={18.102-ps7},
+	pdfpagemode=FullScreen,
+}
+%\urlstyle{same}
+\newcommand{\R}{\mathbb{R}} %the real numbers
+\newcommand{\N}{\mathbb{N}} %the natural numbers
+\newcommand{\M}{\mathcal{M}} %set of all Lebesgue-measurable sets
+\newcommand{\Q}{\mathbb{Q}} % the rational numbers
+\newcommand{\C}{\mathbb{C}} %the complex numbers
+
+\title{18.102 Assignment 7}
+\author{Octavio Vega}
+\date\today
+
+\begin{document}
+\maketitle
+	
+\section*{Problem 1}
+\subsection*{(a)}
+\begin{proof}
+	Let $E = [a, b]$ and let $f: E \to \C$. Suppose $f \in L^p([a, b])$. Then
+	\begin{align}
+		&\Rightarrow \int_E |f|^p < \infty \\
+		&\Rightarrow \left(\int_E |f|^p\right)^\frac{1}{p} < \infty \\
+		&\iff ||f||_{L^p(E)} < \infty.
+	\end{align}
+	Now let $1 \leq q \leq p$. Then by Hölder's inequality, since $1: E \to \C$ is measurable, then
+	\begin{align}
+		||f||_{L^q(E)}^q &= \int_E |f|^q \\
+		&= || |f|^q||_{L^1(E)} \\
+		&= || 1 \cdot |f|^q||_{L^1(E)} \\
+		& \leq ||1||_{L^{\frac{p}{p-q}}(E)} || |f|^q||_{L^{\frac{p}{q}}(E)} \\
+		&= \left(\int_E 1\right)^{\frac{p-q}{p}} \left(\int_E \Big||f|^q\Big|^{\frac{p}{q}}\right)^{\frac{q}{p}} \\
+		&= (b - a)^{\frac{p-q}{p}} \left(\int_E |f|^p\right)^{\frac{q}{p}} \\
+		&= (b - a)^{\frac{p-q}{p}} ||f||_{L^p(E)}^q \\
+		&< \infty.
+	\end{align}
+	Hence, $f \in L^p([a, b]) \Rightarrow f \in L^q ([a, b])$.
+	
+	Therefore $L^p([a, b]) \subset L^q([a, b])$. 
+\end{proof}
+
+\subsection*{(b)}
+\begin{proof}
+	Let $f \in L^p([a, b])$ and $\epsilon > 0$. Choose $N$ such that
+	\begin{equation}
+		||f - f \chi_{[-f^{-1}(N), f^{-1}(N)]}||_p < \frac{\epsilon}{2}.
+	\end{equation}
+	Let $f_n =f \chi_{[-f^{-1}(n), f^{-1}(n)]}$. From \href{https://github.com/ovega14/FunctionalAnalysis_solutions/blob/main/PS6/18.102_ps6.pdf}{PS6.2}, Littlewood's third principle tells us that "every measurable function is nearly continuous." This gives us a closed set $F$ such that
+	\begin{equation}
+		m([a, b] \backslash F) < \left(\frac{\epsilon}{4N}\right)^p,
+	\end{equation}
+	and the restriction $f_n \big|_F$ is continuous with $f_N(a) = f_N(b) = 0$.
+\end{proof}
+	
+\end{document}
