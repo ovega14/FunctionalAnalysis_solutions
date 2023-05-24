@@ -111,4 +111,53 @@
 	Therefore $L^p(\R)$ is separable.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2}
+\subsection*{(a)}
+\begin{proof}
+	Let $f \in L^{\infty}(E)$. The norm is given by the essential supremum, i.e.
+	\begin{equation}
+		||f||_{\infty} = \inf \{C \geq 0 \;|\; |f(x)| \leq C \textrm{ a.e.}\}
+	\end{equation}
+	In problem 4b of the \href{https://github.com/ovega14/FunctionalAnalysis_solutions/blob/main/midterm/18.102_midterm.pdf}{midterm}, we showed that the ess. sup satisfied homogeneity and the triangle inequality. In 4a, we showed that $||f||_{\infty} \geq |f(x)|$ almost everywhere on $E$, so if $||f||_{\infty} = 0$, then $f=0$ a.e., so $||\cdot||_{\infty}$ is a well-defined norm. Thus, $L^{\infty}(E)$ is a normed vector space.
+	
+	Let $\epsilon > 0$. Then $\exists N_0 \in \N$ such that $\forall n \geq N_0$ and $x \in F$, $|f_n(x) - f(x)| < \epsilon$. Then 
+	\begin{equation}
+		m(\{x \in E \;|\; |f_n(x) - f(x)| > \epsilon\}) = 0.
+	\end{equation} 
+	So $\forall n \geq N_0$, $||f_n - f|| < \epsilon$. Thus if $\exists F \subset E$ such that $m(F^c) = 0$ and $f_n \to f$ uniformly on $F$, then $||f_n - f|| \to 0$.
+	
+	Let $\{f_n\}_n \subset L^{\infty}(E)$ be a Cauchy sequence. Then for $\epsilon > 0$, $\exists N_0(\epsilon) \in \N$ such that $\forall n, m \geq N_0(\epsilon)$, we have $||f_n - f_m|| < \frac{\epsilon}{2}$. Then $\exists F^{\epsilon} \subset E$ such that $m(F^{\epsilon}) = 0$ and for $x \notin F^{\epsilon}$, $|f_n(x) - f_m(x)| < \frac{\epsilon}{2}$.
+	
+	Let $F = \cup_n F^{\frac{1}{n}}$. Then $m(F) = 0$ and $\forall x \in F^c$, $\{f_n(x)\}_n$ is Cauchy. Let $f(x) = \lim_{n \to \infty} f_n(x)$ for $x \in F^c$, and let $\epsilon > 0$. Then $\exists k_0 \in \N$ such that $\forall k \geq k_0$, $\frac{1}{k} < \frac{\epsilon}{2}$. Then $\forall n, m \geq N_0(k_0)$, we have
+	\begin{equation}
+		|f_n(x) - f_m(x)| < \frac{1}{k} < \frac{\epsilon}{2}.
+	\end{equation}
+	Sending $m \to \infty$ gives us $|f_n(x) - f(x)| < \epsilon$, hence $||f_n - f|| \to 0$.
+	
+	Therefore $L^{\infty}(E)$ is a Banach space.
+\end{proof}
+
+\subsection*{(b)}
+\begin{proof}
+	Let $f \in L^{\infty}([a, b])$. We have
+	\begin{align}
+		||f||_{L^{\infty}([a, b])} &= \inf \{C \geq 0 \;|\; m({x \in [a, b] \;|\; |f(x)| > C}) = 0\} \\
+		&= \inf \{C \geq 0 \;|\; |f(x)| \leq C \textrm{ a.e. on } [a, b]\}.
+	\end{align}
+	Note that $\forall x \in [a, b]$, $|f(x)| \leq \sup_{x \in [a, b]} |f(x)|$, so
+	\begin{align}
+		||f||_{L^{\infty}([a, b])} &= \inf \{C \geq 0 \;|\; C \geq \sup_{x \in [a, b]} |f(x)|\} \\
+		&= \sup_{x \in [a, b]} |f(x)| \\
+		&= ||f||_{\infty}.
+	\end{align}
+	Consider the function $f = \chi_{[a, b]}$. Then 
+	\begin{equation}
+		||f||_{\infty} = \sup_{x \in [a, b]} |\chi_{[a, b]}(x)| = 1,
+	\end{equation}
+	so $f \in L^{\infty}([a, b])$. Now suppose $\exists \{f_n\}_n \subset C([a, b])$ such that $||f_n - f||_{\infty} \to 0$. Then for every $\epsilon > 0$, $\exists N \in \N$ such that $\forall n \geq N$, $||f_n - f||_{\infty} < \epsilon$. Choose $\epsilon = \frac{1}{2}$. Then $\exists N$ such that $\forall n \geq N$, $||f_n - f||_{\infty} < \frac{1}{2}$. In particular, $\exists N$ such that $||f_n - f||_{\infty} < \frac{1}{2}$ and such that $|f_n(x) - f(x)| > \frac{1}{2}$ for some $x \in [a, b]$. But this contradicts our conclusion above that $||f||_{\infty} = ||f||_{L^{\infty}([a, b])}$, so this $f$ cannot be approximated arbitrarily closely by continuous functions.
+	
+	Therefore $C([a, b])$ is not dense in $L^{\infty}([a, b])$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \end{document}
