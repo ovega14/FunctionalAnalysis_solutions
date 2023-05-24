@@ -194,5 +194,53 @@
 	Thus we conclude that $T \in \mathcal{B}(L^p([a, b]), L^p([a, b]))$ with $||T|| = ||g||_{L^{\infty}}$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 4}
+\subsection*{(a)}
+\begin{proof}
+	We compute and expand:
+	\begin{align}
+		\frac{1}{4}[||u + v||^2 - ||u - v||^2 + i||u + iv||^2 - i ||u - iv||^2] \\= \frac{1}{4}[\langle u+v, u+v\rangle - \langle u-v, u-v\rangle + i\langle u+iv, u+iv\rangle - i\langle u-iv, u-iv\rangle] \\
+		= \frac{1}{4}[2\langle u,v\rangle + 2\langle v,u\rangle + 2\langle u,v\rangle - 2\langle v,u\rangle] \\
+		= \Re \langle u, v\rangle + i \Im \langle u, v\rangle \\
+		= \langle u, v \rangle.
+	\end{align}
+	Thus, the polarization identity holds.
+\end{proof}
+
+\subsection*{(b)}
+\begin{proof}
+	Suppose $||\cdot||$ satisfies the parallelogram law. Then $\forall u, v \in H$, we have
+	\begin{equation}
+		||u + v||^2 + ||u - v||^2 = 2 ||u||^2 + 2||v||^2.
+	\end{equation}
+	By the polarization identity proved in part \textbf{(a)}, we defined
+	\begin{equation}
+		\langle u, v \rangle = \frac{1}{4}[||u + v||^2 - ||u - v||^2 + i||u + iv||^2 - i ||u - iv||^2].
+	\end{equation}
+	We check the following properties:
+	
+	(i) If $v = u$, then
+	\begin{align}
+		\langle u, u \rangle &= \frac{1}{4} ||2u||^2 + \frac{i}{4}||(1 + i)u||^2 - \frac{i}{4}||(1 - i)u||^2 \\
+		&= ||u||^2 + \frac{\sqrt{2}}{4}i ||u||^2 - \frac{\sqrt{2}}{i}||u||^2 \\
+		&= ||u||^2.
+	\end{align}
+	(ii) \begin{align}
+		\langle v, u \rangle  &= \frac{1}{4}[||v + u||^2 - ||v - u||^2 + i ||v + iu||^2 - i||v - iu||^2] \\
+		&= \frac{1}{4}[||u + v||^2 - ||u - v||^2 + i||u - iv||^2 - i||u + iv||^2] \\
+		&= \overline{\langle u, v \rangle}.
+	\end{align}
+	(iii) Let $u, v, w \in H$. Then
+	\begin{align}
+		4 \Re \langle u+v, w \rangle = ||u + v + w||^2 - ||u + v - w||^2 \\
+		= ||v + w ||^2 + ||u + v||^2 - ||u - w||^2 + ||u||^2 + ||w||^2 - ||v||^2 \\
+		 - (||w - v||^2 + ||u - v||^2 - ||u - w||^2 + ||u||^2 + ||w||^2 - ||v||^2) \\
+		= ||w + v||^2 - ||w - v||^2 + ||u + v||^2 - ||u - v||^2 \\
+		= 4 \Re \langle u, w \rangle + 4 \Re \langle v, w \rangle,
+	\end{align}
+	and similarly for $\Im \langle u+v, w \rangle$. So $\langle\cdot, \cdot \rangle$ is linear.
+	
+	Therefore $\langle \cdot, \cdot \rangle$ is a Hermitian inner product on $H$.
+\end{proof}
 
 \end{document}
