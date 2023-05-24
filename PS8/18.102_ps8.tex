@@ -59,4 +59,22 @@
 	Thus, since $\overline{W}$ contains all the limit points of $W$, then $w \in \overline{W}$, as desired.
 \end{proof}
 
+\subsection*{(b)}
+\begin{proof}
+	Let $w \in \overline{W}$ and $u \in H$. Then by \textbf{(a)}, we may write $w = \sum_{n=1}^{\infty} c_n e_n$ for $\{c_n\}_n \in \ell^2(\N)$. Suppose $c_n = \langle u, e_n \rangle$. Then
+	\begin{align}
+		||u - \sum_{n=1}^{\infty} \langle u, e_n \rangle e_n|| &= ||u - \sum_{n=1}^{\infty} c_n e_n || \\
+		&= ||u - v||.
+	\end{align}
+	Now suppose $c_n \neq \langle u, e_n \rangle$. Then we compute
+	\begin{align}
+		||u - w||^2 &= \left\|u - \sum_{n=1}^{\infty} c_n e_n \right\|^2 \\
+		&= \left\|u - \sum_{n=1}^{\infty} \langle u, e_n \rangle e_n + \sum_{n=1}^{\infty} \langle u, e_n \rangle e_n - \sum_{n=1}^{\infty}c_n e_n\right\|^2 \\
+		&= \left\|u - \sum_{n=1}^{\infty} \langle u, e_n \rangle e_n + \sum_{n=1}^{\infty}(\langle u, e_n \rangle - c_n)e_n\right\|^2 \\
+		& \geq \left\|u - \sum_{n=1}^{\infty} \langle u, e_n \rangle e_n \right\|^2.
+	\end{align}
+	Therefore, $\left\|u - \sum_{n=1}^{\infty} \langle u, e_n \rangle e_n\right\| \leq ||u - w||$, with equality only if \\$w = \sum_{n=1}^{\infty} \langle u, e_n \rangle e_n$, and we are done.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \end{document}
