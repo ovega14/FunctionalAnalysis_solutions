@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[]{amsthm} %lets us use \begin{proof}
+\usepackage[]{amssymb} %gives us the character \varnothing
+\usepackage[]{amsmath}
+\usepackage[parfill]{parskip} %avoid indent when skipping lines
+\usepackage[toc,page]{appendix}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={18.102-ps8},
+	pdfpagemode=FullScreen,
+}
+%\urlstyle{same}
+\newcommand{\R}{\mathbb{R}} %the real numbers
+\newcommand{\N}{\mathbb{N}} %the natural numbers
+\newcommand{\M}{\mathcal{M}} %set of all Lebesgue-measurable sets
+\newcommand{\Q}{\mathbb{Q}} % the rational numbers
+\newcommand{\C}{\mathbb{C}} %the complex numbers
+
+\title{18.102 Assignment 8}
+\author{Octavio Vega}
+\date\today
+
+\begin{document}
+\maketitle
+	
+\section*{Problem 1}
+\subsection*{(a)}
+\begin{proof}
+	($\Rightarrow$) Suppose $w \in \overline{W}$. Then since $w \in H$ and since $\{e_n\}_n \subset H$ is a countably infinite orthonormal subset, we have
+	\begin{equation}
+		w = \sum_{n=1}^{\infty} \langle u, e_n \rangle e_n.
+	\end{equation}
+	Computing the norm gives
+	\begin{align}
+		||w||^2 &= \left\langle \sum_{n=1}^{\infty} \langle u, e_n \rangle e_n, \sum_{k=1}^{\infty} \langle u, e_k \rangle e_k \right \rangle \\
+		&= \sum_{n=1}^{\infty}\sum_{k=1}^{\infty} \langle u, e_n \rangle \overline{\langle u, e_k \rangle} \langle e_n, e_k \rangle \\
+		&= \sum_{n=1}^{\infty}\sum_{k=1}^{\infty} \langle u, e_n \rangle \overline{\langle u, e_k \rangle} \delta_{nk} \\
+		&= \sum_{n=1}^{\infty}\langle u, e_n \rangle \overline{\langle u, e_n \rangle} \\
+		&= \sum_{n=1}^{\infty} |\langle u, e_n \rangle|^2.
+	\end{align}
+	Thus, 
+	\begin{equation}
+		||w|| = \left(\sum_{n=1}^{\infty}|\langle u, e_n \rangle|^2\right)^\frac{1}{2} < \infty,
+	\end{equation}
+	so defining $c_n := \langle u, e_n \rangle$ yields a sequence $\{c_n\}_n \in \ell^2 (\N)$, as desired.
+	
+	($\Leftarrow$) Let $\{c_n\}_{n=1}^{\infty} \in \ell^{2}$ such that $w = \sum_{n=1}^{\infty} c_n e_n$. 
+	
+	Define $w_N := \sum_{n=1}^N c_n e_n$. Then $w = \lim\limits_{N \to \infty} w_N$, and for each $N \in N$, $w_N \in W$ since it is a finite linear combination of elements in $\{e_n\}_n$.
+	
+	Thus, since $\overline{W}$ contains all the limit points of $W$, then $w \in \overline{W}$, as desired.
+\end{proof}
+
+\end{document}
