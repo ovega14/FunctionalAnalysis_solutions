@@ -159,5 +159,40 @@
 	Therefore $C([a, b])$ is not dense in $L^{\infty}([a, b])$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 3}
+\begin{proof}
+	First, we show that $T: L^{p}([a, b]) \to L^{p}([a, b])$, defined via
+	\begin{equation}
+		Tf(x) := f(x)g(x)
+	\end{equation}
+	for $g \in L^{\infty}([a, b])$, is linear.
+	
+	Let $f_1, f_2 \in L^{p}([a, b])$ and $\lambda_1, \lambda_2 \in \C$. Then
+	\begin{align}
+		T(\lambda_1 f_1 + \lambda_2 f_2) &= (\lambda_1 f_1 + \lambda_2 f_2)g\\
+		&= \lambda_1 f_1 g + \lambda_2 f_2 g \\
+		&= \lambda_1 Tf_1 + \lambda_2 Tf_2.
+	\end{align}
+	Thus, $T$ is linear. We can also check that $T$ does indeed map $L^p([a, b])$ into itself; let $f \in L^{p}([a, b])$. Then
+	\begin{align}
+		\int_a ^b |Tf|^p &= \int_a ^b |fg|^p \\
+		&= \int_a ^b |f|^p |g|^p \\
+		&\leq \sup_{x \in [a, b]}|g(x)|^p \int_a ^b |f|^p \\
+		&= ||g||_{\infty}^p ||f||_{\infty}^p \\
+		&< \infty,
+	\end{align}
+	hence $Tf \in L^p ([a, b])$. 
+	
+	Next we show that $T$ is bounded:
+	\begin{align}
+		||T|| &= \sup_{||f||_p = 1}||fg||_p \\
+		&= \sup_{||f||_p=1}\left(\int_a ^b |fg|^p\right)^\frac{1}{p} \\
+		&= \sup_{||f||_p = 1} \left(||g||_{\infty}^p \int_a ^b |f|^p\right)^\frac{1}{p} \\
+		&= \sup_{||f||_p = 1} ||g||_{\infty} ||f||_p \\
+		&= ||g||_{L^{\infty}}.
+	\end{align}
+	Thus we conclude that $T \in \mathcal{B}(L^p([a, b]), L^p([a, b]))$ with $||T|| = ||g||_{L^{\infty}}$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
