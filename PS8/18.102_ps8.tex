@@ -113,4 +113,57 @@
 	We conclude that the closure $\overline{W} = \left(W^\perp\right)^\perp$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 3}
+\subsection*{(a)}
+\begin{proof}
+	Since $f \in C^k([-\pi, \pi])$, then $f$ must be bounded. Let $B \geq 0$ be such a bound for $f$. Then we have
+	\begin{align}
+		\|f\|_{L^2}^2 &= \int_{-\pi}^\pi |f(t)|^2 \mathrm{d}t \\
+		& \leq \int_{-\pi}^\pi B^2 \mathrm{d}t \\
+		&= 2\pi B^2 \\
+		& < \infty.
+	\end{align}
+	Thus $f \in L^2([-\pi, \pi])$.
+	
+	Next, we prove the following claim:
+	
+	\underline{Claim}: Let $k \in \N$. For each $j \in \{0, 1, ..., k\}$, 
+	\begin{equation}
+		\hat{f}(n) = \left(-\frac{i}{n}\right)^j \widehat{f^{(j)}}(n).
+	\end{equation}
+	\begin{proof}[Proof of claim:]
+		(By induction on $j$).
+		
+		\underline{Base case}: ($j=0$) $$\hat{f}(n) = \widehat{f^{(0)}}(n).$$
+		
+		\underline{Inductive step:} Assume $\hat{f}(n) = \left(-\frac{i}{n}\right)^j \hat{f^{(j)}}(n)$. Then integrating by parts, we get
+		\begin{align}
+			\hat{f}(n) &= \left(-\frac{i}{n}\right)^j\frac{1}{2 \pi} \int_{-\pi}^\pi f^{(j)}(t) e^{-int} \mathrm{d}t \\
+			&= \left(-\frac{i}{n}\right)^j\frac{1}{2 \pi}\left[f^{(j)}(t) \frac{e^{-int}}{(-in)} \Big|_{-\pi}^\pi - \int_{-\pi}^\pi f^{(j+1)}(t)\frac{e^{-int}}{(-in)} \mathrm{d}t\right] \\
+			&= 0 - \frac{i}{n}\left(-\frac{i}{n}\right)^j \frac{1}{2\pi} \int_{-\pi}^\pi f^{(j+1)}e^{-int} \mathrm{d}t \\
+			&= \left(-\frac{i}{n}\right)^{j+1} \widehat{f^{(j+1)}}(n),
+		\end{align} 
+		and the claim is proven.
+	\end{proof}
+	So for each $j \in \{0, 1, ..., k\}$, 
+	\begin{align}
+		\left|\hat{f}(n)\right| &= \left|\left(-i\right)^j \frac{1}{n^j} \widehat{f^{(j)}}(n)\right| \\
+		&= \frac{1}{n^j} \left|\widehat{f^{(j)}}(n)\right|.
+	\end{align}
+	Let $0 \leq s \leq k$ and $N \in \N$. Then
+	\begin{align}
+		\sum_{|n| \leq N} \left|\hat{f}(n)\right|^2\left(1 + |n|^2\right)^s &= \sum_{|n| \leq N} \frac{1}{n^{2j}} \left|\widehat{f^{(j)}}(n)\right|^2 \left(1 + |n|^2\right)^s \\
+		&= \sum_{|n| \leq N} \frac{\left(1 + |n|^2\right)^s}{n^{2j}} \left|\widehat{f^{(j)}}(n)\right|^2.
+	\end{align}
+	Since this holds $\forall 0 \leq j \leq k$, we can choose $j = k$, giving
+	\begin{align}
+		\sum_{|n| \leq N} \left|\hat{f}(n)\right|^2\left(1 + |n|^2\right)^s &= \sum_{|n| \leq N} \frac{\left(1 + |n|^2\right)^s}{n^{2k + 2}} \left|\widehat{f^{(k)}}(n)\right|^2\\
+		&\leq \sum_{|n| \leq N} \left|\widehat{f^{(k)}}(n)\right|^2 \\
+		& < \infty.
+	\end{align}
+	Sending $N \to \infty$, we get the desired result.
+	
+	Therefore $f \in H^s(\mathbb{T})$ $\forall 0 \leq s \leq k$.
+\end{proof}
+
 \end{document}
