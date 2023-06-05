@@ -75,6 +75,42 @@
 	\end{align}
 	Therefore, $\left\|u - \sum_{n=1}^{\infty} \langle u, e_n \rangle e_n\right\| \leq ||u - w||$, with equality only if \\$w = \sum_{n=1}^{\infty} \langle u, e_n \rangle e_n$, and we are done.
 \end{proof}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Problem 2}
+\subsection*{(a)}
+\begin{proof}
+	Let $\{u_k\}_k \subset W^{\perp}$ be a sequence such that $u_k \to u$ as $k \to \infty$. Then $\forall k \in \N$ and $\forall w \in W$, we have $\langle u_k, w \rangle$ = 0.
+	
+	By continuity of the inner product, 
+	\begin{align}
+		0 &= \lim\limits_{k \to \infty} \langle u_k, w\rangle \\
+		&= \left\langle \lim\limits_{k \to \infty} u_k, w \right \rangle \\
+		&= \langle u, w \rangle.
+	\end{align}
+	Thus, $u \in W^\perp$, so $W^{\perp} \subset H$ is closed.
+\end{proof}
 
+\subsection*{(b)}
+\begin{proof}
+	We note that
+	\begin{equation}
+		\left(W^\perp\right)^\perp := \{v \in H \;|\; \langle v, u \rangle = 0 \: \forall u \in W^\perp\}.
+	\end{equation}
+	Let $w \in W$. Then $\forall u \in W^\perp$, 
+	\begin{align}
+		&\langle w, u \rangle = 0 \\
+		&\implies w \in \left(W^\perp\right)^\perp \\
+		&\implies W \subseteq \left(W^\perp\right)^\perp .
+	\end{align}
+	Since $\left(W^\perp\right)^\perp$ is an orthogonal complement, then by \textbf{(a)} it is a closed linear subspace of $H$. So, $\left(W^\perp\right)^\perp$ must also be complete.
+	
+	Let $\{v_n\}_n \subset W$ be a Cauchy sequence. Since $W \subseteq \left(W^\perp\right)^\perp$, then $\{v_n\}_n \subset \left(W^\perp\right)^\perp$, so $\{v_n\}_n$ converges in $\left(W^\perp\right)^\perp$, i.e.
+	\begin{equation}
+		\lim\limits_{n \to \infty} v_n = v \in \left(W^\perp\right)^\perp.
+	\end{equation}
+	Thus the Cauchy sequence $\{v_n\}_n$ converges to $v$ in $\left(W^\perp\right)^\perp$.
+	
+	We conclude that the closure $\overline{W} = \left(W^\perp\right)^\perp$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
