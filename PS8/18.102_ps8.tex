@@ -166,4 +166,86 @@
 	Therefore $f \in H^s(\mathbb{T})$ $\forall 0 \leq s \leq k$.
 \end{proof}
 
+\subsection*{(b)}
+\begin{proof}
+	We first show that $H^s(\mathbb{T})$ is a vector space.
+	
+	Let $f, g \in H^s(\mathbb{T})$. Consider the function $f + g$. For $N \in \N$, we have
+	\begin{align}
+		\sum_{|n| \leq N} \left|\widehat{f + g}(n)\right|^2 \left(1 + |n|^2\right)^s &= \sum_{|n| \leq N} \left[\left|\hat{f}(n)\right|^2 + |\hat{g}(n)|^2 + \hat{f}(n)\overline{\hat{g}(n)} + \overline{\hat{f}(n)}\hat{g}(n)\right]\left(1 + |n|^2\right)^s \\
+		&= \sum_{|n| \leq N} \left[\left|\widehat{f}(n)\right|^2 + \left|\hat{g}(n)\right|^2 + 2 \Re\left(\hat{f}(n)\overline{\hat{g}(n)}\right)\right]\left(1 + |n|^2\right)^s \\
+		&\leq \sum_{|n| \leq N} \left[\left|\widehat{f}(n)\right|^2 + \left|\hat{g}(n)\right|^2 + 2 \max\left\{\left|\hat{f}(n)\right|^2, \left|\hat{g}(n)\right|^2\right\}\right]\left(1 + |n|^2\right)^s \\
+	\end{align}
+	Sending $N \to \infty$, we have
+	\begin{equation}
+		\sum_{|n| \in \mathbb{Z}} \left|\widehat{f + g}(n)\right|^2 \left(1 + |n|^2\right)^s < \infty, \\
+	\end{equation}
+	thus $f + g\ in H^s(\mathbb{T})$. Thus, $f + g \in H^s(\mathbb{T})$.
+	
+	Scalar multiplication follows trivially, as does existence of additive inverses. The remaining vector space axioms hold automatically, since for any $f, g, h \in H^s(\mathbb{T})$, it follows $f, g, h \in L^2([-\pi, \pi])$, which is a vector space.
+	
+	Next we show that $\left<f,g\right>_{H^s(\mathbb{T})}$ is a Hermitian inner product on $H^s(\mathbb{T})$. We have
+	\begin{equation}
+		\left<f, f\right>_{H^s(\mathbb{T})} = \sum_{|n| \leq N} \left|\hat{f}(n)\right|^2 \left(1 + |n|^2\right)^s \geq 0,
+	\end{equation}
+	since it is a sum of non-negative terms. Now suppose $\left<f, f\right>_{H^s(\mathbb{T})} = 0$. Then
+	\begin{equation}
+		\sum_{|n| \leq N} \left|\hat{f}(n)\right|^2 \left(1 + |n|^2\right)^s = 0 \\
+	\end{equation}
+	Then $\forall n \in \N$, 
+	\begin{align}
+		&\implies \left|\hat{f}(n)\right|^2 \left(1 + |n|^2\right)^s = 0 \\
+		&\implies \left|\hat{f}(n)\right|^2 \\
+		&\implies \hat{f}(n) = \frac{1}{2\pi} \int_{-\pi}^\pi f(t) e^{-int} \mathrm{d}t = 0 \\
+		&\iff \int_{-\pi}^\pi f(t) \cos(t) \mathrm{d}t \quad \mathrm{and} \quad \int_{-\pi}^\pi f(t) \sin(t) \mathrm{d}t.
+	\end{align}
+	The above two statements can only both be true if $f(t) = 0 \forall t \in [-\pi, \pi]$. Thus, $\langle f, f\rangle = 0 \implies f = 0$.
+	
+	Next, we compute
+	\begin{align}
+		\langle g, f \rangle &=\sum_{|n| \in \mathbb{Z}} \hat{g}(n)\overline{\hat{f}(n)} \left(1 + |n|^2\right)^s \\
+		&= \sum_{|n| \in \mathbb{Z}} \overline{\hat{f}(n)\overline{\hat{g}(n)}} \left(1 + |n|^2\right)^s \\
+		&= \overline{\sum_{|n| \in \mathbb{Z}} \hat{f}(n)\overline{\hat{g}{n}}\left(1 + |n|^2\right)^s} \\
+		&= \overline{\langle f, g \rangle}.
+	\end{align}
+	Similarly, for scalar multiples:
+	\begin{align}
+		\langle \alpha f, g \rangle &= \sum_{|n| \in \mathbb{Z}} \widehat{\alpha f}(n) \overline{\hat{g}(n)}\left(1 + |n|^2\right)^s \\
+		&= \alpha \sum_{|n| \in \mathbb{Z}} \widehat{f}(n) \overline{\hat{g}(n)}\left(1 + |n|^2\right)^s \\
+		&= \alpha \langle f, g \rangle.
+	\end{align}
+	Finally, consider
+	\begin{align}
+		\langle f + h, g \rangle &= \sum_{|n| \in \mathbb{Z}} \widehat{(f + g)}(n) \overline{\hat{g}(n)} \left(1 + |n|^2\right)^s \\
+		&= \sum_{|n| \in \mathbb{Z}} \left(\hat{f} + \hat{h}\right) \overline{\hat{g}(n)} \left(1 + |n|^2\right)^s \\
+		&= \sum_{|n| \in \mathbb{Z}} \hat{f}(n)\overline{\hat{g}(n)}\left(1 + |n|^2\right)^s + \sum_{|n| \in \mathbb{Z}} \hat{h}(n)\overline{\hat{g}(n)}\left(1 + |n|^2\right)^s \\
+		&= \langle< f, g \rangle + \langle h, g \rangle,
+	\end{align}
+	as desired.
+
+	Therefore $H^s(\mathbb{T})$ is a vector space with Hermitian inner product $\langle \cdot, \cdot \rangle_{H^s(\mathbb{T})}$.
+\end{proof}
+
+\subsection*{(c)}
+\begin{proof}
+	We take $\|\cdot\|_{H^s(\mathbb{T})}^2 := \langle \cdot, \cdot \rangle_{H^s(\mathbb{T})}$.
+	
+	Let $\{f_k\}_k \subset H^s(\mathbb{T})$ be a Cauchy sequence. Then $\{f_k\}_k \subset L^2([-\pi, \pi])$ is Cauchy. Since $L^2([-\pi, \pi])$ is complete, then $f_k \to f$ for some $f \in L^2([-\pi, \pi])$. Then for every $\epsilon > 0$, $\exists N \in N$ such that $\forall k \geq N$, $\|f - f_k\|_{L^2} < \epsilon$. So
+	\begin{align}
+		\sum_{n \in \mathbb{Z}} \left|\hat{f}(n)\right|^2 \left(1 + |n|^2\right)^s &= \sum_{n \in \mathbb{Z}} \left|\hat{f}(n) - \hat{f_k}(n) + \hat{f_k}(n)\right| \left(1 + |n|^2\right)^s \\
+		& \leq \sum_{n \in \mathbb{Z}} \left|\hat{f}(n) - \hat{f_k}(n)\right|^2 \left(1 + |n|^2\right)^s \\
+		& + 2 \sum_{n \in \mathbb{Z}} \left|\hat{f}(n) - \hat{f_k}(n)\right|\left|\hat{f_k}(n)\right| \left(1 + |n|^2\right)^s \\
+		& + 2 \sum_{n \in \mathbb{Z}} \left|\hat{f_k}(n)\right|^2 \left(1 + |n|^2\right)^s \\
+		& \leq \sum_{n \in \mathbb{Z}} \left|\hat{f}(n) - \hat{f_k}(n)\right|^2 \left(1 + |n|^2\right)^s \\
+		& + 2 \sum_{n \in \mathbb{Z}} \max\{\left|\hat{f_k}(n)\right|^2, \left|\hat{f}(n) - \hat{f_k}(n)\right|^2\} \left(1 + |n|^2\right)^s \\
+		& + \sum_{n \in \mathbb{Z}} \left|\hat{f_k}(n)\right|^2 \left(1 + |n|^2\right)^s \\
+		&< \infty,
+	\end{align}
+	since $f_k \in H^s(\mathbb{T})$ and since $f_k \to f$ in $L^2$, then $\hat{f_k} \to \hat{f}$.
+	Thus $f \in H^s(\mathbb{T})$ so $H^s(\mathbb{T})$ is complete. 
+	
+	Therefore $H^s(\mathbb{T})$ is a Hilbert space.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \end{document}
